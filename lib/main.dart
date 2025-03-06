@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
               home: child,
             );
           },
-          child: LoginScreen()git ,
+          child: LoginScreen() ,
         ));
   }
 }

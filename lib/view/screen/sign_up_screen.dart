@@ -6,7 +6,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:untitled4/controller/sign_up_cubit/sign_up_cubit.dart';
 import 'package:untitled4/view/screen/login_screen.dart';
-import 'package:untitled4/view/widget/phone_number_picker.dart';
 
 import '../../responsive.dart';
 import '../widget/back_ground_widget.dart';
