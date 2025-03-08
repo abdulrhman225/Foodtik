@@ -36,7 +36,7 @@ class TextInputWidget extends StatelessWidget {
         controller: textEditingController,
         obscureText: obscureText,
         style: TextStyle(
-          color: Colors.black,
+          color: Color(0xFF1A1C1E),
           fontSize: 14.sp,
           fontWeight: FontWeight.w500,
         ),

@@ -3,6 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:untitled4/controller/sign_up_cubit/sign_up_cubit.dart';
 import 'package:untitled4/view/screen/login_screen.dart';
+import 'package:untitled4/view/screen/new_passowrd_screen.dart';
+import 'package:untitled4/view/screen/reset_password_screen.dart';
 import 'package:untitled4/view/screen/sign_up_screen.dart';
 
 void main() {

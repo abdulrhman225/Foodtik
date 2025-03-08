@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:untitled4/responsive.dart';
+import 'package:untitled4/view/screen/reset_password_screen.dart';
 import 'package:untitled4/view/screen/sign_up_screen.dart';
 
 import '../widget/back_ground_widget.dart';
@@ -10,6 +11,7 @@ import '../widget/text_input_widget.dart';
 class LoginScreen extends StatelessWidget {
   TextEditingController emailTextEditingController = TextEditingController();
   TextEditingController passwordTextEditingController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -78,11 +80,16 @@ class LoginScreen extends StatelessWidget {
                                     width: responsiveWidth(context, 6),
                                   ),
                                   Container(
-                                    width:responsiveWidth(context, 32),
+                                    width: responsiveWidth(context, 32),
                                     height: responsiveHeight(context, 17),
                                     child: InkWell(
                                       onTap: () {
-                                        Navigator.push(context, MaterialPageRoute(builder: (context) => SignUpScreen(),));
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  SignUpScreen(),
+                                            ));
                                       },
                                       child: Text(
                                         "Sign Up",
@@ -123,15 +130,16 @@ class LoginScreen extends StatelessWidget {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Container(
-                                      width:responsiveWidth(context, 19),
+                                      width: responsiveWidth(context, 19),
                                       height: responsiveHeight(context, 19),
                                       child: Checkbox(
-
                                         value: false,
                                         onChanged: (value) {},
                                       ),
                                     ),
-                                    SizedBox(width: responsiveWidth(context, 5),),
+                                    SizedBox(
+                                      width: responsiveWidth(context, 5),
+                                    ),
                                     Text(
                                       "Remember me",
                                       style: TextStyle(
@@ -147,7 +155,14 @@ class LoginScreen extends StatelessWidget {
                                       width: responsiveWidth(context, 106),
                                       height: responsiveHeight(context, 17),
                                       child: InkWell(
-                                        onTap: () {},
+                                        onTap: () {
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) =>
+                                                    ResetPasswordScreen(),
+                                              ));
+                                        },
                                         child: Text(
                                           "Forgot Password ?",
                                           style: TextStyle(
@@ -211,7 +226,10 @@ class LoginScreen extends StatelessWidget {
                                       width: responsiveWidth(context, 18),
                                       height: responsiveHeight(context, 18),
                                       "assets/images/google.png"),
-                                  title: Text("Continue With Gmail" ,style: TextStyle(fontSize: 14 , fontWeight: FontWeight.w600)),
+                                  title: Text("Continue With Gmail",
+                                      style: TextStyle(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w600)),
                                 ),
                               ),
                               SizedBox(
@@ -232,10 +250,14 @@ class LoginScreen extends StatelessWidget {
                                       width: responsiveWidth(context, 18),
                                       height: responsiveHeight(context, 18),
                                       "assets/images/facebook.png"),
-                                  title: Text("Continue With Facebook" , style: TextStyle(fontSize: 14 , fontWeight: FontWeight.w600),),
+                                  title: Text(
+                                    "Continue With Facebook",
+                                    style: TextStyle(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w600),
+                                  ),
                                 ),
                               ),
-
                               SizedBox(
                                 height: responsiveHeight(context, 15),
                               ),
@@ -254,7 +276,12 @@ class LoginScreen extends StatelessWidget {
                                       width: responsiveWidth(context, 18),
                                       height: responsiveHeight(context, 18),
                                       "assets/images/apple_logo.png"),
-                                  title: Text("Continue With Apple" , style: TextStyle(fontSize: 14 , fontWeight: FontWeight.w600),),
+                                  title: Text(
+                                    "Continue With Apple",
+                                    style: TextStyle(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w600),
+                                  ),
                                 ),
                               ),
                             ],

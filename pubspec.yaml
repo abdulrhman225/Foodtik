@@ -37,7 +37,10 @@ dependencies:
   flutter_screenutil: ^5.9.3
   flutter_bloc: ^9.1.0
   intl: ^0.20.2
+  flutter_country_code_picker: ^0.1.2
   intl_phone_field: ^3.2.0
+  pinput: ^5.0.1
+  pin_code_fields: ^8.0.1
 
 dev_dependencies:
   flutter_test:
@@ -82,9 +85,9 @@ flutter:
          - asset: fonts/ProtestRiot-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
+     - family: Inter-VariableFont_opsz,wght
+       fonts:
+         - asset: fonts/Inter-VariableFont_opsz,wght.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #

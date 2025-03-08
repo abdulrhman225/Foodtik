@@ -47,18 +47,19 @@ class SignUpScreen extends StatelessWidget {
                     height: responsiveHeight(context, 24),
                   ),
                   Container(
-                    padding: EdgeInsets.all(10),
                     width: responsiveWidth(context, 343),
                     height: responsiveHeight(context, 661),
                     decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(12)),
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
                     child: Stack(
                       children: [
-                        SizedBox(
-                          height: responsiveHeight(context, 24),
-                        ),
                         Container(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: responsiveWidth(context, 24),
+                            vertical: responsiveHeight(context, 24),
+                          ),
                           width: double.infinity,
                           height: double.infinity,
                           child: Column(
@@ -111,7 +112,12 @@ class SignUpScreen extends StatelessWidget {
                                       height: responsiveHeight(context, 17),
                                       child: InkWell(
                                         onTap: () {
-                                          Navigator.push(context, MaterialPageRoute(builder: (context) => LoginScreen(),));
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) =>
+                                                    LoginScreen(),
+                                              ));
                                         },
                                         child: Text(
                                           "Login",
@@ -187,6 +193,7 @@ class SignUpScreen extends StatelessWidget {
                                     fontWeight: FontWeight.w500,
                                   ),
                                   decoration: InputDecoration(
+                                      counterText: "",
                                       focusedBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
                                           color: Colors.grey,
@@ -215,7 +222,9 @@ class SignUpScreen extends StatelessWidget {
                                 obscureText: true,
                                 textEditingController:
                                     passwordTextEditingController,
-                                suffixIcon: IconButton(onPressed: (){}, icon: Icon(Icons.visibility)),
+                                suffixIcon: IconButton(
+                                    onPressed: () {},
+                                    icon: Icon(Icons.visibility)),
                               ),
                               SizedBox(
                                 height: responsiveHeight(context, 24),
@@ -239,3 +248,7 @@ class SignUpScreen extends StatelessWidget {
     );
   }
 }
+
+
+
+
