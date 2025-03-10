@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:untitled4/responsive.dart';
+import 'package:Foodtik/constant_colors.dart';
+import 'package:Foodtik/responsive.dart';
 
 class InAppButton extends StatelessWidget {
   String text;
@@ -15,7 +16,7 @@ class InAppButton extends StatelessWidget {
       height: responsiveHeight(context, 48),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        color: Color(0xFF25AE4B),
+        color: ConstantColors.green_background,
       ),
       child: TextButton(
           onPressed: onPress,
@@ -24,7 +25,7 @@ class InAppButton extends StatelessWidget {
             style: TextStyle(
               color: Colors.white,
               fontSize: 14.sp,
-              fontWeight: FontWeight.w700,
+              fontWeight: FontWeight.w500,
             ),
           )),
     );

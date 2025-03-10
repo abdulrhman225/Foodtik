@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:untitled4/responsive.dart';
-import 'package:untitled4/view/screen/third_welcome_screen.dart';
+import 'package:Foodtik/responsive.dart';
+import 'package:Foodtik/view/screen/third_welcome_screen.dart';
 
 import '../widget/skip_widget.dart';
 import '../widget/welcom_button_widget.dart';
@@ -21,12 +21,12 @@ class SecondWelcomeScreen extends StatelessWidget {
           ),
           Container(
             color: Colors.white,
-            margin: EdgeInsets.only(top: 251),
+            margin: EdgeInsets.only(top: responsiveHeight(context, 251)),
             width: responsiveWidth(context, 434),
             height: responsiveHeight(context, 681),
           ),
           Container(
-            margin: EdgeInsets.only(top: 209),
+            margin: EdgeInsets.only(top: responsiveHeight(context, 209)),
             width: double.infinity,
             height: responsiveHeight(context, 103),
             decoration: BoxDecoration(

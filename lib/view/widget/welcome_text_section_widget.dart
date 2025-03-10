@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:Foodtik/constant_colors.dart';
 
 import '../../responsive.dart';
 
@@ -20,7 +21,7 @@ class WelcomeTextSectionWidget extends StatelessWidget {
           style: TextStyle(
             fontSize: 32.sp,
             fontWeight: fontWeight ,
-            color: Color(0xFF455A64),
+            color: ConstantColors.TextColor,
           ),
         ),
         SizedBox(height: responsiveHeight(context, 8),),
@@ -31,7 +32,7 @@ class WelcomeTextSectionWidget extends StatelessWidget {
             subTitle,
             textAlign: TextAlign.center,
             style: TextStyle(
-              color: Color(0xFF455A64),
+              color: Colors.grey,
               fontSize: 16.sp,
             ),
           ),

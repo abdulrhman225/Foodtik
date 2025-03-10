@@ -2,6 +2,9 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:Foodtik/constant_colors.dart';
+import 'package:Foodtik/view/screen/login_screen.dart';
 
 import 'first_welcome_screen.dart';
 
@@ -17,15 +20,30 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Timer(Duration(seconds: 2), () {
-      Navigator.push(context, MaterialPageRoute(builder: (context) => FirstWelcomeScreen(),));
+      checkIfIHaveToGoToWelcomeScreens();
     },);
   }
+
+  checkIfIHaveToGoToWelcomeScreens() async{
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    if(sharedPreferences.getString("welcome") == null){
+      Navigator.push(context, MaterialPageRoute(builder: (context) => FirstWelcomeScreen(),));
+    }
+    else{
+      Navigator.push(context, MaterialPageRoute(builder: (context) => LoginScreen(),));
+
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0XFF25AE4B),
+      backgroundColor: ConstantColors.green_background,
       body: Stack(children: [
         Image.asset(
+          width: double.infinity,
+          height: double.infinity,
+          fit: BoxFit.cover,
           "assets/images/splash_background.png",
         ),
         Center(

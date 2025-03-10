@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:untitled4/responsive.dart';
+import 'package:geolocator/geolocator.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:Foodtik/responsive.dart';
+import 'package:Foodtik/view/screen/login_screen.dart';
 
 import '../widget/welcom_button_widget.dart';
 import '../widget/welcome_text_section_widget.dart';
@@ -19,12 +22,12 @@ class TurnLocationOnScreen extends StatelessWidget {
           ),
           Container(
             color: Colors.white,
-            margin: EdgeInsets.only(top: 251),
+            margin: EdgeInsets.only(top: responsiveHeight(context, 251)),
             width: responsiveWidth(context, 434),
             height: responsiveHeight(context, 681),
           ),
           Container(
-            margin: EdgeInsets.only(top: 209),
+            margin: EdgeInsets.only(top: responsiveHeight(context, 251)),
             width: double.infinity,
             height: responsiveHeight(context, 103),
             decoration: BoxDecoration(
@@ -60,7 +63,9 @@ class TurnLocationOnScreen extends StatelessWidget {
                 ),
                 WelcomeButtonWidget(
                   text: "Yes, Turn It On",
-                  onPress: () {},
+                  onPress: () {
+                    _determinePosition(context);
+                  },
                 ),
                 SizedBox(
                   height: responsiveHeight(context, 14),
@@ -73,7 +78,16 @@ class TurnLocationOnScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(69),
                   ),
                   child: TextButton(
-                    onPressed: () {},
+                    onPressed: () async {
+                      SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+                      sharedPreferences.setString("welcome", "welcomeScreen");
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => LoginScreen(),
+                          ));
+
+                    },
                     child: Text(
                       "Cancel",
                       style: TextStyle(
@@ -89,5 +103,51 @@ class TurnLocationOnScreen extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  Future<Position> _determinePosition(BuildContext context) async {
+    bool serviceEnabled;
+    LocationPermission permission;
+
+    // Test if location services are enabled.
+    serviceEnabled = await Geolocator.isLocationServiceEnabled();
+    if (!serviceEnabled) {
+      // Location services are not enabled don't continue
+      // accessing the position and request users of the
+      // App to enable the location services.
+      return Future.error('Location services are disabled.');
+    }
+
+    permission = await Geolocator.checkPermission();
+    if (permission == LocationPermission.denied) {
+      permission = await Geolocator.requestPermission();
+      if (permission == LocationPermission.denied) {
+        // Permissions are denied, next time you could try
+        // requesting permissions again (this is also where
+        // Android's shouldShowRequestPermissionRationale
+        // returned true. According to Android guidelines
+        // your App should show an explanatory UI now.
+        SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+        sharedPreferences.setString("welcome", "welcomeScreen");
+        Navigator.push(context, MaterialPageRoute(builder: (context) => LoginScreen(),));
+        return Future.error('Location permissions are denied');
+      }
+    }
+
+    if (permission == LocationPermission.deniedForever) {
+      // Permissions are denied forever, handle appropriately.
+      SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+      sharedPreferences.setString("welcome", "welcomeScreen");
+      Navigator.push(context, MaterialPageRoute(builder: (context) => LoginScreen(),));
+      return Future.error(
+          'Location permissions are permanently denied, we cannot request permissions.');
+    }
+
+    // When we reach here, permissions are granted and we can
+    // continue accessing the position of the device.
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    sharedPreferences.setString("welcome", "welcomeScreen");
+    Navigator.push(context, MaterialPageRoute(builder: (context) => LoginScreen(),));
+    return await Geolocator.getCurrentPosition();
   }
 }

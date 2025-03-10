@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
-import 'package:untitled4/responsive.dart';
-import 'package:untitled4/view/screen/congratulations_dialog.dart';
-import 'package:untitled4/view/screen/new_passowrd_screen.dart';
-import 'package:untitled4/view/widget/in_app_button.dart';
+import 'package:Foodtik/responsive.dart';
+import 'package:Foodtik/view/screen/congratulations_dialog.dart';
+import 'package:Foodtik/view/screen/new_passowrd_screen.dart';
+import 'package:Foodtik/view/widget/in_app_button.dart';
 
 class OtpDialog extends StatelessWidget {
   @override
@@ -13,45 +13,41 @@ class OtpDialog extends StatelessWidget {
       child: Material(
         color: Colors.transparent,
         child: Container(
-          width: responsiveWidth(context, 343),
-          height: responsiveHeight(context, 389),
+          padding: EdgeInsets.symmetric(
+            horizontal: responsiveWidth(context, 24),
+            vertical: responsiveHeight(context, 24),
+          ),
+          margin: EdgeInsets.symmetric(
+            horizontal: responsiveWidth(context, 44),
+          ),
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(12),
           ),
-          child: Stack(children: [
-            Container(
-              padding: EdgeInsets.symmetric(
-                horizontal: responsiveWidth(context, 24),
-                vertical: responsiveHeight(context, 24),
-              ),
-              width: double.infinity,
-              height: double.infinity,
-              child: SingleChildScrollView(
+          child: SingleChildScrollView(
+            child: IntrinsicHeight(
+              child: IntrinsicWidth(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Image.asset(
                       width: responsiveWidth(context, 153),
                       height: responsiveHeight(context, 153),
+                      fit: BoxFit.cover,
                       "assets/images/mail_image.png",
                     ),
                     SizedBox(
                       height: responsiveHeight(context, 12),
                     ),
-                    SizedBox(
-                      width: responsiveWidth(context, 263),
-                      height: responsiveHeight(context, 34),
-                      child: Text(
-                        textAlign: TextAlign.center,
-                        "A 4-digit code has been sent to your email. Please enter it to verify.",
-                        style: TextStyle(
-                          color: Colors.grey,
-                          fontSize: 12.sp,
-                          decoration: TextDecoration.none,
-                          fontFamily: "Inter-VariableFont_opsz,wght",
-                          fontWeight: FontWeight.w500,
-                        ),
+                    Text(
+                      textAlign: TextAlign.center,
+                      "A 4-digit code has been sent to your email. Please enter it to verify.",
+                      style: TextStyle(
+                        color: Colors.grey,
+                        fontSize: 12.sp,
+                        decoration: TextDecoration.none,
+                        fontFamily: "Inter-VariableFont_opsz,wght",
+                        fontWeight: FontWeight.w500,
                       ),
                     ),
                     SizedBox(
@@ -104,7 +100,7 @@ class OtpDialog extends StatelessWidget {
                 ),
               ),
             ),
-          ]),
+          ),
         ),
       ),
     );

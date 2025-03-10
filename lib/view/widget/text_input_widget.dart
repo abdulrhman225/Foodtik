@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:untitled4/responsive.dart';
+import 'package:Foodtik/constant_colors.dart';
+import 'package:Foodtik/responsive.dart';
 
 class TextInputWidget extends StatelessWidget {
   String hint;
@@ -36,7 +37,7 @@ class TextInputWidget extends StatelessWidget {
         controller: textEditingController,
         obscureText: obscureText,
         style: TextStyle(
-          color: Color(0xFF1A1C1E),
+          color: ConstantColors.TextColor,
           fontSize: 14.sp,
           fontWeight: FontWeight.w500,
         ),
@@ -48,6 +49,10 @@ class TextInputWidget extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
             ),
             hintText: hint,
+            hintStyle: TextStyle(
+                fontSize: 12.sp,
+                color: Colors.grey,
+                fontWeight: FontWeight.w700),
             prefixIcon: prefixIcon,
             suffixIcon: suffixIcon,
             label: Text(

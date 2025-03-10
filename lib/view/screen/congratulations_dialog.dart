@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:untitled4/responsive.dart';
+import 'package:Foodtik/responsive.dart';
 
 class CongratulationsDialog extends StatelessWidget {
   const CongratulationsDialog({super.key});

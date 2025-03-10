@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:untitled4/responsive.dart';
-import 'package:untitled4/view/screen/second_welcome_screen.dart';
+import 'package:Foodtik/responsive.dart';
+import 'package:Foodtik/view/screen/second_welcome_screen.dart';
 
 
 import '../widget/skip_widget.dart';
@@ -18,16 +18,19 @@ class FirstWelcomeScreen extends StatelessWidget {
       body: Stack(
         children: [
           Image.asset(
+            width: double.infinity,
+            height: double.infinity,
+            fit: BoxFit.cover,
             "assets/images/pattern.png",
           ),
           Container(
             color: Colors.white,
-            margin: EdgeInsets.only(top: 251),
+            margin: EdgeInsets.only(top: responsiveHeight(context, 251)),
             width: responsiveWidth(context, 434),
             height: responsiveHeight(context, 681),
           ),
           Container(
-            margin: EdgeInsets.only(top: 209),
+            margin: EdgeInsets.only(top: responsiveHeight(context, 209)),
             width: double.infinity,
             height: responsiveHeight(context, 103),
             decoration: BoxDecoration(
@@ -39,36 +42,38 @@ class FirstWelcomeScreen extends StatelessWidget {
             ),
           ),
           Center(
-            child: Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(top: 150),
-                  child: Image.asset(
-                    width: responsiveWidth(context, 328),
-                    height: responsiveHeight(context, 328),
-                    "assets/images/order_food_pan.png",
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Padding(
+                    padding:  EdgeInsets.only(top: responsiveHeight(context, 150)),
+                    child: Image.asset(
+                      width: responsiveWidth(context, 328),
+                      height: responsiveHeight(context, 328),
+                      "assets/images/order_food_pan.png",
+                    ),
                   ),
-                ),
-                SizedBox(
-                  height: responsiveHeight(context, 40),
-                ),
-                WelcomeTextSectionWidget(
-                  title: "welcome to sahlah",
-                  subTitle:
-                      "enjoy a fast and smooth food delivery at your doorstep",
-                ),
-                WelcomeButtonWidget(
-                  text: "Continue",
-                  onPress: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => SecondWelcomeScreen(),));
-
-                  },
-                ),
-                SizedBox(
-                  height: responsiveHeight(context, 81),
-                ),
-                SkipWidget(index: 1)
-              ],
+                  SizedBox(
+                    height: responsiveHeight(context, 40),
+                  ),
+                  WelcomeTextSectionWidget(
+                    title: "welcome to sahlah",
+                    subTitle:
+                        "enjoy a fast and smooth food delivery at your doorstep",
+                  ),
+                  WelcomeButtonWidget(
+                    text: "Continue",
+                    onPress: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => SecondWelcomeScreen(),));
+              
+                    },
+                  ),
+                  SizedBox(
+                    height: responsiveHeight(context, 81),
+                  ),
+                  SkipWidget(index: 1)
+                ],
+              ),
             ),
           )
         ],
