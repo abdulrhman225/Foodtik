@@ -5,11 +5,6 @@ sealed class SignUpState {}
 
 final class SignUpInitial extends SignUpState {}
 
-final class ChangeVisibility extends SignUpState {
-  final bool obscureText;
-
-  ChangeVisibility({required this.obscureText});
-}
 
 final class SignUpUpdateDateState extends SignUpState {
   final String date;

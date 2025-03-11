@@ -53,36 +53,30 @@ class OtpDialog extends StatelessWidget {
                     SizedBox(
                       height: responsiveHeight(context, 24),
                     ),
-                    SizedBox(
-                      width: responsiveWidth(context, 250),
-                      height: responsiveHeight(context, 46),
-                      child: PinCodeTextField(
-                        appContext: context,
-                        textStyle: TextStyle(
-                          color: Color(0xFF1A1C1E),
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w700,
-                        ),
-                        length: 4,
-                        // OTP length
-                        onChanged: (value) {
-                          print(value);
-                        },
-                        pinTheme: PinTheme(
-                          inactiveColor: Colors.grey,
-                          activeColor: Colors.grey,
-                          selectedColor: Colors.grey,
-                          shape: PinCodeFieldShape.box,
-                          // Box shape for OTP fields
-                          borderRadius: BorderRadius.circular(10),
-                          fieldHeight: responsiveHeight(context, 46),
-                          fieldWidth: responsiveWidth(context, 50.5),
-                          activeFillColor: Colors.white,
-                          inactiveFillColor: Colors.white,
-                          selectedFillColor: Colors.white,
-                        ),
-                        keyboardType: TextInputType.number, // Numeric keyboard
+                    PinCodeTextField(
+                      appContext: context,
+                      textStyle: TextStyle(
+                        color: Color(0xFF1A1C1E),
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w700,
                       ),
+                      length: 4,
+                      // OTP length
+                      onChanged: (value) {
+                        print(value);
+                      },
+                      pinTheme: PinTheme(
+                        inactiveColor: Colors.grey,
+                        activeColor: Colors.grey,
+                        selectedColor: Colors.grey,
+                        shape: PinCodeFieldShape.box,
+                        // Box shape for OTP fields
+                        borderRadius: BorderRadius.circular(10),
+                        activeFillColor: Colors.white,
+                        inactiveFillColor: Colors.white,
+                        selectedFillColor: Colors.white,
+                      ),
+                      keyboardType: TextInputType.number, // Numeric keyboard
                     ),
                     SizedBox(
                       height: responsiveHeight(context, 24),

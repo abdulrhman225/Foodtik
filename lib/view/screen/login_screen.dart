@@ -1,4 +1,6 @@
+import 'package:Foodtik/controller/login_cubit/login_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:Foodtik/constant_colors.dart';
 import 'package:Foodtik/responsive.dart';
@@ -102,19 +104,70 @@ class LoginScreen extends StatelessWidget {
                             SizedBox(
                               height: responsiveHeight(context, 10),
                             ),
-                            TextInputWidget(
-                              hint: "Email",
-                              label: "Email",
-                              textEditingController: emailTextEditingController,
+                            BlocBuilder<LoginCubit, LoginState>(
+                              builder: (context, state) {
+                                if (state is LoginValidationState) {
+                                  return TextInputWidget(
+                                    hint: "Email",
+                                    label: "Email",
+                                    errorText: state.emailError
+                                        ? "please Enter Your Email"
+                                        : null,
+                                    textEditingController:
+                                        emailTextEditingController,
+                                  );
+                                } else {
+                                  return TextInputWidget(
+                                    hint: "Email",
+                                    label: "Email",
+                                    textEditingController:
+                                        emailTextEditingController,
+                                  );
+                                }
+                              },
                             ),
                             SizedBox(
                               height: responsiveHeight(context, 16),
                             ),
-                            TextInputWidget(
-                              hint: "Password",
-                              label: "Password",
-                              textEditingController:
-                                  passwordTextEditingController,
+                            BlocBuilder<LoginCubit, LoginState>(
+                              builder: (context, state) {
+                                if (state is LoginValidationState) {
+                                  return TextInputWidget(
+                                    hint: "Password",
+                                    label: "Password",
+                                    obscureText: state.obscureText,
+                                    suffixIcon: IconButton(
+                                      icon: Icon(state.obscureText
+                                          ? Icons.visibility
+                                          : Icons.visibility_off),
+                                      onPressed: () {
+                                        context.read<LoginCubit>().changeVisibility();
+                                      },
+                                    ),
+                                    errorText: state.passwordError
+                                        ? "please Enter Your Password"
+                                        : null,
+                                    textEditingController:
+                                        passwordTextEditingController,
+                                  );
+                                } else {
+                                  return TextInputWidget(
+                                    hint: "Password",
+                                    label: "Password",
+                                    obscureText: LoginCubit().obscureText,
+                                    suffixIcon: IconButton(
+                                      icon: Icon(LoginCubit().obscureText
+                                          ? Icons.visibility
+                                          : Icons.visibility_off),
+                                      onPressed: () {
+                                        context.read<LoginCubit>().changeVisibility();
+                                      },
+                                    ),
+                                    textEditingController:
+                                        passwordTextEditingController,
+                                  );
+                                }
+                              },
                             ),
                             SizedBox(
                               height: responsiveHeight(context, 16),
@@ -125,9 +178,28 @@ class LoginScreen extends StatelessWidget {
                                 SizedBox(
                                   width: responsiveWidth(context, 19),
                                   height: responsiveHeight(context, 19),
-                                  child: Checkbox(
-                                    value: false,
-                                    onChanged: (value) {},
+                                  child: BlocBuilder<LoginCubit, LoginState>(
+                                    builder: (context, state) {
+                                      if (state is LoginValidationState) {
+                                        return Checkbox(
+                                          value: state.checkRememberMe,
+                                          onChanged: (value) {
+                                            context
+                                                .read<LoginCubit>()
+                                                .changeCheckRememberMe();
+                                          },
+                                        );
+                                      } else {
+                                        return Checkbox(
+                                          value: LoginCubit().checkRememberMe,
+                                          onChanged: (value) {
+                                            context
+                                                .read<LoginCubit>()
+                                                .changeCheckRememberMe();
+                                          },
+                                        );
+                                      }
+                                    },
                                   ),
                                 ),
                                 SizedBox(
@@ -168,7 +240,13 @@ class LoginScreen extends StatelessWidget {
                             ),
                             InAppButton(
                               text: "Log In",
-                              onPress: () {},
+                              onPress: () {
+                                context.read<LoginCubit>().checkLoginValidation(
+                                      email: emailTextEditingController.text,
+                                      password:
+                                          passwordTextEditingController.text,
+                                    );
+                              },
                             ),
                             SizedBox(
                               height: responsiveHeight(context, 24),
@@ -176,7 +254,7 @@ class LoginScreen extends StatelessWidget {
                             Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Container(
+                                SizedBox(
                                   width: responsiveWidth(context, 124),
                                   child: Divider(),
                                 ),
@@ -194,7 +272,7 @@ class LoginScreen extends StatelessWidget {
                                 SizedBox(
                                   width: responsiveWidth(context, 16),
                                 ),
-                                Container(
+                                SizedBox(
                                   width: responsiveWidth(context, 124),
                                   child: Divider(),
                                 ),
@@ -213,7 +291,9 @@ class LoginScreen extends StatelessWidget {
                               ),
                               child: ListTile(
                                 minTileHeight: responsiveHeight(context, 48),
-                                onTap: () {},
+                                onTap: () {
+                                  context.read<LoginCubit>().loginViaGoogle();
+                                },
                                 leading: Image.asset(
                                     width: responsiveWidth(context, 18),
                                     height: responsiveHeight(context, 18),
@@ -237,7 +317,9 @@ class LoginScreen extends StatelessWidget {
                               ),
                               child: ListTile(
                                 minTileHeight: responsiveHeight(context, 48),
-                                onTap: () {},
+                                onTap: () {
+                                  context.read<LoginCubit>().loginViaFacebook();
+                                },
                                 leading: Image.asset(
                                     width: responsiveWidth(context, 18),
                                     height: responsiveHeight(context, 18),

@@ -1,14 +1,18 @@
+import 'package:Foodtik/controller/login_cubit/login_cubit.dart';
+import 'package:Foodtik/controller/reset_password_cubit/reset_password_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:Foodtik/controller/sign_up_cubit/sign_up_cubit.dart';
-import 'package:Foodtik/view/screen/login_screen.dart';
-import 'package:Foodtik/view/screen/new_passowrd_screen.dart';
-import 'package:Foodtik/view/screen/reset_password_screen.dart';
-import 'package:Foodtik/view/screen/sign_up_screen.dart';
 import 'package:Foodtik/view/screen/splash_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
@@ -22,7 +26,13 @@ class MyApp extends StatelessWidget {
         providers: [
           BlocProvider(
             create: (context) => SignUpCubit(),
-          )
+          ),
+          BlocProvider(
+            create: (context) => LoginCubit(),
+          ),
+          BlocProvider(
+            create: (context) => ResetPasswordCubit(),
+          ),
         ],
         child: ScreenUtilInit(
           designSize: const Size(430, 932),

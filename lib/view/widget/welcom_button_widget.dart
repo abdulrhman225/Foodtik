@@ -11,7 +11,6 @@ class WelcomeButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: responsiveHeight(context, 48),
       width: responsiveWidth(context, 307),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(69),

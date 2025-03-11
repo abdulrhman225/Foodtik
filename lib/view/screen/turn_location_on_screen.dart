@@ -39,65 +39,66 @@ class TurnLocationOnScreen extends StatelessWidget {
             ),
           ),
           Center(
-            child: Column(
-              children: [
-                SizedBox(
-                  height: responsiveHeight(context, 254),
-                ),
-                Image.asset(
-                  width: responsiveWidth(context, 328),
-                  height: responsiveHeight(context, 219),
-                  "assets/images/take_away_cuate.png",
-                ),
-                SizedBox(
-                  height: responsiveHeight(context, 40),
-                ),
-                WelcomeTextSectionWidget(
-                  fontWeight: FontWeight.w700,
-                  title: "Turn On Your Location",
-                  subTitle:
-                      "to continues, let your device turn on location, which uses google’s location service",
-                ),
-                SizedBox(
-                  height: responsiveHeight(context, 14),
-                ),
-                WelcomeButtonWidget(
-                  text: "Yes, Turn It On",
-                  onPress: () {
-                    _determinePosition(context);
-                  },
-                ),
-                SizedBox(
-                  height: responsiveHeight(context, 14),
-                ),
-                Container(
-                  height: responsiveHeight(context, 48),
-                  width: responsiveWidth(context, 307),
-                  decoration: BoxDecoration(
-                    color: Color(0xFFC2C2C2),
-                    borderRadius: BorderRadius.circular(69),
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: responsiveHeight(context, 254),
                   ),
-                  child: TextButton(
-                    onPressed: () async {
-                      SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
-                      sharedPreferences.setString("welcome", "welcomeScreen");
-                      Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => LoginScreen(),
-                          ));
-
+                  Image.asset(
+                    width: responsiveWidth(context, 328),
+                    height: responsiveHeight(context, 219),
+                    "assets/images/take_away_cuate.png",
+                  ),
+                  SizedBox(
+                    height: responsiveHeight(context, 40),
+                  ),
+                  WelcomeTextSectionWidget(
+                    fontWeight: FontWeight.w700,
+                    title: "Turn On Your Location",
+                    subTitle:
+                        "to continues, let your device turn on location, which uses google’s location service",
+                  ),
+                  SizedBox(
+                    height: responsiveHeight(context, 14),
+                  ),
+                  WelcomeButtonWidget(
+                    text: "Yes, Turn It On",
+                    onPress: () {
+                      _determinePosition(context);
                     },
-                    child: Text(
-                      "Cancel",
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 16.sp,
+                  ),
+                  SizedBox(
+                    height: responsiveHeight(context, 14),
+                  ),
+                  Container(
+                    width: responsiveWidth(context, 307),
+                    decoration: BoxDecoration(
+                      color: Color(0xFFC2C2C2),
+                      borderRadius: BorderRadius.circular(69),
+                    ),
+                    child: TextButton(
+                      onPressed: () async {
+                        SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+                        sharedPreferences.setString("welcome", "welcomeScreen");
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => LoginScreen(),
+                            ));
+              
+                      },
+                      child: Text(
+                        "Cancel",
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 16.sp,
+                        ),
                       ),
                     ),
-                  ),
-                )
-              ],
+                  )
+                ],
+              ),
             ),
           )
         ],

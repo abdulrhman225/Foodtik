@@ -13,7 +13,6 @@ class InAppButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: responsiveWidth(context, 295),
-      height: responsiveHeight(context, 48),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         color: ConstantColors.green_background,

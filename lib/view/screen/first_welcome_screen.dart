@@ -26,8 +26,6 @@ class FirstWelcomeScreen extends StatelessWidget {
           Container(
             color: Colors.white,
             margin: EdgeInsets.only(top: responsiveHeight(context, 251)),
-            width: responsiveWidth(context, 434),
-            height: responsiveHeight(context, 681),
           ),
           Container(
             margin: EdgeInsets.only(top: responsiveHeight(context, 209)),
@@ -35,10 +33,10 @@ class FirstWelcomeScreen extends StatelessWidget {
             height: responsiveHeight(context, 103),
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                  colors: [Colors.white, Colors.white],
+                  colors: [Colors.white24, Colors.white],
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
-                  stops: [0.67, 0.1]),
+                 ),
             ),
           ),
           Center(

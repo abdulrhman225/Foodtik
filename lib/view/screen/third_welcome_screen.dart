@@ -38,34 +38,36 @@ class ThirdWelcomeScreen extends StatelessWidget {
             ),
           ),
           Center(
-            child: Column(
-              children: [
-                SizedBox(height: responsiveHeight(context, 254),),
-                Image.asset(
-                  width: responsiveWidth(context, 328),
-                  height: responsiveHeight(context, 219),
-                  "assets/images/take_away_cuate.png",
-                ),
-                SizedBox(
-                  height: responsiveHeight(context, 40),
-                ),
-                WelcomeTextSectionWidget(
-                  title: "Choose Your Food",
-                  subTitle:
-                  "order your favorite food within the plam of your hand and the zone of your comfort",
-                ),
-                WelcomeButtonWidget(
-                  text: "Continue",
-                  onPress: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => TurnLocationOnScreen(),));
-
-                  },
-                ),
-                SizedBox(
-                  height: responsiveHeight(context, 81),
-                ),
-                SkipWidget(index: 3)
-              ],
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  SizedBox(height: responsiveHeight(context, 254),),
+                  Image.asset(
+                    width: responsiveWidth(context, 328),
+                    height: responsiveHeight(context, 219),
+                    "assets/images/take_away_cuate.png",
+                  ),
+                  SizedBox(
+                    height: responsiveHeight(context, 40),
+                  ),
+                  WelcomeTextSectionWidget(
+                    title: "Choose Your Food",
+                    subTitle:
+                    "order your favorite food within the plam of your hand and the zone of your comfort",
+                  ),
+                  WelcomeButtonWidget(
+                    text: "Continue",
+                    onPress: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => TurnLocationOnScreen(),));
+              
+                    },
+                  ),
+                  SizedBox(
+                    height: responsiveHeight(context, 81),
+                  ),
+                  SkipWidget(index: 3)
+                ],
+              ),
             ),
           )
         ],

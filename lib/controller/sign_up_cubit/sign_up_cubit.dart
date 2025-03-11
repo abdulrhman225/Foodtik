@@ -9,6 +9,11 @@ class SignUpCubit extends Cubit<SignUpState> {
   SignUpCubit() : super(SignUpInitial());
 
   bool obscure = true;
+  bool fullNameErrorText = false;
+  bool emailErrorText = false;
+  bool passwordErrorText = false;
+  bool birthOfDateErrorText = false ;
+  bool phoneNumberErrorText = false;
 
   updateBirthDate(BuildContext context) async {
     DateTime? picked = await showDatePicker(
@@ -37,18 +42,31 @@ class SignUpCubit extends Cubit<SignUpState> {
     String passwordPattern =
         r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$';
 
+    fullNameErrorText = username.isEmpty;
+    emailErrorText = !RegExp(emailPattern).hasMatch(email);
+    passwordErrorText = !RegExp(passwordPattern).hasMatch(password);
+    birthOfDateErrorText = birthOfDate.isEmpty;
+    phoneNumberErrorText = phoneNumber.isEmpty;
+
     emit(SignUpValidation(
-      fullNameErrorText: username.isEmpty,
-      emailErrorText: !RegExp(emailPattern).hasMatch(email),
-      passwordErrorText: !RegExp(passwordPattern).hasMatch(password),
-      birthOfDateErrorText: birthOfDate.isEmpty,
-      phoneNumberErrorText: phoneNumber.isEmpty,
+      fullNameErrorText: fullNameErrorText,
+      emailErrorText: emailErrorText,
+      passwordErrorText: passwordErrorText,
+      birthOfDateErrorText: birthOfDateErrorText,
+      phoneNumberErrorText: phoneNumberErrorText,
       obscureText: obscure,
     ));
   }
 
   changeVisibility(){
     obscure = !obscure;
-    emit(ChangeVisibility(obscureText: obscure));
+    emit(SignUpValidation(
+      fullNameErrorText: fullNameErrorText,
+      emailErrorText: emailErrorText,
+      passwordErrorText: passwordErrorText,
+      birthOfDateErrorText: birthOfDateErrorText,
+      phoneNumberErrorText: phoneNumberErrorText,
+      obscureText: obscure,
+    ));
   }
 }

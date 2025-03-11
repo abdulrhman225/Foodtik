@@ -92,42 +92,38 @@ class SignUpScreen extends StatelessWidget {
                                 SizedBox(
                                   height: responsiveHeight(context, 12),
                                 ),
-                                Container(
-                                  width: responsiveWidth(context, 295),
-                                  height: responsiveHeight(context, 42),
-                                  child: Row(
-                                    children: [
-                                      Text(
-                                        "Already have an account?",
+                                Row(
+                                  children: [
+                                    Text(
+                                      "Already have an account?",
+                                      style: TextStyle(
+                                        color: Color(0xFF6C7278),
+                                        fontWeight: FontWeight.w700,
+                                        fontSize: 12.sp,
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: responsiveWidth(context, 6),
+                                    ),
+                                    InkWell(
+                                      onTap: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  LoginScreen(),
+                                            ));
+                                      },
+                                      child: Text(
+                                        "Login",
                                         style: TextStyle(
-                                          color: Color(0xFF6C7278),
-                                          fontWeight: FontWeight.w700,
-                                          fontSize: 12.sp,
-                                        ),
+                                            fontWeight: FontWeight.w600,
+                                            color: ConstantColors
+                                                .green_background,
+                                            fontSize: 12.sp),
                                       ),
-                                      SizedBox(
-                                        width: responsiveWidth(context, 6),
-                                      ),
-                                      InkWell(
-                                        onTap: () {
-                                          Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                builder: (context) =>
-                                                    LoginScreen(),
-                                              ));
-                                        },
-                                        child: Text(
-                                          "Login",
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.w600,
-                                              color: ConstantColors
-                                                  .green_background,
-                                              fontSize: 12.sp),
-                                        ),
-                                      )
-                                    ],
-                                  ),
+                                    )
+                                  ],
                                 ),
                                 SizedBox(
                                   height: responsiveHeight(context, 24),
@@ -350,7 +346,7 @@ class SignUpScreen extends StatelessWidget {
                                                 ),
                                         ),
                                       );
-                                    } else if (state is ChangeVisibility) {
+                                    } else if (state is SignUpValidation) {
                                       return TextInputWidget(
                                         hint: "password",
                                         label: "password",
