@@ -1,5 +1,6 @@
 import 'package:Foodtik/controller/login_cubit/login_cubit.dart';
 import 'package:Foodtik/controller/reset_password_cubit/reset_password_cubit.dart';
+import 'package:Foodtik/view/screen/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -52,7 +53,7 @@ class MyApp extends StatelessWidget {
               home: child,
             );
           },
-          child: SplashScreen() ,
+          child: HomeScreen() ,
         ));
   }
 }

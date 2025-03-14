@@ -73,9 +73,8 @@ class LoginCubit extends Cubit<LoginState> {
         final userData = await FacebookAuth.instance.getUserData();
 
         // Successfully signed in
-        print('Signed in with Facebook: ${userData['name']}');
+        print('Signed in with Facebook: ${userData['email']}');
 
-        // Navigate to the home screen or perform other actions
       } else {
         print('Facebook login failed: ${result.status}');
       }
