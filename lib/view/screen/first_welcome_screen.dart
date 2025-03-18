@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:Foodtik/responsive.dart';
 import 'package:Foodtik/view/screen/second_welcome_screen.dart';
-
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../widget/skip_widget.dart';
 import '../widget/welcom_button_widget.dart';
 import '../widget/welcome_text_section_widget.dart';
@@ -55,12 +54,12 @@ class FirstWelcomeScreen extends StatelessWidget {
                     height: responsiveHeight(context, 40),
                   ),
                   WelcomeTextSectionWidget(
-                    title: "welcome to sahlah",
+                    title: AppLocalizations.of(context)!.first_welcome_screen_welcome_title,
                     subTitle:
-                        "enjoy a fast and smooth food delivery at your doorstep",
+                        AppLocalizations.of(context)!.first_welcome_screen_welcome_sub_title,
                   ),
                   WelcomeButtonWidget(
-                    text: "Continue",
+                    text: AppLocalizations.of(context)!.c_ontinue,
                     onPress: () {
                       Navigator.push(context, MaterialPageRoute(builder: (context) => SecondWelcomeScreen(),));
               

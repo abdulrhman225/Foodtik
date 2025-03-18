@@ -6,7 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:Foodtik/controller/sign_up_cubit/sign_up_cubit.dart';
 import 'package:Foodtik/view/screen/login_screen.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../../constant_colors.dart';
 import '../../responsive.dart';
 import '../widget/back_ground_widget.dart';
@@ -82,7 +82,7 @@ class SignUpScreen extends StatelessWidget {
                                   height: responsiveHeight(context, 24),
                                 ),
                                 Text(
-                                  "Sign Up",
+                                  AppLocalizations.of(context)!.sign_up,
                                   style: TextStyle(
                                     color: Colors.black,
                                     fontWeight: FontWeight.w700,
@@ -95,7 +95,7 @@ class SignUpScreen extends StatelessWidget {
                                 Row(
                                   children: [
                                     Text(
-                                      "Already have an account?",
+                                      AppLocalizations.of(context)!.already_have_an_account,
                                       style: TextStyle(
                                         color: Color(0xFF6C7278),
                                         fontWeight: FontWeight.w700,
@@ -115,7 +115,7 @@ class SignUpScreen extends StatelessWidget {
                                             ));
                                       },
                                       child: Text(
-                                        "Login",
+                                        AppLocalizations.of(context)!.login,
                                         style: TextStyle(
                                             fontWeight: FontWeight.w600,
                                             color: ConstantColors
@@ -132,18 +132,18 @@ class SignUpScreen extends StatelessWidget {
                                   builder: (context, state) {
                                     if (state is SignUpValidation) {
                                       return TextInputWidget(
-                                        hint: "Full Name",
-                                        label: "Full Name",
+                                        hint: AppLocalizations.of(context)!.full_name,
+                                        label: AppLocalizations.of(context)!.full_name,
                                         errorText: state.fullNameErrorText
-                                            ? "please Enter Your Full Name"
+                                            ? AppLocalizations.of(context)!.error_full_name
                                             : null,
                                         textEditingController:
                                             fullNameTextEditingController,
                                       );
                                     } else {
                                       return TextInputWidget(
-                                        hint: "Full Name",
-                                        label: "Full Name",
+                                        hint: AppLocalizations.of(context)!.full_name,
+                                        label: AppLocalizations.of(context)!.full_name,
                                         textEditingController:
                                             fullNameTextEditingController,
                                       );
@@ -157,18 +157,18 @@ class SignUpScreen extends StatelessWidget {
                                   builder: (context, state) {
                                     if (state is SignUpValidation) {
                                       return TextInputWidget(
-                                        hint: "Email",
-                                        label: "Email",
+                                        hint: AppLocalizations.of(context)!.email,
+                                        label: AppLocalizations.of(context)!.email,
                                         errorText: state.emailErrorText
-                                            ? "please Enter Valid Email"
+                                            ? AppLocalizations.of(context)!.error_email_sign_up
                                             : null,
                                         textEditingController:
                                             emailTextEditingController,
                                       );
                                     } else {
                                       return TextInputWidget(
-                                        hint: "Email",
-                                        label: "Email",
+                                        hint: AppLocalizations.of(context)!.email,
+                                        label: AppLocalizations.of(context)!.email,
                                         textEditingController:
                                             emailTextEditingController,
                                       );
@@ -189,10 +189,10 @@ class SignUpScreen extends StatelessWidget {
                                     builder: (context, state) {
                                       if (state is SignUpValidation) {
                                         return TextInputWidget(
-                                          hint: "Birth Of Date",
-                                          label: "Birth Of Date",
+                                          hint: AppLocalizations.of(context)!.birth_of_date,
+                                          label: AppLocalizations.of(context)!.birth_of_date,
                                           errorText: state.birthOfDateErrorText
-                                              ? "please enter your birth date"
+                                              ? AppLocalizations.of(context)!.error_birth_of_date
                                               : null,
                                           textEditingController:
                                               birthDateTextEditingController,
@@ -209,8 +209,8 @@ class SignUpScreen extends StatelessWidget {
                                         );
                                       } else {
                                         return TextInputWidget(
-                                          hint: "Birth Of Date",
-                                          label: "Birth Of Date",
+                                          hint: AppLocalizations.of(context)!.birth_of_date,
+                                          label: AppLocalizations.of(context)!.birth_of_date,
                                           textEditingController:
                                               birthDateTextEditingController,
                                           suffixIcon: IconButton(
@@ -252,7 +252,7 @@ class SignUpScreen extends StatelessWidget {
                                               counterText: "",
                                               errorText: state
                                                       .phoneNumberErrorText
-                                                  ? "please Enter Your Phone Number"
+                                                  ? AppLocalizations.of(context)!.error_phone_number
                                                   : null,
                                               focusedBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
@@ -261,9 +261,9 @@ class SignUpScreen extends StatelessWidget {
                                                 borderRadius:
                                                     BorderRadius.circular(10),
                                               ),
-                                              hintText: "phoneNumber",
+                                              hintText: AppLocalizations.of(context)!.phone_number,
                                               label: Text(
-                                                "poneNumber",
+                                                AppLocalizations.of(context)!.phone_number,
                                                 style: TextStyle(
                                                     fontSize: 12.sp,
                                                     color: Colors.grey,
@@ -300,9 +300,9 @@ class SignUpScreen extends StatelessWidget {
                                                 borderRadius:
                                                     BorderRadius.circular(10),
                                               ),
-                                              hintText: "phoneNumber",
+                                              hintText: AppLocalizations.of(context)!.phone_number,
                                               label: Text(
-                                                "poneNumber",
+                                                AppLocalizations.of(context)!.phone_number,
                                                 style: TextStyle(
                                                     fontSize: 12.sp,
                                                     color: Colors.grey,
@@ -325,11 +325,11 @@ class SignUpScreen extends StatelessWidget {
                                   builder: (context, state) {
                                     if (state is SignUpValidation) {
                                       return TextInputWidget(
-                                        hint: "password",
-                                        label: "password",
+                                        hint: AppLocalizations.of(context)!.password,
+                                        label: AppLocalizations.of(context)!.password,
                                         obscureText: state.obscureText,
                                         errorText: state.passwordErrorText
-                                            ? "please Enter Strong Password"
+                                            ? AppLocalizations.of(context)!.error_password_signUp
                                             : null,
                                         textEditingController:
                                             passwordTextEditingController,
@@ -348,8 +348,8 @@ class SignUpScreen extends StatelessWidget {
                                       );
                                     } else if (state is SignUpValidation) {
                                       return TextInputWidget(
-                                        hint: "password",
-                                        label: "password",
+                                        hint: AppLocalizations.of(context)!.password,
+                                        label: AppLocalizations.of(context)!.password,
                                         textEditingController:
                                             passwordTextEditingController,
                                         obscureText: state.obscureText,
@@ -368,8 +368,8 @@ class SignUpScreen extends StatelessWidget {
                                       );
                                     } else {
                                       return TextInputWidget(
-                                        hint: "password",
-                                        label: "password",
+                                        hint: AppLocalizations.of(context)!.password,
+                                        label: AppLocalizations.of(context)!.password,
                                         textEditingController:
                                             passwordTextEditingController,
                                         obscureText: SignUpCubit().obscure,
@@ -393,7 +393,7 @@ class SignUpScreen extends StatelessWidget {
                                   height: responsiveHeight(context, 24),
                                 ),
                                 InAppButton(
-                                  text: "Sign Up",
+                                  text: AppLocalizations.of(context)!.sign_up,
                                   onPress: () {
                                     context
                                         .read<SignUpCubit>()

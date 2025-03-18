@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:Foodtik/responsive.dart';
-import 'package:Foodtik/view/screen/congratulations_dialog.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:Foodtik/view/screen/new_passowrd_screen.dart';
 import 'package:Foodtik/view/widget/in_app_button.dart';
 
@@ -41,7 +41,7 @@ class OtpDialog extends StatelessWidget {
                     ),
                     Text(
                       textAlign: TextAlign.center,
-                      "A 4-digit code has been sent to your email. Please enter it to verify.",
+                      AppLocalizations.of(context)!.otp_text,
                       style: TextStyle(
                         color: Colors.grey,
                         fontSize: 12.sp,
@@ -82,7 +82,7 @@ class OtpDialog extends StatelessWidget {
                       height: responsiveHeight(context, 24),
                     ),
                     InAppButton(
-                        text: "Verify",
+                        text: AppLocalizations.of(context)!.verify,
                         onPress: () {
                           Navigator.push(
                               context,

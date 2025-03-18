@@ -6,7 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:Foodtik/view/screen/congratulations_dialog.dart';
 import 'package:Foodtik/view/screen/login_screen.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../../constant_colors.dart';
 import '../../responsive.dart';
 import '../widget/back_ground_widget.dart';
@@ -41,150 +41,151 @@ class NewPassowrdScreen extends StatelessWidget {
                 SizedBox(
                   height: responsiveHeight(context, 24),
                 ),
-                Container(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: responsiveWidth(context, 24),
-                    vertical: responsiveHeight(context, 24),
-                  ),
-                  margin: EdgeInsets.symmetric(
-                    horizontal: responsiveWidth(context, 44),
-                  ),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      SizedBox(
-                        width: responsiveWidth(context, 24),
-                        height: responsiveHeight(context, 24),
-                        child: InkWell(
-                            onTap: () {
-                              Navigator.pop(context);
-                            },
-                            child: Icon(
-                              Icons.arrow_back,
-                              size: 14,
-                            )),
+                Center(
+                  child: IntrinsicWidth(
+                    child: Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: responsiveWidth(context, 24),
+                        vertical: responsiveHeight(context, 24),
                       ),
-                      SizedBox(
-                        height: responsiveHeight(context, 24),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(12),
                       ),
-                      Text(
-                        "Rest Password",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.w700,
-                          fontSize: 32.sp,
-                        ),
-                      ),
-                      SizedBox(
-                        height: responsiveHeight(context, 12),
-                      ),
-                      Row(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
+                          SizedBox(
+                            width: responsiveWidth(context, 24),
+                            height: responsiveHeight(context, 24),
+                            child: InkWell(
+                                onTap: () {
+                                  Navigator.pop(context);
+                                },
+                                child: Icon(
+                                  Icons.arrow_back,
+                                  size: 14,
+                                )),
+                          ),
+                          SizedBox(
+                            height: responsiveHeight(context, 24),
+                          ),
                           Text(
-                            "Want to try with my current password?",
+                            AppLocalizations.of(context)!.reset_password_screen_title,
                             style: TextStyle(
-                              fontSize: 12.sp,
-                              color: Colors.grey,
-                              fontWeight: FontWeight.w500,
+                              color: Colors.black,
+                              fontWeight: FontWeight.w700,
+                              fontSize: 32.sp,
                             ),
                           ),
                           SizedBox(
-                            width: responsiveWidth(context, 6),
+                            height: responsiveHeight(context, 12),
                           ),
-                          InkWell(
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => LoginScreen(),
-                                  ));
-                            },
-                            child: Text(
-                              "Login",
-                              style: TextStyle(
-                                color: ConstantColors.green_background,
-                                fontSize: 12.sp,
+                          Row(
+                            children: [
+                              Text(
+                                AppLocalizations.of(context)!.want_to_try_with_my_current_password,
+                                style: TextStyle(
+                                  fontSize: 12.sp,
+                                  color: Colors.grey,
+                                  fontWeight: FontWeight.w500,
+                                ),
                               ),
-                            ),
-                          )
+                              SizedBox(
+                                width: responsiveWidth(context, 6),
+                              ),
+                              InkWell(
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => LoginScreen(),
+                                      ));
+                                },
+                                child: Text(
+                                  AppLocalizations.of(context)!.login,
+                                  style: TextStyle(
+                                    color: ConstantColors.green_background,
+                                    fontSize: 12.sp,
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
+                          SizedBox(
+                            height: responsiveHeight(context, 24),
+                          ),
+                          BlocBuilder<ResetPasswordCubit, ResetPasswordState>(
+                            builder: (context, state) {
+                              if (state is ResetPasswordValidation) {
+                                return TextInputWidget(
+                                  hint: AppLocalizations.of(context)!.new_password,
+                                  label: AppLocalizations.of(context)!.new_password,
+                                  errorText: state.newPasswordError
+                                      ? AppLocalizations.of(context)!.error_password_signUp
+                                      : null,
+                                  obscureText: true,
+                                  textEditingController:
+                                      newPasswordTextEditingController,
+                                );
+                              } else {
+                                return TextInputWidget(
+                                  hint: AppLocalizations.of(context)!.new_password,
+                                  label: AppLocalizations.of(context)!.new_password,
+                                  obscureText: true,
+                                  textEditingController:
+                                      newPasswordTextEditingController,
+                                );
+                              }
+                            },
+                          ),
+                          SizedBox(
+                            height: responsiveHeight(context, 16),
+                          ),
+                          BlocBuilder<ResetPasswordCubit, ResetPasswordState>(
+                            builder: (context, state) {
+                              if (state is ResetPasswordValidation) {
+                                return TextInputWidget(
+                                  hint: AppLocalizations.of(context)!.confirm_password,
+                                  label: AppLocalizations.of(context)!.confirm_password,
+                                  obscureText: true,
+                                  errorText: state.confirmPasswordError
+                                      ? AppLocalizations.of(context)!.error_confirm_password
+                                      : null,
+                                  textEditingController:
+                                      confirmPasswordTextEditingController,
+                                );
+                              } else {
+                                return TextInputWidget(
+                                  hint: AppLocalizations.of(context)!.confirm_password,
+                                  label: AppLocalizations.of(context)!.confirm_password,
+                                  obscureText: true,
+                                  textEditingController:
+                                      confirmPasswordTextEditingController,
+                                );
+                              }
+                            },
+                          ),
+                          SizedBox(
+                            height: responsiveHeight(context, 24),
+                          ),
+                          InAppButton(
+                            text: AppLocalizations.of(context)!.update_password,
+                            onPress: () {
+                              context
+                                  .read<ResetPasswordCubit>()
+                                  .resetPasswordValidation(
+                                    newPassword:
+                                        newPasswordTextEditingController.text,
+                                    confirmPassword:
+                                        confirmPasswordTextEditingController.text,
+                                    context: context,
+                                  );
+                            },
+                          ),
                         ],
                       ),
-                      SizedBox(
-                        height: responsiveHeight(context, 24),
-                      ),
-                      BlocBuilder<ResetPasswordCubit, ResetPasswordState>(
-                        builder: (context, state) {
-                          if (state is ResetPasswordValidation) {
-                            return TextInputWidget(
-                              hint: "new Password",
-                              label: "new Password",
-                              errorText: state.newPasswordError
-                                  ? "please Enter Strong Password"
-                                  : null,
-                              obscureText: true,
-                              textEditingController:
-                                  newPasswordTextEditingController,
-                            );
-                          } else {
-                            return TextInputWidget(
-                              hint: "new Password",
-                              label: "new Password",
-                              obscureText: true,
-                              textEditingController:
-                                  newPasswordTextEditingController,
-                            );
-                          }
-                        },
-                      ),
-                      SizedBox(
-                        height: responsiveHeight(context, 16),
-                      ),
-                      BlocBuilder<ResetPasswordCubit, ResetPasswordState>(
-                        builder: (context, state) {
-                          if (state is ResetPasswordValidation) {
-                            return TextInputWidget(
-                              hint: "confirm Password",
-                              label: "confirm Password",
-                              obscureText: true,
-                              errorText: state.confirmPasswordError
-                                  ? "the confirm password does not match with new password"
-                                  : null,
-                              textEditingController:
-                                  confirmPasswordTextEditingController,
-                            );
-                          } else {
-                            return TextInputWidget(
-                              hint: "confirm Password",
-                              label: "confirm Password",
-                              obscureText: true,
-                              textEditingController:
-                                  confirmPasswordTextEditingController,
-                            );
-                          }
-                        },
-                      ),
-                      SizedBox(
-                        height: responsiveHeight(context, 24),
-                      ),
-                      InAppButton(
-                        text: "Update Password",
-                        onPress: () {
-                          context
-                              .read<ResetPasswordCubit>()
-                              .resetPasswordValidation(
-                                newPassword:
-                                    newPasswordTextEditingController.text,
-                                confirmPassword:
-                                    confirmPasswordTextEditingController.text,
-                                context: context,
-                              );
-                        },
-                      ),
-                    ],
+                    ),
                   ),
                 ),
               ],

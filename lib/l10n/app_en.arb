@@ -1,0 +1,73 @@
+{
+  "first_welcome_screen_welcome_title": "Welcome To Shalah",
+  "first_welcome_screen_welcome_sub_title": "enjoy a fast and smooth food delivery at your doorstep",
+
+  "second_welcome_screen_welcome_title": "Get Delivery On Time",
+  "second_welcome_screen_welcome_sub_title": "order your favorite food within the plam of your hand and the zone of your comfort",
+
+  "third_welcome_screen_welcome_title": "Choose Your Food",
+  "third_welcome_screen_welcome_sub_title": "order your favorite food within the plam of your hand and the zone of your comfort",
+
+  "turn_location_on_screen_title" : "Turn On Your Location",
+  "turn_location_on_screen_sub_title": "to continues, let your device turn on location, which uses google's location service",
+
+  "reset_password_screen_title": "Reset Password",
+  "reset_password_screen_sub_title": "Enter you E-mail or phone and we'll send you a link to get back into your account",
+  "want_to_try_with_my_current_password": "Want to try with my current password?",
+
+  "otp_text": "A 4-digit code has been sent to your email. Please enter it to verify.",
+
+  "back_to": "Back to",
+  "page": "page",
+
+
+  "login" : "Login",
+  "do_not_have_an_account": "Don't have an account",
+
+  "sign_up": "Sign Up",
+
+  "full_name": "Full Name",
+  "email": "Email",
+
+  "password": "Password",
+  "new_password": "New Password",
+  "confirm_password": "Confirm Password",
+  "update_password" : "Update Password",
+
+  "birth_of_date": "Birth Of Date",
+  "phone_number": "Phone Number",
+  "already_have_an_account":"Already Have an account?",
+
+
+
+  "remember_me" : "Remember Me",
+
+  "forgot_password": "Forgot Password",
+
+  "continue_with_gmail" : "Continue With Gmail",
+
+  "continue_with_facebook" : "Continue With Facebook",
+
+  "continue_with_apple" : "Continue With Apple",
+
+  "yes_turn_it_on": "Yes, Turn It On",
+  "cancel": "cancel",
+
+  "skip" : "skip",
+  "send": "Send",
+  "verify" : "Verify",
+  "c_ontinue": "continue",
+
+  "congratulations" : "Congratulations!",
+  "password_reset_successfully" : "Password Reset Successfully",
+
+  "error_email_login" : "please Enter Your email",
+  "error_password_login": "please enter your password",
+
+  "error_email_sign_up" : "please Enter valid email",
+  "error_password_signUp": "please enter strong password",
+  "error_full_name": "please enter your name",
+  "error_birth_of_date": "please Enter Your Birth Of Date",
+  "error_phone_number": "please Enter Your Phone Number",
+  "error_confirm_password": "new password and confirm password doesn't match"
+}

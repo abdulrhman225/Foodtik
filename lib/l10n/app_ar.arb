@@ -1,0 +1,73 @@
+{
+  "first_welcome_screen_welcome_title": "اهلا بكم في سهله",
+  "first_welcome_screen_welcome_sub_title": "استمتع بتوصيل طعام سريع وسلس إلى باب منزلك",
+
+  "second_welcome_screen_welcome_title": "احصل على طلبك في الوقت المحدد",
+  "second_welcome_screen_welcome_sub_title": "اطلب طعامك المفضل بين يديك وفي منطقة راحتك",
+
+  "third_welcome_screen_welcome_title": "اختر طعامك",
+  "third_welcome_screen_welcome_sub_title": "اطلب طعامك المفضل بين يديك وفي منطقة راحتك",
+
+  "turn_location_on_screen_title" : "قم بتشغيل موقعك",
+  "turn_location_on_screen_sub_title": "للمتابعة، اسمح لجهازك بتشغيل الموقع، والذي يستخدم خدمة موقع Google",
+
+  "reset_password_screen_title": "إعادة تعيين كلمة المرور",
+  "reset_password_screen_sub_title": "أدخل بريدك الإلكتروني أو رقم هاتفك وسنرسل لك رابطًا للعودة إلى حسابك",
+  "want_to_try_with_my_current_password": "هل تريد تجربة كلمة المرور الحالية الخاصة بي؟",
+
+  "otp_text": "تم إرسال رمز مكون من أربعة أرقام إلى بريدك الإلكتروني. يُرجى إدخاله للتحقق.",
+
+  "back_to": "العودة إلى صفحة",
+  "page": "",
+
+
+  "login" : "تسجيل الدخول",
+  "do_not_have_an_account": "لا تملك حساب",
+
+  "sign_up": "انشاء حساب جديد",
+
+  "full_name": "الاسم الكامل",
+  "email": "البريد الاكتروني",
+
+  "password": "كلمة المرور",
+  "new_password": "كلمة مرور جديدة",
+  "confirm_password": "تأكيد كلمة المرور",
+  "update_password" : "تحديث كلمة المرور",
+
+  "birth_of_date": "تاريخ الميلاد",
+  "phone_number": "رقم الهاتف",
+  "already_have_an_account":"هل لديك حساب بالفعل؟",
+
+
+
+  "remember_me" : "تذكرني",
+
+  "forgot_password": "نسيت كلمة السر",
+
+  "continue_with_gmail" : "متابعة مع Gmail",
+
+  "continue_with_facebook" : "متابعة مع Facebook",
+
+  "continue_with_apple" : "الاستمرار مع Apple",
+
+  "yes_turn_it_on": "نعم، قم بتشغيله",
+  "cancel": "الغاء",
+
+  "skip" : "تخطِ",
+  "send": "أرسال",
+  "verify" : "تحقق",
+  "c_ontinue": "التالي",
+
+  "congratulations" : "مبروك!",
+  "password_reset_successfully" : "تم إعادة تعيين كلمة المرور بنجاح",
+
+  "error_email_login" : "ارجو ادخال البريد الاكتروني الخاص بك",
+  "error_password_login": "ارجو ادخال كلمة المرور",
+
+  "error_email_sign_up" : "ارجو ادخال بريد صالح",
+  "error_password_signUp": "ارجو ادخال كلمة مرور قوية",
+  "error_full_name": "ارجو ادخال اسمك الكامل",
+  "error_birth_of_date": "ارجو ادخال تاريخ ميلادك",
+  "error_phone_number": "ارجو ادخال رقم الهاتف",
+  "error_confirm_password": "كلمة المرور الجديدة و تأكيد كلمة المرور لا تتطابق"
+}

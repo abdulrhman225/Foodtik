@@ -8,6 +8,8 @@ import 'package:Foodtik/controller/sign_up_cubit/sign_up_cubit.dart';
 import 'package:Foodtik/view/screen/splash_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
+import "package:flutter_localizations/flutter_localizations.dart";
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -44,7 +46,16 @@ class MyApp extends StatelessWidget {
             return MaterialApp(
               debugShowCheckedModeBanner: false,
               title: 'First Method',
-              // You can use the library anywhere in the app even in theme
+              localizationsDelegates: [
+                AppLocalizations.delegate, // Add this line
+                GlobalMaterialLocalizations.delegate,
+                GlobalWidgetsLocalizations.delegate,
+                GlobalCupertinoLocalizations.delegate,
+              ],
+              supportedLocales: [
+                Locale('en'), // English
+                Locale('ar'), // Spanish
+              ],
               theme: ThemeData(
                 primarySwatch: Colors.blue,
                 textTheme:
@@ -53,7 +64,7 @@ class MyApp extends StatelessWidget {
               home: child,
             );
           },
-          child: HomeScreen() ,
+          child: SplashScreen() ,
         ));
   }
 }

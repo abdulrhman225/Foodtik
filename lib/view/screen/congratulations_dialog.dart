@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:Foodtik/responsive.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CongratulationsDialog extends StatelessWidget {
   const CongratulationsDialog({super.key});
@@ -19,7 +20,7 @@ class CongratulationsDialog extends StatelessWidget {
           height: responsiveHeight(context, 37),
         ),
         Text(
-          "Congratulations!",
+          AppLocalizations.of(context)!.congratulations,
           style: TextStyle(
             color: Colors.white,
             fontSize: 32.sp,
@@ -32,7 +33,7 @@ class CongratulationsDialog extends StatelessWidget {
         SizedBox(height: responsiveHeight(context, 12),),
 
         Text(
-          "password reset succesfuly",
+          AppLocalizations.of(context)!.password_reset_successfully,
           style: TextStyle(
               color: Colors.white,
               fontFamily: "Inter-VariableFont_opsz,wght",

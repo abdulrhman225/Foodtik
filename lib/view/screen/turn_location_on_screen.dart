@@ -4,7 +4,7 @@ import 'package:geolocator/geolocator.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:Foodtik/responsive.dart';
 import 'package:Foodtik/view/screen/login_screen.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../widget/welcom_button_widget.dart';
 import '../widget/welcome_text_section_widget.dart';
 
@@ -55,15 +55,15 @@ class TurnLocationOnScreen extends StatelessWidget {
                   ),
                   WelcomeTextSectionWidget(
                     fontWeight: FontWeight.w700,
-                    title: "Turn On Your Location",
+                    title: AppLocalizations.of(context)!.turn_location_on_screen_title,
                     subTitle:
-                        "to continues, let your device turn on location, which uses google’s location service",
+                    AppLocalizations.of(context)!.turn_location_on_screen_sub_title,
                   ),
                   SizedBox(
                     height: responsiveHeight(context, 14),
                   ),
                   WelcomeButtonWidget(
-                    text: "Yes, Turn It On",
+                    text: AppLocalizations.of(context)!.yes_turn_it_on,
                     onPress: () {
                       _determinePosition(context);
                     },
@@ -89,7 +89,7 @@ class TurnLocationOnScreen extends StatelessWidget {
               
                       },
                       child: Text(
-                        "Cancel",
+                        AppLocalizations.of(context)!.cancel,
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: 16.sp,

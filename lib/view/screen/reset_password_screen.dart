@@ -8,7 +8,7 @@ import 'package:Foodtik/controller/sign_up_cubit/sign_up_cubit.dart';
 import 'package:Foodtik/view/screen/congratulations_dialog.dart';
 import 'package:Foodtik/view/screen/login_screen.dart';
 import 'package:Foodtik/view/screen/otp_dialog.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../../constant_colors.dart';
 import '../../responsive.dart';
 import '../widget/back_ground_widget.dart';
@@ -75,7 +75,7 @@ class ResetPasswordScreen extends StatelessWidget {
                                     width: responsiveWidth(context, 6),
                                   ),
                                   Text(
-                                    "Back to ",
+                                    "${AppLocalizations.of(context)!.back_to} ",
                                     style: TextStyle(
                                       fontSize: 12.sp,
                                       fontWeight: FontWeight.w500,
@@ -83,7 +83,7 @@ class ResetPasswordScreen extends StatelessWidget {
                                     ),
                                   ),
                                   Text(
-                                    "Login ",
+                                    "${AppLocalizations.of(context)!.login} ",
                                     style: TextStyle(
                                       fontSize: 12.sp,
                                       fontWeight: FontWeight.w700,
@@ -91,7 +91,7 @@ class ResetPasswordScreen extends StatelessWidget {
                                     ),
                                   ),
                                   Text(
-                                    "page?",
+                                    "${AppLocalizations.of(context)!.page}?",
                                     style: TextStyle(
                                       fontSize: 12.sp,
                                       fontWeight: FontWeight.w500,
@@ -107,7 +107,7 @@ class ResetPasswordScreen extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Text(
-                                    "Rest Password",
+                                    AppLocalizations.of(context)!.reset_password_screen_title,
                                     style: TextStyle(
                                       color: Color(0xFF111827),
                                       fontSize: 32.sp,
@@ -118,7 +118,7 @@ class ResetPasswordScreen extends StatelessWidget {
                                     height: responsiveHeight(context, 12),
                                   ),
                                   Text(
-                                    "Enter your E-mail or phone and we'll send you a link to get back into your account",
+                                    AppLocalizations.of(context)!.reset_password_screen_sub_title,
                                     style: TextStyle(
                                       fontSize: 12.sp,
                                       fontWeight: FontWeight.w500,
@@ -132,8 +132,8 @@ class ResetPasswordScreen extends StatelessWidget {
                                 height: responsiveHeight(context, 24),
                               ),
                               TextInputWidget(
-                                hint: "Email",
-                                label: "Email",
+                                hint: AppLocalizations.of(context)!.email,
+                                label: AppLocalizations.of(context)!.email,
                                 textEditingController:
                                     emailTextEditingController,
                               ),
@@ -141,7 +141,7 @@ class ResetPasswordScreen extends StatelessWidget {
                                 height: responsiveHeight(context, 24),
                               ),
                               InAppButton(
-                                  text: "Send",
+                                  text: AppLocalizations.of(context)!.send,
                                   onPress: () {
                                     showDialog(
                                       context: context,
