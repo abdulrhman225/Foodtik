@@ -87,7 +87,7 @@ class ProductWidget extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Text(
-                    productPrice,
+                    "\$$productPrice",
                     style: TextStyle(
                       fontSize: 14.sp,
                       color: ConstantColors.green_background,
