@@ -1,5 +1,6 @@
 import 'package:Foodtik/constant_colors.dart';
 import 'package:Foodtik/responsive.dart';
+import 'package:Foodtik/view/screen/filter_screen.dart';
 import 'package:Foodtik/view/widget/banner_widget.dart';
 import 'package:Foodtik/view/widget/category_widget.dart';
 import 'package:Foodtik/view/widget/product_widget.dart';
@@ -123,7 +124,9 @@ class HomeScreen extends StatelessWidget {
                   color: Colors.grey,
                 ),
                 suffixIcon: InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => FilterScreen(),));
+                    },
                     child: Icon(
                       Icons.filter_alt,
                       color: Colors.grey,
