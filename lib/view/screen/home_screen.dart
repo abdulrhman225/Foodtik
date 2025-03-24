@@ -73,18 +73,19 @@ class HomeScreen extends StatelessWidget {
             children: [
               ListTile(
                 leading: Container(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: responsiveWidth(context, 11),
-                    vertical: responsiveHeight(context, 8),
-                  ),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(4),
-                    color: Color(0xFFF5F5F5),
-                  ),
-                  child: SvgPicture.asset(
-                    "assets/images/location_pin.svg",
-                  ),
-                ),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: responsiveWidth(context, 11),
+                      vertical: responsiveHeight(context, 8),
+                    ),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(4),
+                      color: Color(0xFFF5F5F5),
+                    ),
+                    child: Icon(
+                      Icons.location_pin,
+                      color: ConstantColors.green_background,
+                      size: 15,
+                    )),
                 title: Text(
                   "Current location ▾",
                   style: TextStyle(
@@ -100,18 +101,18 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 trailing: Container(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: responsiveWidth(context, 11),
-                    vertical: responsiveHeight(context, 8),
-                  ),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(4),
-                    color: Color(0xFFF5F5F5),
-                  ),
-                  child: SvgPicture.asset(
-                    "assets/images/notification_bell.svg",
-                  ),
-                ),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: responsiveWidth(context, 11),
+                      vertical: responsiveHeight(context, 8),
+                    ),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(4),
+                      color: Color(0xFFF5F5F5),
+                    ),
+                    child: Icon(
+                      Icons.notifications_none,
+                      size: 15,
+                    )),
               ),
               SizedBox(
                 height: responsiveHeight(context, 22),
@@ -125,7 +126,11 @@ class HomeScreen extends StatelessWidget {
                 ),
                 suffixIcon: InkWell(
                     onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => FilterScreen(),));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => FilterScreen(),
+                          ));
                     },
                     child: Icon(
                       Icons.filter_alt,

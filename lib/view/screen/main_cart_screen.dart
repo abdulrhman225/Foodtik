@@ -1,0 +1,85 @@
+import 'package:Foodtik/view/screen/cart_screen.dart';
+import 'package:Foodtik/view/screen/filter_screen.dart';
+import 'package:Foodtik/view/screen/main_screen.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../constant_colors.dart';
+import '../../responsive.dart';
+import 'history_screen.dart';
+
+class MainCartScreen extends StatelessWidget {
+  const MainCartScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return DefaultTabController(
+      length: 2,
+      child: Scaffold(
+          appBar: AppBar(
+            title: ListTile(
+              leading: Container(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: responsiveWidth(context, 11),
+                    vertical: responsiveHeight(context, 8),
+                  ),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(4),
+                    color: Color(0xFFF5F5F5),
+                  ),
+                  child: Icon(
+                    Icons.location_pin,
+                    color: ConstantColors.green_background,
+                    size: 15,
+                  )),
+              title: Text(
+                "Current location ▾",
+                style: TextStyle(
+                  fontSize: 12.sp,
+                  color: Colors.grey,
+                ),
+              ),
+              subtitle: Text(
+                "Jl. Soekarno Hatta 15A Malang",
+                style: TextStyle(
+                  color: ConstantColors.TextColor,
+                  fontSize: 14.sp,
+                ),
+              ),
+              trailing: Container(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: responsiveWidth(context, 11),
+                    vertical: responsiveHeight(context, 8),
+                  ),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(4),
+                    color: Color(0xFFF5F5F5),
+                  ),
+                  child: Icon(
+                    Icons.notifications_none,
+                    size: 15,
+                  )),
+            ),
+            bottom: TabBar(
+                dividerColor:  Color(0xFFDBF4D1),
+                indicatorColor: ConstantColors.green_background,
+                indicatorSize: TabBarIndicatorSize.tab,
+                labelColor: ConstantColors.green_background,
+                tabs: [
+                  Tab(
+                    text: "Cart",
+                  ),
+                  Tab(
+                    text: "History",
+                  )
+                ]),
+          ),
+          body: TabBarView(
+            children: [
+              CartScreen(),
+              HistoryScreen(),
+            ],
+          )),
+    );
+  }
+}

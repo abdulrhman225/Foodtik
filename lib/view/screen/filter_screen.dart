@@ -34,18 +34,19 @@ class _FilterScreenState extends State<FilterScreen> {
             children: [
               ListTile(
                 leading: Container(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: responsiveWidth(context, 11),
-                    vertical: responsiveHeight(context, 8),
-                  ),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(4),
-                    color: Color(0xFFF5F5F5),
-                  ),
-                  child: SvgPicture.asset(
-                    "assets/images/location_pin.svg",
-                  ),
-                ),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: responsiveWidth(context, 11),
+                      vertical: responsiveHeight(context, 8),
+                    ),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(4),
+                      color: Color(0xFFF5F5F5),
+                    ),
+                    child: Icon(
+                      Icons.location_pin,
+                      color: ConstantColors.green_background,
+                      size: 15,
+                    )),
                 title: Text(
                   "Current location ▾",
                   style: TextStyle(
@@ -61,18 +62,15 @@ class _FilterScreenState extends State<FilterScreen> {
                   ),
                 ),
                 trailing: Container(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: responsiveWidth(context, 11),
-                    vertical: responsiveHeight(context, 8),
-                  ),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(4),
-                    color: Color(0xFFF5F5F5),
-                  ),
-                  child: SvgPicture.asset(
-                    "assets/images/notification_bell.svg",
-                  ),
-                ),
+                    padding: EdgeInsets.symmetric(
+                      horizontal: responsiveWidth(context, 11),
+                      vertical: responsiveHeight(context, 8),
+                    ),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(4),
+                      color: Color(0xFFF5F5F5),
+                    ),
+                    child: Icon(Icons.notifications_none , size: 15,)),
               ),
               SizedBox(
                 height: responsiveHeight(context, 23),
@@ -290,22 +288,22 @@ class _FilterScreenState extends State<FilterScreen> {
               Row(
                 children: [
                   InkWell(
-                    onTap: (){
+                    onTap: () {
                       selectedCategory = 0;
                       setState(() {});
-                      },
+                    },
                     child: FilterCatigoryWidget(
                       text: "Fast Food",
                       color: selectedCategory == 0
                           ? ConstantColors.green_background
                           : Color(0xFFF2F4F7),
-                      textColor:
-                          selectedCategory == 0 ? Colors.white : Color(0xFF4B4B4B),
+                      textColor: selectedCategory == 0
+                          ? Colors.white
+                          : Color(0xFF4B4B4B),
                     ),
                   ),
-
                   InkWell(
-                    onTap: (){
+                    onTap: () {
                       selectedCategory = 1;
                       setState(() {});
                     },
@@ -314,13 +312,13 @@ class _FilterScreenState extends State<FilterScreen> {
                       color: selectedCategory == 1
                           ? ConstantColors.green_background
                           : Color(0xFFF2F4F7),
-                      textColor:
-                      selectedCategory == 1 ? Colors.white : Color(0xFF4B4B4B),
+                      textColor: selectedCategory == 1
+                          ? Colors.white
+                          : Color(0xFF4B4B4B),
                     ),
                   ),
-
                   InkWell(
-                    onTap: (){
+                    onTap: () {
                       selectedCategory = 2;
                       setState(() {});
                     },
@@ -329,13 +327,13 @@ class _FilterScreenState extends State<FilterScreen> {
                       color: selectedCategory == 2
                           ? ConstantColors.green_background
                           : Color(0xFFF2F4F7),
-                      textColor:
-                      selectedCategory == 2 ? Colors.white : Color(0xFF4B4B4B),
+                      textColor: selectedCategory == 2
+                          ? Colors.white
+                          : Color(0xFF4B4B4B),
                     ),
                   )
                 ],
               ),
-
               SizedBox(
                 height: responsiveHeight(context, 32),
               ),
@@ -353,7 +351,7 @@ class _FilterScreenState extends State<FilterScreen> {
               Row(
                 children: [
                   InkWell(
-                    onTap: (){
+                    onTap: () {
                       selectedLocation = 0;
                       setState(() {});
                     },
@@ -362,13 +360,13 @@ class _FilterScreenState extends State<FilterScreen> {
                       color: selectedLocation == 0
                           ? ConstantColors.green_background
                           : Color(0xFFF2F4F7),
-                      textColor:
-                      selectedLocation == 0 ? Colors.white : Color(0xFF4B4B4B),
+                      textColor: selectedLocation == 0
+                          ? Colors.white
+                          : Color(0xFF4B4B4B),
                     ),
                   ),
-
                   InkWell(
-                    onTap: (){
+                    onTap: () {
                       selectedLocation = 1;
                       setState(() {});
                     },
@@ -377,13 +375,13 @@ class _FilterScreenState extends State<FilterScreen> {
                       color: selectedLocation == 1
                           ? ConstantColors.green_background
                           : Color(0xFFF2F4F7),
-                      textColor:
-                      selectedLocation == 1 ? Colors.white : Color(0xFF4B4B4B),
+                      textColor: selectedLocation == 1
+                          ? Colors.white
+                          : Color(0xFF4B4B4B),
                     ),
                   ),
-
                   InkWell(
-                    onTap: (){
+                    onTap: () {
                       selectedLocation = 2;
                       setState(() {});
                     },
@@ -392,17 +390,16 @@ class _FilterScreenState extends State<FilterScreen> {
                       color: selectedLocation == 2
                           ? ConstantColors.green_background
                           : Color(0xFFF2F4F7),
-                      textColor:
-                      selectedLocation == 2 ? Colors.white : Color(0xFF4B4B4B),
+                      textColor: selectedLocation == 2
+                          ? Colors.white
+                          : Color(0xFF4B4B4B),
                     ),
                   )
                 ],
               ),
-
               SizedBox(
                 height: responsiveHeight(context, 32),
               ),
-
               Text(
                 "Dish",
                 style: TextStyle(
@@ -417,7 +414,7 @@ class _FilterScreenState extends State<FilterScreen> {
               Row(
                 children: [
                   InkWell(
-                    onTap: (){
+                    onTap: () {
                       selectedDish = 0;
                       setState(() {});
                     },
@@ -427,12 +424,11 @@ class _FilterScreenState extends State<FilterScreen> {
                           ? ConstantColors.green_background
                           : Color(0xFFF2F4F7),
                       textColor:
-                      selectedDish == 0 ? Colors.white : Color(0xFF4B4B4B),
+                          selectedDish == 0 ? Colors.white : Color(0xFF4B4B4B),
                     ),
                   ),
-
                   InkWell(
-                    onTap: (){
+                    onTap: () {
                       selectedDish = 1;
                       setState(() {});
                     },
@@ -442,12 +438,11 @@ class _FilterScreenState extends State<FilterScreen> {
                           ? ConstantColors.green_background
                           : Color(0xFFF2F4F7),
                       textColor:
-                      selectedDish == 1 ? Colors.white : Color(0xFF4B4B4B),
+                          selectedDish == 1 ? Colors.white : Color(0xFF4B4B4B),
                     ),
                   ),
-
                   InkWell(
-                    onTap: (){
+                    onTap: () {
                       selectedDish = 2;
                       setState(() {});
                     },
@@ -457,19 +452,18 @@ class _FilterScreenState extends State<FilterScreen> {
                           ? ConstantColors.green_background
                           : Color(0xFFF2F4F7),
                       textColor:
-                      selectedDish == 2 ? Colors.white : Color(0xFF4B4B4B),
+                          selectedDish == 2 ? Colors.white : Color(0xFF4B4B4B),
                     ),
                   )
                 ],
               ),
-
               SizedBox(
                 height: responsiveHeight(context, 24),
               ),
               Row(
                 children: [
                   InkWell(
-                    onTap: (){
+                    onTap: () {
                       selectedDish = 3;
                       setState(() {});
                     },
@@ -479,12 +473,11 @@ class _FilterScreenState extends State<FilterScreen> {
                           ? ConstantColors.green_background
                           : Color(0xFFF2F4F7),
                       textColor:
-                      selectedDish == 3 ? Colors.white : Color(0xFF4B4B4B),
+                          selectedDish == 3 ? Colors.white : Color(0xFF4B4B4B),
                     ),
                   ),
-
                   InkWell(
-                    onTap: (){
+                    onTap: () {
                       selectedDish = 4;
                       setState(() {});
                     },
@@ -494,12 +487,11 @@ class _FilterScreenState extends State<FilterScreen> {
                           ? ConstantColors.green_background
                           : Color(0xFFF2F4F7),
                       textColor:
-                      selectedDish == 4 ? Colors.white : Color(0xFF4B4B4B),
+                          selectedDish == 4 ? Colors.white : Color(0xFF4B4B4B),
                     ),
                   ),
-
                   InkWell(
-                    onTap: (){
+                    onTap: () {
                       selectedDish = 5;
                       setState(() {});
                     },
@@ -509,7 +501,7 @@ class _FilterScreenState extends State<FilterScreen> {
                           ? ConstantColors.green_background
                           : Color(0xFFF2F4F7),
                       textColor:
-                      selectedDish == 5 ? Colors.white : Color(0xFF4B4B4B),
+                          selectedDish == 5 ? Colors.white : Color(0xFF4B4B4B),
                     ),
                   )
                 ],

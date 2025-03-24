@@ -3,6 +3,9 @@ import 'package:Foodtik/view/screen/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 
+import 'history_screen.dart';
+import 'main_cart_screen.dart';
+
 class MainScreen extends StatelessWidget {
 
   final PersistentTabController _controller = PersistentTabController(initialIndex: 0);
@@ -10,7 +13,7 @@ class MainScreen extends StatelessWidget {
     return [
       HomeScreen(),
       favorityScreen(),
-      CartScreen(),
+      MainCartScreen(),
       HistoryScreen(),
       profileScreen()// Example screen
     ];
@@ -76,23 +79,6 @@ class favorityScreen extends StatelessWidget {
 }
 
 
-class HistoryScreen extends StatelessWidget {
-  const HistoryScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
-  }
-}
-
-class CartScreen extends StatelessWidget {
-  const CartScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
-  }
-}
 
 class profileScreen extends StatelessWidget {
   const profileScreen({super.key});
