@@ -1,15 +1,15 @@
 import 'package:Foodtik/view/widget/in_app_button.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_advanced_seekbar/flutter_advanced_seekbar.dart';
 import 'package:flutter_rating/flutter_rating.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../constant_colors.dart';
 import '../../responsive.dart';
 import '../widget/search_text_input_widget.dart';
 
 class ProductDetailScreen extends StatefulWidget {
+  const ProductDetailScreen({super.key});
+
   @override
   State<ProductDetailScreen> createState() => _ProductDetailScreenState();
 }
@@ -21,12 +21,12 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: EdgeInsets.symmetric(
-          horizontal: responsiveWidth(context, 30),
-          vertical: responsiveHeight(context, 23),
-        ),
-        child: SingleChildScrollView(
+      body: SingleChildScrollView(
+        child: Container(
+          margin: EdgeInsets.symmetric(
+            horizontal: responsiveWidth(context, 22),
+            vertical: responsiveHeight(context, 22)
+          ),
           child: Column(
             children: [
               ListTile(
@@ -37,7 +37,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                     ),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(4),
-                      color: Color(0xFFF5F5F5),
+                      color: const Color(0xFFF5F5F5),
                     ),
                     child: Icon(
                       Icons.location_pin,
@@ -59,15 +59,19 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                   ),
                 ),
                 trailing: Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: responsiveWidth(context, 11),
-                      vertical: responsiveHeight(context, 8),
-                    ),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(4),
-                      color: Color(0xFFF5F5F5),
-                    ),
-                    child: Icon(Icons.notifications_none, size: 15,) ,),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: responsiveWidth(context, 11),
+                    vertical: responsiveHeight(context, 8),
+                  ),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(4),
+                    color: const Color(0xFFF5F5F5),
+                  ),
+                  child: const Icon(
+                    Icons.notifications_none,
+                    size: 15,
+                  ),
+                ),
               ),
               SizedBox(
                 height: responsiveHeight(context, 22),
@@ -75,13 +79,13 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
               SearchTextInputWidget(
                 hint: "Search menu, restaurant or etc",
                 textEditingController: searchTextEditingController,
-                prefixIcon: Icon(
+                prefixIcon: const Icon(
                   Icons.search,
                   color: Colors.grey,
                 ),
                 suffixIcon: InkWell(
                     onTap: () {},
-                    child: Icon(
+                    child: const Icon(
                       Icons.filter_alt,
                       color: Colors.grey,
                     )),
@@ -94,7 +98,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                 height: responsiveHeight(context, 203),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
-                  image: DecorationImage(
+                  image: const DecorationImage(
                     fit: BoxFit.cover,
                     image: AssetImage(
                         "assets/images/delicious_tasty_flying_burger_table_cheese_burger_with.png"),
@@ -188,13 +192,16 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
               SizedBox(
                 height: responsiveHeight(context, 24),
               ),
-              Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+              Row(children: [
                 Text(
                   "Spicy",
                   style: TextStyle(
                       color: Colors.grey,
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w500),
+                ),
+                SizedBox(
+                  width: responsiveWidth(context, 221),
                 ),
                 Text(
                   "Quantity",
@@ -207,69 +214,82 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
               SizedBox(
                 height: responsiveHeight(context, 15),
               ),
-              Row(
-                children: [
-                  SizedBox(
-                    width: responsiveWidth(context, 169),
-                    child: Slider(
-                      value: valueOfslider,
-                      onChanged: (value) {
-                        valueOfslider = value;
-                        setState(() {});
-                      },
-                      activeColor: Colors.red,
+              Align(
+                alignment: AlignmentDirectional.topStart,
+                child: Row(
+                  children: [
+                    SizedBox(
+                      width: responsiveWidth(context, 7),
                     ),
-                  ),
-                  SizedBox(
-                    width: responsiveWidth(context, 60),
-                  ),
-                  InkWell(
-                    child: Container(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: responsiveWidth(context, 15),
-                          vertical: responsiveHeight(context, 16)),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(12),
-                          border: Border.all(
-                              color: ConstantColors.green_background)),
-                      child: Icon(
-                        Icons.minimize,
-                        color: ConstantColors.green_background,
-                        size: 10,
+
+                    SliderTheme(
+                      data: SliderThemeData(
+                        // here
+                        trackShape: CustomTrackShape(),
+                      ),
+                      child: SizedBox(
+                        width: responsiveWidth(context, 169),
+                        child: Slider.adaptive(
+                          value: valueOfslider,
+                          onChanged: (value) {
+                            valueOfslider = value;
+                            setState(() {});
+                          },
+                          activeColor: Colors.red,
+                        ),
                       ),
                     ),
-                  ),
-                  SizedBox(
-                    width: responsiveWidth(context, 20),
-                  ),
-                  Text(
-                    "3",
-                    style: TextStyle(
-                        color: Colors.grey,
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.w500),
-                  ),
-                  SizedBox(
-                    width: responsiveWidth(context, 20),
-                  ),
-                  InkWell(
-                    child: Container(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: responsiveWidth(context, 15),
-                          vertical: responsiveHeight(context, 16)),
-                      decoration: BoxDecoration(
+                    SizedBox(
+                      width: responsiveWidth(context, 70),
+                    ),
+                    InkWell(
+                      child: Container(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: responsiveWidth(context, 15),
+                            vertical: responsiveHeight(context, 16)),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(12),
+                            border: Border.all(
+                                color: ConstantColors.green_background)),
+                        child: Icon(
+                          Icons.minimize,
                           color: ConstantColors.green_background,
-                          borderRadius: BorderRadius.circular(12),
-                          border: Border.all(
-                              color: ConstantColors.green_background)),
-                      child: Icon(
-                        Icons.add,
-                        color: Colors.white,
-                        size: 10,
+                          size: 10,
+                        ),
                       ),
                     ),
-                  )
-                ],
+                    SizedBox(
+                      width: responsiveWidth(context, 20),
+                    ),
+                    Text(
+                      "3",
+                      style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.w500),
+                    ),
+                    SizedBox(
+                      width: responsiveWidth(context, 20),
+                    ),
+                    InkWell(
+                      child: Container(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: responsiveWidth(context, 15),
+                            vertical: responsiveHeight(context, 16)),
+                        decoration: BoxDecoration(
+                            color: ConstantColors.green_background,
+                            borderRadius: BorderRadius.circular(12),
+                            border: Border.all(
+                                color: ConstantColors.green_background)),
+                        child: const Icon(
+                          Icons.add,
+                          color: Colors.white,
+                          size: 10,
+                        ),
+                      ),
+                    )
+                  ],
+                ),
               ),
               SizedBox(
                 height: responsiveHeight(context, 7),
@@ -307,5 +327,22 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
         ),
       ),
     );
+  }
+}
+
+class CustomTrackShape extends RoundedRectSliderTrackShape {
+  @override
+  Rect getPreferredRect({
+    required RenderBox parentBox,
+    Offset offset = Offset.zero,
+    required SliderThemeData sliderTheme,
+    bool isEnabled = false,
+    bool isDiscrete = false,
+  }) {
+    final trackHeight = sliderTheme.trackHeight;
+    final trackLeft = offset.dx;
+    final trackTop = offset.dy + (parentBox.size.height - trackHeight!) / 2;
+    final trackWidth = parentBox.size.width;
+    return Rect.fromLTWH(trackLeft, trackTop, trackWidth, trackHeight);
   }
 }

@@ -1,17 +1,18 @@
 import 'package:Foodtik/controller/login_cubit/login_cubit.dart';
 import 'package:Foodtik/controller/reset_password_cubit/reset_password_cubit.dart';
-import 'package:Foodtik/view/screen/home_screen.dart';
-import 'package:Foodtik/view/screen/main_screen.dart';
-import 'package:Foodtik/view/widget/recommended_product_widget.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:Foodtik/controller/sign_up_cubit/sign_up_cubit.dart';
+import 'package:Foodtik/view/screen/check_out_screen.dart';
+import 'package:Foodtik/view/screen/location_screen.dart';
+import 'package:Foodtik/view/screen/main_screen.dart';
 import 'package:Foodtik/view/screen/splash_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
-import "package:flutter_localizations/flutter_localizations.dart";
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import "package:flutter_localizations/flutter_localizations.dart";
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import 'firebase_options.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -48,13 +49,13 @@ class MyApp extends StatelessWidget {
             return MaterialApp(
               debugShowCheckedModeBanner: false,
               title: 'First Method',
-              localizationsDelegates: [
+              localizationsDelegates: const [
                 AppLocalizations.delegate, // Add this line
                 GlobalMaterialLocalizations.delegate,
                 GlobalWidgetsLocalizations.delegate,
                 GlobalCupertinoLocalizations.delegate,
               ],
-              supportedLocales: [
+              supportedLocales: const [
                 Locale('en'), // English
                 Locale('ar'), // Spanish
               ],
@@ -66,7 +67,7 @@ class MyApp extends StatelessWidget {
               home: child,
             );
           },
-          child: MainScreen(),
+          child: CheckOutScreen(),
         ));
   }
 }

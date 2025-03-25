@@ -1,3 +1,4 @@
+import 'package:Foodtik/view/screen/product_detail_screen.dart';
 import 'package:Foodtik/view/widget/filter_catigory_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -23,12 +24,12 @@ class _FilterScreenState extends State<FilterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: EdgeInsets.symmetric(
-          horizontal: responsiveWidth(context, 30),
-          vertical: responsiveHeight(context, 23),
-        ),
-        child: SingleChildScrollView(
+      body: SingleChildScrollView(
+        child: Container(
+          margin: EdgeInsets.symmetric(
+            horizontal: responsiveWidth(context, 22),
+            vertical: responsiveHeight(context, 22)
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -70,7 +71,10 @@ class _FilterScreenState extends State<FilterScreen> {
                       borderRadius: BorderRadius.circular(4),
                       color: Color(0xFFF5F5F5),
                     ),
-                    child: Icon(Icons.notifications_none , size: 15,)),
+                    child: Icon(
+                      Icons.notifications_none,
+                      size: 15,
+                    )),
               ),
               SizedBox(
                 height: responsiveHeight(context, 23),
@@ -166,16 +170,22 @@ class _FilterScreenState extends State<FilterScreen> {
               SizedBox(
                 height: responsiveHeight(context, 3),
               ),
-              Slider(
-                value: priceRange,
-                onChanged: (value) {
-                  priceRange = value;
-                  setState(() {});
-                },
-                activeColor: ConstantColors.green_background,
-                min: 0,
-                max: 10,
-                divisions: 10,
+              SliderTheme(
+                data: SliderThemeData(
+                  // here
+                  trackShape: CustomTrackShape(),
+                ),
+                child: Slider(
+                  value: priceRange,
+                  onChanged: (value) {
+                    priceRange = value;
+                    setState(() {});
+                  },
+                  activeColor: ConstantColors.green_background,
+                  min: 0,
+                  max: 10,
+                  divisions: 10,
+                ),
               ),
               SizedBox(
                 height: responsiveHeight(context, 20),
@@ -260,16 +270,22 @@ class _FilterScreenState extends State<FilterScreen> {
               SizedBox(
                 height: responsiveHeight(context, 3),
               ),
-              Slider(
-                value: Discount,
-                onChanged: (value) {
-                  Discount = value;
-                  setState(() {});
-                },
-                activeColor: ConstantColors.green_background,
-                min: 0,
-                max: 100,
-                divisions: 100,
+              SliderTheme(
+                data: SliderThemeData(
+                  // here
+                  trackShape: CustomTrackShape(),
+                ),
+                child: Slider(
+                  value: Discount,
+                  onChanged: (value) {
+                    Discount = value;
+                    setState(() {});
+                  },
+                  activeColor: ConstantColors.green_background,
+                  min: 0,
+                  max: 100,
+                  divisions: 100,
+                ),
               ),
               SizedBox(
                 height: responsiveHeight(context, 20),
@@ -511,5 +527,21 @@ class _FilterScreenState extends State<FilterScreen> {
         ),
       ),
     );
+  }
+}
+class CustomTrackShape extends RoundedRectSliderTrackShape {
+  @override
+  Rect getPreferredRect({
+    required RenderBox parentBox,
+    Offset offset = Offset.zero,
+    required SliderThemeData sliderTheme,
+    bool isEnabled = false,
+    bool isDiscrete = false,
+  }) {
+    final trackHeight = sliderTheme.trackHeight;
+    final trackLeft = offset.dx;
+    final trackTop = offset.dy + (parentBox.size.height - trackHeight!) / 2;
+    final trackWidth = parentBox.size.width;
+    return Rect.fromLTWH(trackLeft, trackTop, trackWidth, trackHeight);
   }
 }
