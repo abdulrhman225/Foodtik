@@ -35,6 +35,7 @@ class TotalPriceCardWidget extends StatelessWidget {
                 Text(
                   "Sub-Total",
                   style: TextStyle(
+                    color: Colors.white,
                     fontSize: 14.sp,
                     fontWeight: FontWeight.w400,
                   ),
@@ -42,6 +43,7 @@ class TotalPriceCardWidget extends StatelessWidget {
                 Text(
                   "100\$",
                   style: TextStyle(
+                    color: Colors.white,
                     fontSize: 14.sp,
                     fontWeight: FontWeight.w400,
                   ),
@@ -55,6 +57,7 @@ class TotalPriceCardWidget extends StatelessWidget {
                 Text(
                   "Delivery Charge",
                   style: TextStyle(
+                    color: Colors.white,
                     fontSize: 14.sp,
                     fontWeight: FontWeight.w400,
                   ),
@@ -62,6 +65,7 @@ class TotalPriceCardWidget extends StatelessWidget {
                 Text(
                   "10\$",
                   style: TextStyle(
+                    color: Colors.white,
                     fontSize: 14.sp,
                     fontWeight: FontWeight.w400,
                   ),
@@ -75,6 +79,7 @@ class TotalPriceCardWidget extends StatelessWidget {
                 Text(
                   "Discount",
                   style: TextStyle(
+                    color: Colors.white,
                     fontSize: 14.sp,
                     fontWeight: FontWeight.w400,
                   ),
@@ -82,6 +87,7 @@ class TotalPriceCardWidget extends StatelessWidget {
                 Text(
                   "10\$",
                   style: TextStyle(
+                    color: Colors.white,
                     fontSize: 14.sp,
                     fontWeight: FontWeight.w400,
                   ),
@@ -95,6 +101,7 @@ class TotalPriceCardWidget extends StatelessWidget {
                 Text(
                   "Total:",
                   style: TextStyle(
+                    color: Colors.white,
                     fontSize: 18.sp,
                     fontWeight: FontWeight.w700,
                   ),
@@ -102,6 +109,7 @@ class TotalPriceCardWidget extends StatelessWidget {
                 Text(
                   "110\$",
                   style: TextStyle(
+                    color:Colors.white,
                     fontSize: 18.sp,
                     fontWeight: FontWeight.w700,
                   ),
