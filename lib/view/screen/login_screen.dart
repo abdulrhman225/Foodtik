@@ -1,4 +1,5 @@
 import 'package:Foodtik/controller/login_cubit/login_cubit.dart';
+import 'package:Foodtik/view/screen/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -239,11 +240,13 @@ class LoginScreen extends StatelessWidget {
                               InAppButton(
                                 text: AppLocalizations.of(context)!.login,
                                 onPress: () {
-                                  context.read<LoginCubit>().checkLoginValidation(
-                                        email: emailTextEditingController.text,
-                                        password:
-                                            passwordTextEditingController.text,
-                                      );
+                                  // context.read<LoginCubit>().checkLoginValidation(
+                                  //       email: emailTextEditingController.text,
+                                  //       password:
+                                  //           passwordTextEditingController.text,
+                                  //     );
+
+                                  Navigator.push(context, MaterialPageRoute(builder: (context) => MainScreen(),));
                                 },
                               ),
                               SizedBox(

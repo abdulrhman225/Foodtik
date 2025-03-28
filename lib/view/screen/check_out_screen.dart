@@ -1,5 +1,7 @@
 import 'package:Foodtik/constant_colors.dart';
 import 'package:Foodtik/responsive.dart';
+import 'package:Foodtik/view/screen/credit_card_payment_screen.dart';
+import 'package:Foodtik/view/screen/finish_ording_screen.dart';
 import 'package:Foodtik/view/widget/promo_text_input_widget.dart';
 import 'package:Foodtik/view/widget/text_input_widget.dart';
 import 'package:Foodtik/view/widget/total_price_card_widget.dart';
@@ -279,10 +281,17 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                           ),
                           Image.asset("assets/images/visa.png"),
                         ]),
-                        TotalPriceCardWidget()
                       ],
                     )
-                  : SizedBox()
+                  : SizedBox(),
+              TotalPriceCardWidget(onPress: (){
+                if(selectedWay == "card"){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => CreditCardPaymentScreen(),));
+                }else if(selectedWay == "cash"){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => FinishOrdingScreen(),));
+                }
+              })
+
             ],
           ),
         ),

@@ -5,7 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class TotalPriceCardWidget extends StatelessWidget {
-  const TotalPriceCardWidget({super.key});
+
+  VoidCallback onPress;
+
+  TotalPriceCardWidget({required this.onPress});
 
   @override
   Widget build(BuildContext context) {
@@ -118,7 +121,7 @@ class TotalPriceCardWidget extends StatelessWidget {
             ),
             SizedBox(height: responsiveHeight(context, 24),),
 
-            PlaceOrderButtonWidget(text: "Place My Order", onPress: (){}),
+            PlaceOrderButtonWidget(text: "Place My Order", onPress: onPress,),
           ],
         ),
       ),

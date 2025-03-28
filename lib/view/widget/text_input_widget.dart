@@ -42,29 +42,37 @@ class TextInputWidget extends StatelessWidget {
           fontWeight: FontWeight.w500,
         ),
         decoration: InputDecoration(
-            focusedBorder: OutlineInputBorder(
-              borderSide: BorderSide(
-                color: Colors.grey,
-              ),
-              borderRadius: BorderRadius.circular(10),
+          focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(
+              color: Color(0xFFEDF1F3),
             ),
-            hintText: hint,
-            hintStyle: TextStyle(
+            borderRadius: BorderRadius.circular(10),
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(
+              color: Color(0xFFEDF1F3),
+            ),
+            borderRadius: BorderRadius.circular(10),
+          ),
+          hintText: hint,
+          hintStyle: TextStyle(
+              fontSize: 12.sp, color: Colors.grey, fontWeight: FontWeight.w700),
+          prefixIcon: prefixIcon,
+          suffixIcon: suffixIcon,
+          label: Text(
+            label,
+            style: TextStyle(
                 fontSize: 12.sp,
                 color: Colors.grey,
                 fontWeight: FontWeight.w700),
-            prefixIcon: prefixIcon,
-            suffixIcon: suffixIcon,
-            label: Text(
-              label,
-              style: TextStyle(
-                  fontSize: 12.sp,
-                  color: Colors.grey,
-                  fontWeight: FontWeight.w700),
-            ),
-            errorText: errorText,
-            border:
-                OutlineInputBorder(borderRadius: BorderRadius.circular(10))),
+          ),
+          errorText: errorText,
+          border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10),
+              borderSide: BorderSide(
+                color: Color(0xFFEDF1F3),
+              )),
+        ),
       ),
     );
   }

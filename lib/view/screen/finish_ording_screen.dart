@@ -1,3 +1,4 @@
+import 'package:Foodtik/view/screen/track_order_screen.dart';
 import 'package:Foodtik/view/widget/in_app_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -16,6 +17,7 @@ class FinishOrdingScreen extends StatelessWidget {
             vertical: responsiveHeight(context, 30)),
         child: SingleChildScrollView(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
                 height: responsiveHeight(context, 20),
@@ -78,7 +80,12 @@ class FinishOrdingScreen extends StatelessWidget {
               SizedBox(
                 height: responsiveHeight(context, 49),
               ),
-              InAppButton(text: "track Your Order", onPress: (){}),
+              Align(
+                alignment: Alignment.center,
+                child: InAppButton(text: "track Your Order", onPress: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => TrackOrderScreen(),));
+                }),
+              ),
             ],
           ),
         ),

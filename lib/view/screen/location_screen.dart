@@ -50,6 +50,9 @@ class _LocationScreenState extends State<LocationScreen> {
             child: Row(
               children: [
                 InkWell(
+                  onTap:(){
+                    Navigator.pop(context);
+                  },
                   child: Icon(
                     Icons.arrow_back,
                     size: 25,

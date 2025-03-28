@@ -1,5 +1,7 @@
 import 'package:Foodtik/constant_colors.dart';
 import 'package:Foodtik/view/screen/home_screen.dart';
+import 'package:Foodtik/view/screen/profile_screen.dart';
+import 'package:Foodtik/view/screen/track_order_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 
@@ -14,8 +16,8 @@ class MainScreen extends StatelessWidget {
       HomeScreen(),
       favorityScreen(),
       MainCartScreen(),
-      HistoryScreen(),
-      profileScreen()// Example screen
+      TrackOrderScreen(),
+      ProfileScreen()// Example screen
     ];
   }
 
@@ -39,8 +41,8 @@ class MainScreen extends StatelessWidget {
         inactiveColorPrimary: Colors.grey,
       ),
       PersistentBottomNavBarItem(
-        icon: Icon(Icons.history_toggle_off),
-        title: "History",
+        icon: Icon(Icons.location_pin),
+        title: "Track",
         activeColorPrimary: ConstantColors.green_background,
         inactiveColorPrimary: Colors.grey,
       ),
@@ -78,14 +80,4 @@ class favorityScreen extends StatelessWidget {
   }
 }
 
-
-
-class profileScreen extends StatelessWidget {
-  const profileScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
-  }
-}
 

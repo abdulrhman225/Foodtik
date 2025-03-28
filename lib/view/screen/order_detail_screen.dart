@@ -1,0 +1,276 @@
+import 'package:Foodtik/responsive.dart';
+import 'package:Foodtik/view/screen/chat_screen.dart';
+import 'package:Foodtik/view/screen/track_order_screen.dart';
+import 'package:Foodtik/view/widget/in_app_button.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../constant_colors.dart';
+
+class OrderDetailScreen extends StatelessWidget {
+  const OrderDetailScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Order Detail",
+          style: TextStyle(
+            fontSize: 20.sp,
+            fontWeight: FontWeight.w600,
+            color: ConstantColors.TextColor,
+          ),
+        ),
+      ),
+      body: Container(
+        margin: EdgeInsets.symmetric(
+            horizontal: responsiveWidth(context, 24),
+            vertical: responsiveHeight(context, 24)),
+        child: Column(
+          children: [
+            Row(
+              children: [
+                Image.asset("assets/images/packge.png"),
+                SizedBox(
+                  width: responsiveWidth(context, 12),
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Order ID",
+                      style: TextStyle(
+                        fontSize: 16.sp,
+                        fontWeight: FontWeight.w600,
+                        color: ConstantColors.TextColor,
+                      ),
+                    ),
+                    Text(
+                      "#6579-6432",
+                      style: TextStyle(
+                        fontSize: 10.sp,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.grey,
+                      ),
+                    ),
+                    Text(
+                      "25m",
+                      style: TextStyle(
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.w500,
+                        color: ConstantColors.TextColor,
+                      ),
+                    ),
+                  ],
+                )
+              ],
+            ),
+            SizedBox(
+              height: responsiveWidth(context, 48),
+            ),
+            Row(
+              children: [
+                Image.asset("assets/images/order_received.png"),
+                SizedBox(
+                  width: responsiveWidth(context, 12),
+                ),
+                Text(
+                  "Order received",
+                  style: TextStyle(
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w600,
+                    color: ConstantColors.TextColor,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: responsiveWidth(context, 20),
+            ),
+            Row(
+              children: [
+                Image.asset("assets/images/cooking_your_order.png"),
+                SizedBox(
+                  width: responsiveWidth(context, 12),
+                ),
+                Text(
+                  "Cooking your order",
+                  style: TextStyle(
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w600,
+                    color: ConstantColors.TextColor,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: responsiveWidth(context, 20),
+            ),
+            Row(
+              children: [
+                Image.asset("assets/images/picking_up_order.png"),
+                SizedBox(
+                  width: responsiveWidth(context, 12),
+                ),
+                Text(
+                  "Courier is picking up order",
+                  style: TextStyle(
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w600,
+                    color: ConstantColors.TextColor,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: responsiveWidth(context, 20),
+            ),
+            Row(
+              children: [
+                Image.asset("assets/images/order_delivered.png"),
+                SizedBox(
+                  width: responsiveWidth(context, 12),
+                ),
+                Text(
+                  "Order delivered",
+                  style: TextStyle(
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w600,
+                    color: ConstantColors.TextColor,
+                  ),
+                ),
+              ],
+            ),
+
+            SizedBox(
+              height: responsiveWidth(context, 51),
+            ),
+
+            Row(
+              children: [
+                Image.asset("assets/images/driver_phone.png"),
+                SizedBox(
+                  width: responsiveWidth(context, 12),
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Your Delivery Hero",
+                      style: TextStyle(
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.grey,
+                      ),
+                    ),
+                    SizedBox(
+                      height: responsiveHeight(context, 12),
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          "Aleksandr V.",
+                          style: TextStyle(
+                            fontSize: 15.sp,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.grey,
+                          ),
+                        ),
+                        SizedBox(
+                          width: responsiveWidth(context, 11),
+                        ),
+                        Icon(
+                          Icons.star,
+                          color: Colors.yellow.shade400,
+                        ),
+                        SizedBox(
+                          width: responsiveWidth(context, 4),
+                        ),
+                        Text(
+                          "4.9",
+                          style: TextStyle(
+                            fontSize: 13.sp,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.grey.shade400,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  width: responsiveWidth(context, 60),
+                ),
+                Image.asset("assets/images/Icon_phone.png"),
+                SizedBox(
+                  width: responsiveWidth(context, 12),
+                ),
+                InkWell(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => ChatScreen(),));
+                  },
+                  child: Image.asset("assets/images/Icon_chat.png"),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: responsiveHeight(context, 27),
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(
+                      left: responsiveWidth(context, 8),
+                      right: responsiveWidth(context, 8)),
+                  child: Text(
+                    "your location",
+                    style: TextStyle(
+                      fontSize: 12.sp,
+                      color: Colors.grey,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: responsiveHeight(context, 5),
+                ),
+                Row(
+                  children: [
+                    Icon(
+                      Icons.location_pin,
+                      color: ConstantColors.green_background,
+                    ),
+                    SizedBox(
+                      width: responsiveWidth(context, 4),
+                    ),
+                    Text(
+                      "123 Al-Madina Street, Abdali, Amman, Jordan",
+                      style: TextStyle(
+                        fontSize: 12.sp,
+                        color: Colors.grey,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: responsiveHeight(context, 24),
+                ),
+              ],
+            ),
+
+            SizedBox(
+              height: responsiveHeight(context, 50),
+            ),
+
+            InAppButton(text: "Live Track", onPress: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context) => TrackOrderScreen(),));
+            })
+          ],
+        ),
+      ),
+    );
+  }
+}

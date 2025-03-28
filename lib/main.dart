@@ -2,7 +2,7 @@ import 'package:Foodtik/controller/login_cubit/login_cubit.dart';
 import 'package:Foodtik/controller/reset_password_cubit/reset_password_cubit.dart';
 import 'package:Foodtik/controller/sign_up_cubit/sign_up_cubit.dart';
 import 'package:Foodtik/view/screen/check_out_screen.dart';
-import 'package:Foodtik/view/screen/credit_card_payment.dart';
+import 'package:Foodtik/view/screen/credit_card_payment_screen.dart';
 import 'package:Foodtik/view/screen/location_screen.dart';
 import 'package:Foodtik/view/screen/main_screen.dart';
 import 'package:Foodtik/view/screen/splash_screen.dart';
@@ -68,7 +68,7 @@ class MyApp extends StatelessWidget {
               home: child,
             );
           },
-          child: CreditCardPayment(),
+          child: SplashScreen(),
         ));
   }
 }

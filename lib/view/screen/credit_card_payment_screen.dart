@@ -7,14 +7,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../responsive.dart';
 
-class CreditCardPayment extends StatefulWidget {
-  const CreditCardPayment({super.key});
+class CreditCardPaymentScreen extends StatefulWidget {
+  const CreditCardPaymentScreen({super.key});
 
   @override
-  State<CreditCardPayment> createState() => _CreditCardPaymentState();
+  State<CreditCardPaymentScreen> createState() => _CreditCardPaymentScreenState();
 }
 
-class _CreditCardPaymentState extends State<CreditCardPayment> {
+class _CreditCardPaymentScreenState extends State<CreditCardPaymentScreen> {
   String cardNumber = "";
   String expiryDate = "";
   String cardHolderName = "";
@@ -25,35 +25,33 @@ class _CreditCardPaymentState extends State<CreditCardPayment> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        actions: [
+          Container(
+              margin: EdgeInsets.symmetric(
+                  horizontal: responsiveWidth(context, 7)),
+              padding: EdgeInsets.symmetric(
+                horizontal: responsiveWidth(context, 11),
+                vertical: responsiveHeight(context, 8),
+              ),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(4),
+                color: Color(0xFFF5F5F5),
+              ),
+              child: Icon(
+                Icons.notifications_none,
+                size: 18,
+              )),
+        ],
+      ),
       body: Container(
         margin: EdgeInsets.symmetric(
-            horizontal: responsiveWidth(context, 32),
-            vertical: responsiveHeight(context, 30)),
+            horizontal: responsiveWidth(context, 10),
+            vertical: responsiveHeight(context, 10)),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(
-                height: responsiveHeight(context, 20),
-              ),
-              Align(
-                alignment: AlignmentDirectional.topEnd,
-                child: Container(
-                    margin: EdgeInsets.symmetric(
-                        horizontal: responsiveWidth(context, 7)),
-                    padding: EdgeInsets.symmetric(
-                      horizontal: responsiveWidth(context, 11),
-                      vertical: responsiveHeight(context, 8),
-                    ),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(4),
-                      color: Color(0xFFF5F5F5),
-                    ),
-                    child: Icon(
-                      Icons.notifications_none,
-                      size: 18,
-                    )),
-              ),
               Text(
                 "Checkout",
                 style: TextStyle(

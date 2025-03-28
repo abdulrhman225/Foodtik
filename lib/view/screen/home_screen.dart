@@ -1,6 +1,7 @@
 import 'package:Foodtik/constant_colors.dart';
 import 'package:Foodtik/responsive.dart';
 import 'package:Foodtik/view/screen/filter_screen.dart';
+import 'package:Foodtik/view/screen/location_screen.dart';
 import 'package:Foodtik/view/widget/banner_widget.dart';
 import 'package:Foodtik/view/widget/category_widget.dart';
 import 'package:Foodtik/view/widget/product_widget.dart';
@@ -81,10 +82,15 @@ class HomeScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(4),
                       color: Color(0xFFF5F5F5),
                     ),
-                    child: Icon(
-                      Icons.location_pin,
-                      color: ConstantColors.green_background,
-                      size: 15,
+                    child: InkWell(
+                      onTap: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => LocationScreen(),));
+                      },
+                      child: Icon(
+                        Icons.location_pin,
+                        color: ConstantColors.green_background,
+                        size: 15,
+                      ),
                     )),
                 title: Text(
                   "Current location ▾",
