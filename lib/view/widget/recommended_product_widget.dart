@@ -17,6 +17,7 @@ class RecommendedProductWidget extends StatelessWidget {
         right: responsiveWidth(context, 27)
       ),
       width: responsiveWidth(context, 72),
+      height: responsiveHeight(context, 120),
       child: Stack(children: [
         Container(
           decoration: BoxDecoration(

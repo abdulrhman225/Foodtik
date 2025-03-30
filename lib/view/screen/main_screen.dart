@@ -1,4 +1,5 @@
 import 'package:Foodtik/constant_colors.dart';
+import 'package:Foodtik/view/screen/favorite_screen.dart';
 import 'package:Foodtik/view/screen/home_screen.dart';
 import 'package:Foodtik/view/screen/profile_screen.dart';
 import 'package:Foodtik/view/screen/track_order_screen.dart';
@@ -14,7 +15,7 @@ class MainScreen extends StatelessWidget {
   List<Widget> _buildScreens() {
     return [
       HomeScreen(),
-      favorityScreen(),
+      FavoriteScreen(),
       MainCartScreen(),
       TrackOrderScreen(),
       ProfileScreen()// Example screen
@@ -70,14 +71,4 @@ class MainScreen extends StatelessWidget {
     );
   }
 }
-
-class favorityScreen extends StatelessWidget {
-  const favorityScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
-  }
-}
-
 
