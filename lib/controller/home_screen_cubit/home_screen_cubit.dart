@@ -25,6 +25,23 @@ class HomeScreenCubit extends Cubit<HomeScreenState> {
       "name" : "Sandwich"
     },
   ];
+  List banners = [
+    {
+      "image_path" : "assets/images/banner.png",
+    },
+    {
+      "image_path" : "assets/images/banner.png",
+    },
+    {
+      "image_path" : "assets/images/banner.png",
+    },
+    {
+      "image_path" : "assets/images/banner.png",
+    },
+    {
+      "image_path" : "assets/images/banner.png",
+    },
+  ];
 
   List pizzas = [
     {
@@ -159,19 +176,27 @@ class HomeScreenCubit extends Cubit<HomeScreenState> {
     },
   ];
 
+  getDefaultData(){
+    emit(HomeScreenDefault(categories: categories,banners:  banners ,showedBanner:  0));
+  }
+
+  changeBanner(int index){
+    emit(HomeScreenDefault(categories: categories,banners:  banners ,showedBanner:  index));
+  }
+
   getCategory({required String productName , required int index}){
     switch(productName){
       case "All" :
-        emit(HomeScreenInitial());
+        emit(HomeScreenDefault(categories: categories,banners:  banners ,showedBanner:  0));
         break;
       case "Burger":
-        emit(HomeScreenSelectedCategory(selectedCategory: burger , index: index , category: "Burger"));
+        emit(HomeScreenSelectedCategory(selectedCategory: burger , index: index , category: "Burger" , categories:  categories));
         break;
       case"Pizza":
-        emit(HomeScreenSelectedCategory(selectedCategory: pizzas , index:  index, category: "Pizza"));
+        emit(HomeScreenSelectedCategory(selectedCategory: pizzas , index:  index, category: "Pizza", categories:  categories));
         break;
       case"Sandwich":
-        emit(HomeScreenSelectedCategory(selectedCategory: sandwich , index: index , category: "Sandwich"));
+        emit(HomeScreenSelectedCategory(selectedCategory: sandwich , index: index , category: "Sandwich", categories:  categories));
         break;
     }
 
@@ -182,17 +207,17 @@ class HomeScreenCubit extends Cubit<HomeScreenState> {
       case "Burger":
         burger.elementAt(elementIndex)["favorite"] = ! burger.elementAt(elementIndex)["favorite"];
         emit(HomeScreenInitial());
-        emit(HomeScreenSelectedCategory(selectedCategory: burger , index: categoryIndex , category: category));
+        emit(HomeScreenSelectedCategory(selectedCategory: burger , index: categoryIndex , category: category , categories: categories));
         break;
       case"Pizza":
         pizzas.elementAt(elementIndex)["favorite"] = ! pizzas.elementAt(elementIndex)["favorite"];
         emit(HomeScreenInitial());
-        emit(HomeScreenSelectedCategory(selectedCategory: pizzas , index:  categoryIndex, category: category));
+        emit(HomeScreenSelectedCategory(selectedCategory: pizzas , index:  categoryIndex, category: category, categories: categories));
         break;
       case"Sandwich":
         sandwich.elementAt(elementIndex)["favorite"] = ! sandwich.elementAt(elementIndex)["favorite"];
         emit(HomeScreenInitial());
-        emit(HomeScreenSelectedCategory(selectedCategory: sandwich , index: categoryIndex , category: category));
+        emit(HomeScreenSelectedCategory(selectedCategory: sandwich , index: categoryIndex , category: category, categories: categories));
         break;
     }
   }

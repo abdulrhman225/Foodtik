@@ -11,8 +11,19 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../widget/search_text_input_widget.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   TextEditingController searchTextEditingController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    context.read<HomeScreenCubit>().getDefaultData();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -117,13 +128,13 @@ class HomeScreen extends StatelessWidget {
                       scrollDirection: Axis.horizontal,
                       child: Row(
                           children: List.generate(
-                        HomeScreenCubit().categories.length,
+                        state.categories.length,
                         (index) {
                           if (index == state.index) {
                             return CategoryWidget(
-                              imagePath: HomeScreenCubit().categories[index]
+                              imagePath: state.categories[index]
                                   ["image_path"],
-                              category: HomeScreenCubit().categories[index]
+                              category: state.categories[index]
                                   ["name"],
                               backgroundColor: ConstantColors.green_background,
                               textColor: Colors.white,
@@ -131,9 +142,9 @@ class HomeScreen extends StatelessWidget {
                             );
                           } else {
                             return CategoryWidget(
-                              imagePath: HomeScreenCubit().categories[index]
+                              imagePath: state.categories[index]
                                   ["image_path"],
-                              category: HomeScreenCubit().categories[index]
+                              category: state.categories[index]
                                   ["name"],
                               backgroundColor: Colors.white,
                               textColor: ConstantColors.TextColor,
@@ -144,7 +155,7 @@ class HomeScreen extends StatelessWidget {
                       )),
                     ),
                   );
-                } else {
+                } else if(state is HomeScreenDefault) {
                   return Padding(
                     padding: EdgeInsets.symmetric(
                         horizontal: responsiveWidth(context, 30)),
@@ -152,13 +163,13 @@ class HomeScreen extends StatelessWidget {
                       scrollDirection: Axis.horizontal,
                       child: Row(
                           children: List.generate(
-                        HomeScreenCubit().categories.length,
+                        state.categories.length,
                         (index) {
                           if (index == 0) {
                             return CategoryWidget(
-                              imagePath: HomeScreenCubit().categories[index]
+                              imagePath: state.categories[index]
                                   ["image_path"],
-                              category: HomeScreenCubit().categories[index]
+                              category: state.categories[index]
                                   ["name"],
                               backgroundColor: ConstantColors.green_background,
                               textColor: Colors.white,
@@ -166,9 +177,9 @@ class HomeScreen extends StatelessWidget {
                             );
                           } else {
                             return CategoryWidget(
-                              imagePath: HomeScreenCubit().categories[index]
+                              imagePath: state.categories[index]
                                   ["image_path"],
-                              category: HomeScreenCubit().categories[index]
+                              category: state.categories[index]
                                   ["name"],
                               backgroundColor: Colors.white,
                               textColor: ConstantColors.TextColor,
@@ -179,6 +190,9 @@ class HomeScreen extends StatelessWidget {
                       )),
                     ),
                   );
+                }
+                else{
+                  return SizedBox();
                 }
               },
             ),
