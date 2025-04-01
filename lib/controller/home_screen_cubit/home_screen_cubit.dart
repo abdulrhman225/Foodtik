@@ -45,42 +45,42 @@ class HomeScreenCubit extends Cubit<HomeScreenState> {
 
   List pizzas = [
     {
-      "image_path": "assets/images/first_burger.png",
+      "image_path": "assets/images/round_pizza.png",
       "product_Name": "Cheese Burger",
       "product_price": "20.00",
       "product_content": "100 gr chicken + tomato + cheese  Lettuce",
       "favorite" : false
     },
     {
-      "image_path": "assets/images/first_burger.png",
+      "image_path": "assets/images/round_pizza.png",
       "product_Name": "Cheese Burger",
       "product_price": "20.00",
       "product_content": "100 gr chicken + tomato + cheese  Lettuce",
       "favorite" : false
     },
     {
-      "image_path": "assets/images/first_burger.png",
+      "image_path": "assets/images/round_pizza.png",
       "product_Name": "Cheese Burger",
       "product_price": "20.00",
       "product_content": "100 gr chicken + tomato + cheese  Lettuce",
       "favorite" : false
     },
     {
-      "image_path": "assets/images/first_burger.png",
+      "image_path": "assets/images/round_pizza.png",
       "product_Name": "Cheese Burger",
       "product_price": "20.00",
       "product_content": "100 gr chicken + tomato + cheese  Lettuce",
       "favorite" : false
     },
     {
-      "image_path": "assets/images/first_burger.png",
+      "image_path": "assets/images/round_pizza.png",
       "product_Name": "Cheese Burger",
       "product_price": "20.00",
       "product_content": "100 gr chicken + tomato + cheese  Lettuce",
       "favorite" : false
     },
     {
-      "image_path": "assets/images/first_burger.png",
+      "image_path": "assets/images/round_pizza.png",
       "product_Name": "Cheese Burger",
       "product_price": "20.00",
       "product_content": "100 gr chicken + tomato + cheese  Lettuce",

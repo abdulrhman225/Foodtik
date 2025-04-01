@@ -1,7 +1,6 @@
 import 'package:Foodtik/constant_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../responsive.dart';
 
 class DriverMessage extends StatelessWidget {
@@ -17,7 +16,7 @@ class DriverMessage extends StatelessWidget {
       ),
       padding: EdgeInsets.all(15),
       decoration: BoxDecoration(
-        color: Colors.grey,
+        color: Color(0xFFEEEEEE),
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(24),
           topRight: Radius.circular(24),

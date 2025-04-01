@@ -122,6 +122,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                   padding: EdgeInsets.symmetric(vertical: responsiveHeight(context, 80)),
                   child: GridView.builder(
                     clipBehavior: Clip.none,
+                    physics: NeverScrollableScrollPhysics(),
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 2,
                         mainAxisSpacing: responsiveHeight(context, 95)),
