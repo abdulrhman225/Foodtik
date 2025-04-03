@@ -1,5 +1,6 @@
 import 'package:Foodtik/view/screen/cart_screen.dart';
 import 'package:Foodtik/view/screen/filter_screen.dart';
+import 'package:Foodtik/view/screen/location_screen.dart';
 import 'package:Foodtik/view/screen/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -7,6 +8,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../constant_colors.dart';
 import '../../responsive.dart';
 import 'history_screen.dart';
+import 'notification_screen.dart';
 
 class MainCartScreen extends StatelessWidget {
   const MainCartScreen({super.key});
@@ -27,10 +29,15 @@ class MainCartScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(4),
                     color: Color(0xFFF5F5F5),
                   ),
-                  child: Icon(
-                    Icons.location_pin,
-                    color: ConstantColors.green_background,
-                    size: 15,
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => LocationScreen(),));
+                    },
+                    child: Icon(
+                      Icons.location_pin,
+                      color: ConstantColors.green_background,
+                      size: 15,
+                    ),
                   )),
               title: Text(
                 "Current location ▾",
@@ -55,9 +62,26 @@ class MainCartScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(4),
                     color: Color(0xFFF5F5F5),
                   ),
-                  child: Icon(
-                    Icons.notifications_none,
-                    size: 15,
+                  child: InkWell(
+                    onTap: () {
+                      showModalBottomSheet(
+                        context: context,
+                        isScrollControlled: true,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+                        ),
+                        builder: (context) {
+                          return SizedBox(
+                              height: responsiveHeight(context, 600),
+                              child: NotificationScreen()
+                          );
+                        },
+                      );
+                    },
+                    child: Icon(
+                      Icons.notifications_none,
+                      size: 15,
+                    ),
                   )),
             ),
             bottom: TabBar(

@@ -1,3 +1,5 @@
+import 'package:Foodtik/view/screen/filter_screen.dart';
+import 'package:Foodtik/view/screen/location_screen.dart';
 import 'package:Foodtik/view/widget/in_app_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating/flutter_rating.dart';
@@ -6,6 +8,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../constant_colors.dart';
 import '../../responsive.dart';
 import '../widget/search_text_input_widget.dart';
+import 'notification_screen.dart';
 
 class ProductDetailScreen extends StatefulWidget {
   const ProductDetailScreen({super.key});
@@ -24,9 +27,8 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
       body: SingleChildScrollView(
         child: Container(
           margin: EdgeInsets.symmetric(
-            horizontal: responsiveWidth(context, 22),
-            vertical: responsiveHeight(context, 22)
-          ),
+              horizontal: responsiveWidth(context, 22),
+              vertical: responsiveHeight(context, 22)),
           child: Column(
             children: [
               ListTile(
@@ -39,10 +41,19 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                       borderRadius: BorderRadius.circular(4),
                       color: const Color(0xFFF5F5F5),
                     ),
-                    child: Icon(
-                      Icons.location_pin,
-                      color: ConstantColors.green_background,
-                      size: 15,
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => LocationScreen(),
+                            ));
+                      },
+                      child: Icon(
+                        Icons.location_pin,
+                        color: ConstantColors.green_background,
+                        size: 15,
+                      ),
                     )),
                 title: Text(
                   "Current location ▾",
@@ -67,9 +78,26 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                     borderRadius: BorderRadius.circular(4),
                     color: const Color(0xFFF5F5F5),
                   ),
-                  child: const Icon(
-                    Icons.notifications_none,
-                    size: 15,
+                  child: InkWell(
+                    onTap: () {
+                      showModalBottomSheet(
+                        context: context,
+                        isScrollControlled: true,
+                        shape: RoundedRectangleBorder(
+                          borderRadius:
+                              BorderRadius.vertical(top: Radius.circular(20)),
+                        ),
+                        builder: (context) {
+                          return SizedBox(
+                              height: responsiveHeight(context, 600),
+                              child: NotificationScreen());
+                        },
+                      );
+                    },
+                    child: Icon(
+                      Icons.notifications_none,
+                      size: 15,
+                    ),
                   ),
                 ),
               ),
@@ -84,11 +112,24 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                   color: Colors.grey,
                 ),
                 suffixIcon: InkWell(
-                    onTap: () {},
-                    child: const Icon(
-                      Icons.filter_alt,
-                      color: Colors.grey,
-                    )),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => FilterScreen(),
+                        ));
+                  },
+                  child: Container(
+                    width: responsiveWidth(context, 15),
+                    height: responsiveHeight(context, 15),
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        fit: BoxFit.scaleDown,
+                        image: AssetImage("assets/images/equalizer.png"),
+                      ),
+                    ),
+                  ),
+                ),
               ),
               SizedBox(
                 height: responsiveHeight(context, 30),
@@ -221,7 +262,6 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                     SizedBox(
                       width: responsiveWidth(context, 7),
                     ),
-
                     SliderTheme(
                       data: SliderThemeData(
                         // here
@@ -230,6 +270,9 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                       child: SizedBox(
                         width: responsiveWidth(context, 169),
                         child: Slider.adaptive(
+                          min: 0,
+                          max: 10,
+                          divisions: 10,
                           value: valueOfslider,
                           onChanged: (value) {
                             valueOfslider = value;

@@ -4,6 +4,7 @@ import 'package:Foodtik/responsive.dart';
 import 'package:Foodtik/view/screen/all_category_screen.dart';
 import 'package:Foodtik/view/screen/filter_screen.dart';
 import 'package:Foodtik/view/screen/location_screen.dart';
+import 'package:Foodtik/view/screen/notification_screen.dart';
 import 'package:Foodtik/view/widget/category_widget.dart';
 import 'package:Foodtik/view/screen/other_category_screen.dart';
 import 'package:flutter/material.dart';
@@ -82,14 +83,28 @@ class _HomeScreenState extends State<HomeScreen> {
                       borderRadius: BorderRadius.circular(4),
                       color: Color(0xFFF5F5F5),
                     ),
-                    child: Icon(
-                      Icons.notifications_none,
-                      size: 15,
+                    child: InkWell(
+                      onTap: () {
+                        showModalBottomSheet(
+                          context: context,
+                          isScrollControlled: true,
+                          shape: RoundedRectangleBorder(
+                            borderRadius:
+                                BorderRadius.vertical(top: Radius.circular(20)),
+                          ),
+                          builder: (context) {
+                            return SizedBox(
+                                height: responsiveHeight(context, 600),
+                                child: NotificationScreen());
+                          },
+                        );
+                      },
+                      child: Icon(
+                        Icons.notifications_none,
+                        size: 15,
+                      ),
                     )),
               ),
-            ),
-            SizedBox(
-              height: responsiveHeight(context, 22),
             ),
             Padding(
               padding: EdgeInsets.symmetric(
@@ -109,10 +124,17 @@ class _HomeScreenState extends State<HomeScreen> {
                             builder: (context) => FilterScreen(),
                           ));
                     },
-                    child: Icon(
-                      Icons.filter_alt,
-                      color: Colors.grey,
-                    )),
+                    child: Container(
+                      width: responsiveWidth(context, 15),
+                      height: responsiveHeight(context, 15),
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                            fit: BoxFit.scaleDown,
+                        image: AssetImage(
+                            "assets/images/equalizer.png"),
+                      )),
+                    ),
+                ),
               ),
             ),
             SizedBox(
@@ -132,20 +154,16 @@ class _HomeScreenState extends State<HomeScreen> {
                         (index) {
                           if (index == state.index) {
                             return CategoryWidget(
-                              imagePath: state.categories[index]
-                                  ["image_path"],
-                              category: state.categories[index]
-                                  ["name"],
+                              imagePath: state.categories[index]["image_path"],
+                              category: state.categories[index]["name"],
                               backgroundColor: ConstantColors.green_background,
                               textColor: Colors.white,
                               index: index,
                             );
                           } else {
                             return CategoryWidget(
-                              imagePath: state.categories[index]
-                                  ["image_path"],
-                              category: state.categories[index]
-                                  ["name"],
+                              imagePath: state.categories[index]["image_path"],
+                              category: state.categories[index]["name"],
                               backgroundColor: Colors.white,
                               textColor: ConstantColors.TextColor,
                               index: index,
@@ -155,7 +173,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       )),
                     ),
                   );
-                } else if(state is HomeScreenDefault) {
+                } else if (state is HomeScreenDefault) {
                   return Padding(
                     padding: EdgeInsets.symmetric(
                         horizontal: responsiveWidth(context, 30)),
@@ -167,20 +185,16 @@ class _HomeScreenState extends State<HomeScreen> {
                         (index) {
                           if (index == 0) {
                             return CategoryWidget(
-                              imagePath: state.categories[index]
-                                  ["image_path"],
-                              category: state.categories[index]
-                                  ["name"],
+                              imagePath: state.categories[index]["image_path"],
+                              category: state.categories[index]["name"],
                               backgroundColor: ConstantColors.green_background,
                               textColor: Colors.white,
                               index: index,
                             );
                           } else {
                             return CategoryWidget(
-                              imagePath: state.categories[index]
-                                  ["image_path"],
-                              category: state.categories[index]
-                                  ["name"],
+                              imagePath: state.categories[index]["image_path"],
+                              category: state.categories[index]["name"],
                               backgroundColor: Colors.white,
                               textColor: ConstantColors.TextColor,
                               index: index,
@@ -190,8 +204,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       )),
                     ),
                   );
-                }
-                else{
+                } else {
                   return SizedBox();
                 }
               },
@@ -200,7 +213,8 @@ class _HomeScreenState extends State<HomeScreen> {
               builder: (context, state) {
                 if (state is HomeScreenSelectedCategory) {
                   return Padding(
-                    padding: EdgeInsets.symmetric(vertical: responsiveHeight(context, 80)),
+                    padding: EdgeInsets.symmetric(
+                        vertical: responsiveHeight(context, 80)),
                     child: GridView.builder(
                       clipBehavior: Clip.none,
                       physics: NeverScrollableScrollPhysics(),
@@ -210,14 +224,18 @@ class _HomeScreenState extends State<HomeScreen> {
                       shrinkWrap: true,
                       itemBuilder: (context, index) {
                         return OtherCategoryScreen(
-                          imagePath: state.selectedCategory[index]["image_path"],
+                          imagePath: state.selectedCategory[index]
+                              ["image_path"],
                           name: state.selectedCategory[index]["product_Name"],
                           description: state.selectedCategory[index]
                               ["product_content"],
                           isFavorite: state.selectedCategory[index]["favorite"],
                           price: state.selectedCategory[index]["product_price"],
-                          onTap: (){
-                            context.read<HomeScreenCubit>().changeFavorite(category: state.category, categoryIndex: state.index , elementIndex: index);
+                          onTap: () {
+                            context.read<HomeScreenCubit>().changeFavorite(
+                                category: state.category,
+                                categoryIndex: state.index,
+                                elementIndex: index);
                           },
                         );
                       },

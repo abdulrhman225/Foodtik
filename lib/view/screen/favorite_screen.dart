@@ -9,6 +9,7 @@ import '../../constant_colors.dart';
 import '../widget/search_text_input_widget.dart';
 import 'filter_screen.dart';
 import 'location_screen.dart';
+import 'notification_screen.dart';
 import 'other_category_screen.dart';
 
 class FavoriteScreen extends StatefulWidget {
@@ -53,10 +54,15 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                               builder: (context) => LocationScreen(),
                             ));
                       },
-                      child: Icon(
-                        Icons.location_pin,
-                        color: ConstantColors.green_background,
-                        size: 15,
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => LocationScreen(),));
+                        },
+                        child: Icon(
+                          Icons.location_pin,
+                          color: ConstantColors.green_background,
+                          size: 15,
+                        ),
                       ),
                     )),
                 title: Text(
@@ -82,14 +88,28 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                       borderRadius: BorderRadius.circular(4),
                       color: Color(0xFFF5F5F5),
                     ),
-                    child: Icon(
-                      Icons.notifications_none,
-                      size: 15,
+                    child: InkWell(
+                      onTap: () {
+                        showModalBottomSheet(
+                          context: context,
+                          isScrollControlled: true,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+                          ),
+                          builder: (context) {
+                            return SizedBox(
+                                height: responsiveHeight(context, 600),
+                                child: NotificationScreen()
+                            );
+                          },
+                        );
+                      },
+                      child: Icon(
+                        Icons.notifications_none,
+                        size: 15,
+                      ),
                     )),
               ),
-            ),
-            SizedBox(
-              height: responsiveHeight(context, 22),
             ),
             Padding(
               padding: EdgeInsets.symmetric(
@@ -109,10 +129,18 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                             builder: (context) => FilterScreen(),
                           ));
                     },
-                    child: Icon(
-                      Icons.filter_alt,
-                      color: Colors.grey,
-                    )),
+                    child: Container(
+                      width: responsiveWidth(context, 15),
+                      height: responsiveHeight(context, 15),
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                            fit: BoxFit.scaleDown,
+                            image: AssetImage(
+                                "assets/images/equalizer.png"),
+                          ),
+                      ),
+                    ),
+                ),
               ),
             ),
 

@@ -2,8 +2,8 @@ import 'package:Foodtik/view/screen/track_order_screen.dart';
 import 'package:Foodtik/view/widget/in_app_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../responsive.dart';
+import 'notification_screen.dart';
 
 class FinishOrdingScreen extends StatelessWidget {
   const FinishOrdingScreen({super.key});
@@ -35,9 +35,26 @@ class FinishOrdingScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(4),
                       color: Color(0xFFF5F5F5),
                     ),
-                    child: Icon(
-                      Icons.notifications_none,
-                      size: 18,
+                    child: InkWell(
+                      onTap: () {
+                        showModalBottomSheet(
+                          context: context,
+                          isScrollControlled: true,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+                          ),
+                          builder: (context) {
+                            return SizedBox(
+                                height: responsiveHeight(context, 600),
+                                child: NotificationScreen()
+                            );
+                          },
+                        );
+                      },
+                      child: Icon(
+                        Icons.notifications_none,
+                        size: 18,
+                      ),
                     )),
               ),
               Text(

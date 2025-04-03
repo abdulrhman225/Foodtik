@@ -8,6 +8,8 @@ import 'package:Foodtik/view/widget/total_price_card_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'notification_screen.dart';
+
 class CheckOutScreen extends StatefulWidget {
   @override
   State<CheckOutScreen> createState() => _CheckOutScreenState();
@@ -46,9 +48,26 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                       borderRadius: BorderRadius.circular(4),
                       color: Color(0xFFF5F5F5),
                     ),
-                    child: Icon(
-                      Icons.notifications_none,
-                      size: 18,
+                    child: InkWell(
+                      onTap: () {
+                        showModalBottomSheet(
+                          context: context,
+                          isScrollControlled: true,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+                          ),
+                          builder: (context) {
+                            return SizedBox(
+                                height: responsiveHeight(context, 600),
+                                child: NotificationScreen()
+                            );
+                          },
+                        );
+                      },
+                      child: Icon(
+                        Icons.notifications_none,
+                        size: 18,
+                      ),
                     )),
               ),
               Text(

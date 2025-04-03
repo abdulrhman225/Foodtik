@@ -6,6 +6,7 @@ import 'package:flutter_credit_card/flutter_credit_card.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../responsive.dart';
+import 'notification_screen.dart';
 
 class CreditCardPaymentScreen extends StatefulWidget {
   const CreditCardPaymentScreen({super.key});
@@ -38,9 +39,26 @@ class _CreditCardPaymentScreenState extends State<CreditCardPaymentScreen> {
                 borderRadius: BorderRadius.circular(4),
                 color: Color(0xFFF5F5F5),
               ),
-              child: Icon(
-                Icons.notifications_none,
-                size: 18,
+              child: InkWell(
+                onTap: () {
+                  showModalBottomSheet(
+                    context: context,
+                    isScrollControlled: true,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+                    ),
+                    builder: (context) {
+                      return SizedBox(
+                          height: responsiveHeight(context, 600),
+                          child: NotificationScreen()
+                      );
+                    },
+                  );
+                },
+                child: Icon(
+                  Icons.notifications_none,
+                  size: 18,
+                ),
               )),
         ],
       ),

@@ -6,6 +6,8 @@ import 'package:flutter_svg/svg.dart';
 
 import '../../constant_colors.dart';
 import '../../responsive.dart';
+import 'location_screen.dart';
+import 'notification_screen.dart';
 
 class FilterScreen extends StatefulWidget {
   const FilterScreen({super.key});
@@ -43,10 +45,15 @@ class _FilterScreenState extends State<FilterScreen> {
                       borderRadius: BorderRadius.circular(4),
                       color: Color(0xFFF5F5F5),
                     ),
-                    child: Icon(
-                      Icons.location_pin,
-                      color: ConstantColors.green_background,
-                      size: 15,
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => LocationScreen(),));
+                      },
+                      child: Icon(
+                        Icons.location_pin,
+                        color: ConstantColors.green_background,
+                        size: 15,
+                      ),
                     )),
                 title: Text(
                   "Current location ▾",
@@ -71,9 +78,26 @@ class _FilterScreenState extends State<FilterScreen> {
                       borderRadius: BorderRadius.circular(4),
                       color: Color(0xFFF5F5F5),
                     ),
-                    child: Icon(
-                      Icons.notifications_none,
-                      size: 15,
+                    child: InkWell(
+                      onTap: () {
+                        showModalBottomSheet(
+                          context: context,
+                          isScrollControlled: true,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+                          ),
+                          builder: (context) {
+                            return SizedBox(
+                                height: responsiveHeight(context, 600),
+                                child: NotificationScreen()
+                            );
+                          },
+                        );
+                      },
+                      child: Icon(
+                        Icons.notifications_none,
+                        size: 15,
+                      ),
                     )),
               ),
               SizedBox(
