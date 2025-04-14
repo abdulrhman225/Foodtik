@@ -39,14 +39,23 @@ class PromoTextInputWidget extends StatelessWidget {
             controller: textEditingController,
             obscureText: obscureText,
             style: TextStyle(
-              color: ConstantColors.TextColor,
+              color: Theme.of(context).colorScheme.secondary,
               fontSize: 14.sp,
               fontWeight: FontWeight.w500,
             ),
             decoration: InputDecoration(
+              enabledBorder: OutlineInputBorder(
+                borderSide: BorderSide(
+                  color: Theme.of(context).colorScheme.onSecondary,
+                ),
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(10),
+                  bottomLeft: Radius.circular(10),
+                ),
+              ),
               focusedBorder: OutlineInputBorder(
                 borderSide: BorderSide(
-                  color: Colors.grey,
+                  color: Theme.of(context).colorScheme.onSecondary,
                 ),
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(10),
@@ -56,7 +65,7 @@ class PromoTextInputWidget extends StatelessWidget {
               hintText: hint,
               hintStyle: TextStyle(
                   fontSize: 12.sp,
-                  color: Colors.grey,
+                  color: Theme.of(context).colorScheme.onSecondary,
                   fontWeight: FontWeight.w700),
               prefixIcon: prefixIcon,
               suffixIcon: suffixIcon,
@@ -64,7 +73,7 @@ class PromoTextInputWidget extends StatelessWidget {
                 label,
                 style: TextStyle(
                     fontSize: 12.sp,
-                    color: Colors.grey,
+                    color: Theme.of(context).colorScheme.onSecondary,
                     fontWeight: FontWeight.w700),
               ),
               errorText: errorText,
@@ -80,9 +89,8 @@ class PromoTextInputWidget extends StatelessWidget {
         Container(
           width: responsiveWidth(context, 80),
           padding: EdgeInsets.symmetric(
-            vertical: responsiveHeight(context, 23),
-            horizontal: responsiveWidth(context, 23)
-          ),
+              vertical: responsiveHeight(context, 23),
+              horizontal: responsiveWidth(context, 23)),
           decoration: BoxDecoration(
             color: ConstantColors.green_background,
             borderRadius: BorderRadius.only(

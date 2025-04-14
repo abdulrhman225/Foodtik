@@ -8,6 +8,7 @@ class HistoryScreenWithoutData extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.primary,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -23,7 +24,7 @@ class HistoryScreenWithoutData extends StatelessWidget {
             Text(
               "History Empty",
               style: TextStyle(
-                color: Color(0xFF111827),
+                color: Theme.of(context).colorScheme.secondary,
                 fontSize: 32.sp,
                 fontWeight: FontWeight.w700,
               ),
@@ -34,7 +35,7 @@ class HistoryScreenWithoutData extends StatelessWidget {
             Text(
               "You don’t have order any foods before",
               style: TextStyle(
-                color: Colors.grey,
+                color: Theme.of(context).colorScheme.onSecondary,
                 fontSize: 16.sp,
                 fontWeight: FontWeight.w500,
               ),

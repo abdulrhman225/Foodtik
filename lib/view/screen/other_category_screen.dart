@@ -13,7 +13,7 @@ class OtherCategoryScreen extends StatelessWidget {
   VoidCallback onTap;
 
   // Constructor لتلقي القيم من الـ Widget الأم
-   OtherCategoryScreen({
+  OtherCategoryScreen({
     required this.imagePath,
     required this.name,
     required this.description,
@@ -31,7 +31,7 @@ class OtherCategoryScreen extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(25),
         border: Border.all(
-          color: Colors.grey,
+          color: Theme.of(context).colorScheme.onSecondary,
         ),
       ),
       margin: EdgeInsets.symmetric(
@@ -49,14 +49,23 @@ class OtherCategoryScreen extends StatelessWidget {
               child: Center(
                 child: Container(
                   padding: EdgeInsets.symmetric(
-                    vertical: responsiveHeight(context, 15),
-                    horizontal: responsiveWidth(context, 12)
-                  ),
+                      vertical: responsiveHeight(context, 15),
+                      horizontal: responsiveWidth(context, 12)),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(14),
-                    color: Color(0xFFDBF4D1),
+                    color: Theme.of(context).colorScheme.secondaryFixed,
                   ),
-                    child: isFavorite?Icon(Icons.favorite ,color: Colors.red,size: 15,):Icon(Icons.favorite_border , color: Colors.grey , size: 15,),
+                  child: isFavorite
+                      ? Icon(
+                          Icons.favorite,
+                          color: Colors.red,
+                          size: 15,
+                        )
+                      : Icon(
+                          Icons.favorite_border,
+                          color: Theme.of(context).colorScheme.onSecondary,
+                          size: 15,
+                        ),
                 ),
               ),
             ),
@@ -70,7 +79,11 @@ class OtherCategoryScreen extends StatelessWidget {
           Positioned(
             top: -35,
             child: Center(
-              child: Image.asset(imagePath, width: responsiveWidth(context, 74) , height: responsiveHeight(context, 74),),
+              child: Image.asset(
+                imagePath,
+                width: responsiveWidth(context, 74),
+                height: responsiveHeight(context, 74),
+              ),
             ),
           ),
           SizedBox(height: 8),
@@ -78,7 +91,11 @@ class OtherCategoryScreen extends StatelessWidget {
             top: 60,
             child: Text(name,
                 textAlign: TextAlign.center,
-                style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16.sp , color: Colors.black)),
+                style: TextStyle(
+                  fontWeight: FontWeight.w600,
+                  fontSize: 16.sp,
+                  color: Theme.of(context).colorScheme.secondary,
+                )),
           ),
           SizedBox(height: 4),
           Positioned(
@@ -87,14 +104,19 @@ class OtherCategoryScreen extends StatelessWidget {
             child: Text(description,
                 maxLines: 3,
                 overflow: TextOverflow.ellipsis,
-
-                style: TextStyle(color: Colors.grey, fontSize: 12)),
+                style: TextStyle(
+                    color: Theme.of(context).colorScheme.onSecondary,
+                    fontSize: 12)),
           ),
           SizedBox(height: 8),
           Positioned(
             bottom: 50,
             child: Text(price,
-                style: TextStyle(fontWeight: FontWeight.w600, fontSize: 14.sp , color: Colors.black)),
+                style: TextStyle(
+                  fontWeight: FontWeight.w600,
+                  fontSize: 14.sp,
+                  color: Theme.of(context).colorScheme.secondary,
+                )),
           ),
           SizedBox(height: 8),
           Positioned(
@@ -110,7 +132,6 @@ class OtherCategoryScreen extends StatelessWidget {
           ),
         ],
       ),
-
     );
   }
 }

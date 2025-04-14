@@ -24,7 +24,7 @@ class CategoryWidget extends StatelessWidget {
       decoration: BoxDecoration(
         color: backgroundColor,
           borderRadius: BorderRadius.circular(7),
-          border: Border.all(color: Colors.grey)),
+          border: Border.all(color: Theme.of(context).colorScheme.onSecondary,)),
       child: InkWell(
         onTap: (){
           context.read<HomeScreenCubit>().getCategory(productName: category, index: index);

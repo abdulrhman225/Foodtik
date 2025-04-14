@@ -45,7 +45,7 @@ class UnreadNotificationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color(0xFFF1F6FC),
+      color: Theme.of(context).colorScheme.secondaryFixed,
       child: ListView.builder(
         itemBuilder: (context, index) {
           return ListTile(
@@ -73,7 +73,7 @@ class UnreadNotificationScreen extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.w500,
-                      color: Colors.grey,
+                      color: Theme.of(context).colorScheme.onSecondary,
                     ))
               ],
             ),

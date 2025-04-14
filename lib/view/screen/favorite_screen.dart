@@ -29,8 +29,10 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.primary,
       body: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
               padding: EdgeInsets.symmetric(
@@ -44,7 +46,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                     ),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(4),
-                      color: Color(0xFFF5F5F5),
+                      color: Theme.of(context).colorScheme.secondaryFixed,
                     ),
                     child: InkWell(
                       onTap: () {
@@ -69,13 +71,13 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                   "Current location ▾",
                   style: TextStyle(
                     fontSize: 12.sp,
-                    color: Colors.grey,
+                    color: Theme.of(context).colorScheme.onSecondary,
                   ),
                 ),
                 subtitle: Text(
                   "Jl. Soekarno Hatta 15A Malang",
                   style: TextStyle(
-                    color: ConstantColors.TextColor,
+                    color: Theme.of(context).colorScheme.secondary,
                     fontSize: 14.sp,
                   ),
                 ),
@@ -86,7 +88,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                     ),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(4),
-                      color: Color(0xFFF5F5F5),
+                      color: Theme.of(context).colorScheme.secondaryFixed,
                     ),
                     child: InkWell(
                       onTap: () {
@@ -106,6 +108,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                       },
                       child: Icon(
                         Icons.notifications_none,
+                        color: Theme.of(context).colorScheme.onSecondary,
                         size: 15,
                       ),
                     )),
@@ -119,7 +122,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                 textEditingController: searchTextEditingController,
                 prefixIcon: Icon(
                   Icons.search,
-                  color: Colors.grey,
+                  color: Theme.of(context).colorScheme.onSecondary,
                 ),
                 suffixIcon: InkWell(
                     onTap: () {
@@ -142,6 +145,12 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                     ),
                 ),
               ),
+            ),
+            SizedBox(height: responsiveHeight(context, 30),),
+
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: responsiveWidth(context, 10)),
+              child: Text("Favorite" , style: TextStyle(color: Theme.of(context).colorScheme.secondary , fontSize: 20.sp , fontWeight: FontWeight.w600),),
             ),
 
             BlocBuilder<FavoriteScreenCubit , FavoriteScreenState>(builder: (context, state) {

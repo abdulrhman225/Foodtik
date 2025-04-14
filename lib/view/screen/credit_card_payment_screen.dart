@@ -26,7 +26,9 @@ class _CreditCardPaymentScreenState extends State<CreditCardPaymentScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.primary,
       appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.primary,
         actions: [
           Container(
               margin: EdgeInsets.symmetric(
@@ -37,7 +39,7 @@ class _CreditCardPaymentScreenState extends State<CreditCardPaymentScreen> {
               ),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(4),
-                color: Color(0xFFF5F5F5),
+                color: Theme.of(context).colorScheme.secondaryFixed,
               ),
               child: InkWell(
                 onTap: () {
@@ -58,6 +60,7 @@ class _CreditCardPaymentScreenState extends State<CreditCardPaymentScreen> {
                 child: Icon(
                   Icons.notifications_none,
                   size: 18,
+                    color:Theme.of(context).colorScheme.onSecondary
                 ),
               )),
         ],
@@ -71,9 +74,9 @@ class _CreditCardPaymentScreenState extends State<CreditCardPaymentScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Checkout",
+                "Add Card",
                 style: TextStyle(
-                  color: Color(0xFF391713),
+                  color: Theme.of(context).colorScheme.secondary,
                   fontSize: 20.sp,
                   fontWeight: FontWeight.w600,
                 ),
@@ -98,6 +101,7 @@ class _CreditCardPaymentScreenState extends State<CreditCardPaymentScreen> {
                 expiryDate: expiryDate,
                 cardHolderName: cardHolderName,
                 cvvCode: cvvCode,
+
                 onCreditCardModelChange: (p0) {
                   cardHolderName = p0.cardHolderName;
                   cardNumber = p0.cardNumber;
@@ -116,7 +120,7 @@ class _CreditCardPaymentScreenState extends State<CreditCardPaymentScreen> {
                   textAlign: TextAlign.center,
                   "We will send you an order details to your email after the successfull payment",
                   style: TextStyle(
-                    color: Colors.grey,
+                    color: Theme.of(context).colorScheme.onSecondary,
                     fontSize: 12.sp,
                     fontWeight: FontWeight.w400,
                   ),
@@ -133,6 +137,9 @@ class _CreditCardPaymentScreenState extends State<CreditCardPaymentScreen> {
                     Navigator.push(context, MaterialPageRoute(builder: (context) => FinishOrdingScreen(),));
                   },
                 ),
+              ),
+              SizedBox(
+                height: responsiveHeight(context, 16),
               ),
             ],
           ),

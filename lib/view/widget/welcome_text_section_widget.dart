@@ -21,7 +21,7 @@ class WelcomeTextSectionWidget extends StatelessWidget {
           style: TextStyle(
             fontSize: 32.sp,
             fontWeight: fontWeight ,
-            color: ConstantColors.TextColor,
+            color: Theme.of(context).colorScheme.secondary,
           ),
         ),
         SizedBox(height: responsiveHeight(context, 8),),
@@ -32,7 +32,7 @@ class WelcomeTextSectionWidget extends StatelessWidget {
             subTitle,
             textAlign: TextAlign.center,
             style: TextStyle(
-              color: Colors.grey,
+              color: Theme.of(context).colorScheme.secondary,
               fontSize: 16.sp,
             ),
           ),

@@ -26,6 +26,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.primary,
       body: Container(
         margin: EdgeInsets.symmetric(
             horizontal: responsiveWidth(context, 32),
@@ -46,7 +47,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                     ),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(4),
-                      color: Color(0xFFF5F5F5),
+                      color: Theme.of(context).colorScheme.secondaryFixed,
                     ),
                     child: InkWell(
                       onTap: () {
@@ -67,13 +68,14 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                       child: Icon(
                         Icons.notifications_none,
                         size: 18,
+                        color: Theme.of(context).colorScheme.onSecondary,
                       ),
                     )),
               ),
               Text(
                 "Checkout",
                 style: TextStyle(
-                  color: Color(0xFF391713),
+                  color: Theme.of(context).colorScheme.secondary,
                   fontSize: 20.sp,
                   fontWeight: FontWeight.w600,
                 ),
@@ -84,7 +86,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
               Text(
                 "Pay With:",
                 style: TextStyle(
-                  color: Color(0xFF0A0D13),
+                  color: Theme.of(context).colorScheme.secondary,
                   fontSize: 18.sp,
                   fontWeight: FontWeight.w600,
                 ),
@@ -108,7 +110,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                       Text(
                         "88 Zurab Gorgiladze St",
                         style: TextStyle(
-                          color: Color(0xFF0A0D13),
+                          color: Theme.of(context).colorScheme.secondary,
                           fontSize: 15.sp,
                           fontWeight: FontWeight.w400,
                         ),
@@ -119,7 +121,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                       Text(
                         "Georgia, Batumi",
                         style: TextStyle(
-                          color: Colors.grey,
+                          color: Theme.of(context).colorScheme.onSecondary,
                           fontSize: 13.sp,
                           fontWeight: FontWeight.w400,
                         ),
@@ -148,7 +150,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                       Text(
                         "5 Noe Zhordania St",
                         style: TextStyle(
-                          color: Color(0xFF0A0D13),
+                          color: Theme.of(context).colorScheme.secondary,
                           fontSize: 15.sp,
                           fontWeight: FontWeight.w400,
                         ),
@@ -161,7 +163,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                           Text(
                             "Georgia, Batumi",
                             style: TextStyle(
-                              color: Colors.grey,
+                              color: Theme.of(context).colorScheme.onSecondary,
                               fontSize: 13.sp,
                               fontWeight: FontWeight.w400,
                             ),
@@ -191,7 +193,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
               Text(
                 "Promo Code?",
                 style: TextStyle(
-                  color: Color(0xFF0A0D13),
+                  color: Theme.of(context).colorScheme.secondary,
                   fontSize: 16.sp,
                   fontWeight: FontWeight.w600,
                 ),
@@ -210,7 +212,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
               Text(
                 "Pay With",
                 style: TextStyle(
-                  color: Color(0xFF0A0D13),
+                  color: Theme.of(context).colorScheme.secondary,
                   fontSize: 18.sp,
                   fontWeight: FontWeight.w600,
                 ),
@@ -231,7 +233,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                 Text(
                   "card",
                   style: TextStyle(
-                    color: Color(0xFF0A0D13),
+                    color: Theme.of(context).colorScheme.secondary,
                     fontSize: 12.sp,
                     fontWeight: FontWeight.w600,
                   ),
@@ -251,7 +253,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                 Text(
                   "cash",
                   style: TextStyle(
-                    color: Color(0xFF0A0D13),
+                    color: Theme.of(context).colorScheme.secondary,
                     fontSize: 12.sp,
                     fontWeight: FontWeight.w600,
                   ),
@@ -267,7 +269,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                         Text(
                           "Card Type",
                           style: TextStyle(
-                            color: Color(0xFF0A0D13),
+                            color: Theme.of(context).colorScheme.secondary,
                             fontSize: 18.sp,
                             fontWeight: FontWeight.w600,
                           ),
@@ -278,6 +280,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                         Row(children: [
                           Radio<String>(
                             value: "card",
+                            focusColor: Theme.of(context).colorScheme.onSecondary,
                             activeColor: ConstantColors.green_background,
                             groupValue: selectCard,
                             onChanged: (value) {
@@ -309,8 +312,10 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                 }else if(selectedWay == "cash"){
                   Navigator.push(context, MaterialPageRoute(builder: (context) => FinishOrdingScreen(),));
                 }
-              })
-
+              }),
+              SizedBox(
+                width: responsiveWidth(context, 20),
+              ),
             ],
           ),
         ),

@@ -42,20 +42,26 @@ class SearchTextInputWidget extends StatelessWidget {
         decoration: InputDecoration(
             focusedBorder: OutlineInputBorder(
               borderSide: BorderSide(
-                color: Colors.grey,
+                color: Theme.of(context).colorScheme.onSecondary,
+              ),
+              borderRadius: BorderRadius.circular(40),
+            ),
+            enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(
+                color: Theme.of(context).colorScheme.onSecondary,
               ),
               borderRadius: BorderRadius.circular(40),
             ),
             hintText: hint,
             hintStyle: TextStyle(
                 fontSize: 12.sp,
-                color: Colors.grey,
+                color: Theme.of(context).colorScheme.onSecondary,
                 fontWeight: FontWeight.w700),
             prefixIcon: prefixIcon,
             suffixIcon: suffixIcon,
             errorText: errorText,
             border:
-            OutlineInputBorder(borderRadius: BorderRadius.circular(40))),
+            OutlineInputBorder(borderRadius: BorderRadius.circular(40)) ,),
       ),
     );
   }

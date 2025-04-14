@@ -60,7 +60,7 @@ class SignUpScreen extends StatelessWidget {
                         horizontal: responsiveWidth(context, 44),
                       ),
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: Theme.of(context).colorScheme.primary,
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: IntrinsicWidth(
@@ -76,8 +76,11 @@ class SignUpScreen extends StatelessWidget {
                                       onTap: () {
                                         Navigator.pop(context);
                                       },
-                                      child: const Icon(
+                                      child: Icon(
                                         Icons.arrow_back,
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .onSecondary,
                                         size: 14,
                                       )),
                                 ),
@@ -87,7 +90,8 @@ class SignUpScreen extends StatelessWidget {
                                 Text(
                                   AppLocalizations.of(context)!.sign_up,
                                   style: TextStyle(
-                                    color: Colors.black,
+                                    color:
+                                        Theme.of(context).colorScheme.secondary,
                                     fontWeight: FontWeight.w700,
                                     fontSize: 32.sp,
                                   ),
@@ -101,7 +105,9 @@ class SignUpScreen extends StatelessWidget {
                                       AppLocalizations.of(context)!
                                           .already_have_an_account,
                                       style: TextStyle(
-                                        color: const Color(0xFF6C7278),
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .onSecondary,
                                         fontWeight: FontWeight.w700,
                                         fontSize: 12.sp,
                                       ),
@@ -219,9 +225,11 @@ class SignUpScreen extends StatelessWidget {
                                                     .read<SignUpCubit>()
                                                     .updateBirthDate(context);
                                               },
-                                              icon: const Icon(
+                                              icon: Icon(
                                                 Icons.date_range,
-                                                color: Colors.grey,
+                                                color: Theme.of(context)
+                                                    .colorScheme
+                                                    .onSecondary,
                                               )),
                                         );
                                       } else {
@@ -238,9 +246,11 @@ class SignUpScreen extends StatelessWidget {
                                                     .read<SignUpCubit>()
                                                     .updateBirthDate(context);
                                               },
-                                              icon: const Icon(
+                                              icon: Icon(
                                                 Icons.date_range,
-                                                color: Colors.grey,
+                                                color: Theme.of(context)
+                                                    .colorScheme
+                                                    .onSecondary,
                                               )),
                                         );
                                       }
@@ -256,14 +266,16 @@ class SignUpScreen extends StatelessWidget {
                                       return SizedBox(
                                         width: responsiveWidth(context, 295),
                                         child: IntlPhoneField(
-                                          initialCountryCode: "+962",
+                                          initialCountryCode: "JO",
                                           controller:
                                               phoneNumberTextEditingController,
                                           onChanged: (value) {
                                             contryCode = value.countryCode;
                                           },
                                           style: TextStyle(
-                                            color: Colors.black,
+                                            color: Theme.of(context)
+                                                .colorScheme
+                                                .secondary,
                                             fontSize: 14.sp,
                                             fontWeight: FontWeight.w500,
                                           ),
@@ -276,11 +288,22 @@ class SignUpScreen extends StatelessWidget {
                                                           .error_phone_number
                                                       : null,
                                               focusedBorder: OutlineInputBorder(
-                                                borderSide: const BorderSide(
-                                                  color: Colors.grey,
+                                                borderSide: BorderSide(
+                                                  color: Theme.of(context)
+                                                      .colorScheme
+                                                      .onSecondary,
                                                 ),
                                                 borderRadius:
                                                     BorderRadius.circular(10),
+                                              ),
+                                              enabledBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: Theme.of(context)
+                                                      .colorScheme
+                                                      .onSecondary,
+                                                ),
+                                                borderRadius:
+                                                BorderRadius.circular(10),
                                               ),
                                               hintText:
                                                   AppLocalizations.of(context)!
@@ -290,11 +313,18 @@ class SignUpScreen extends StatelessWidget {
                                                     .phone_number,
                                                 style: TextStyle(
                                                     fontSize: 12.sp,
-                                                    color: Colors.grey,
+                                                    color: Theme.of(context)
+                                                        .colorScheme
+                                                        .onSecondary,
                                                     fontWeight:
                                                         FontWeight.w700),
                                               ),
                                               border: OutlineInputBorder(
+                                                  borderSide: BorderSide(
+                                                    color:Theme.of(context)
+                                                        .colorScheme
+                                                        .onSecondary,
+                                                  ),
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           10))),
@@ -312,35 +342,57 @@ class SignUpScreen extends StatelessWidget {
                                             contryCode = value.countryCode;
                                           },
                                           style: TextStyle(
-                                            color: Colors.black,
+                                            color: Theme.of(context)
+                                                .colorScheme
+                                                .secondary,
                                             fontSize: 14.sp,
                                             fontWeight: FontWeight.w500,
                                           ),
                                           decoration: InputDecoration(
-                                              counterText: "",
-                                              focusedBorder: OutlineInputBorder(
-                                                borderSide: const BorderSide(
-                                                  color: Colors.grey,
-                                                ),
-                                                borderRadius:
-                                                    BorderRadius.circular(10),
+                                            counterText: "",
+                                            focusedBorder: OutlineInputBorder(
+                                              borderSide: BorderSide(
+                                                color: Theme.of(context)
+                                                    .colorScheme
+                                                    .onSecondary,
                                               ),
-                                              hintText:
-                                                  AppLocalizations.of(context)!
-                                                      .phone_number,
-                                              label: Text(
+                                              borderRadius:
+                                                  BorderRadius.circular(10),
+                                            ),
+                                            enabledBorder: OutlineInputBorder(
+                                              borderSide: BorderSide(
+                                                color: Theme.of(context)
+                                                    .colorScheme
+                                                    .onSecondary,
+                                              ),
+                                              borderRadius:
+                                              BorderRadius.circular(10),
+                                            ),
+                                            hintText:
                                                 AppLocalizations.of(context)!
                                                     .phone_number,
-                                                style: TextStyle(
-                                                    fontSize: 12.sp,
-                                                    color: Colors.grey,
-                                                    fontWeight:
-                                                        FontWeight.w700),
+                                            label: Text(
+                                              AppLocalizations.of(context)!
+                                                  .phone_number,
+                                              style: TextStyle(
+                                                  fontSize: 12.sp,
+                                                  color: Theme.of(context)
+                                                      .colorScheme
+                                                      .onSecondary,
+                                                  fontWeight: FontWeight.w700),
+                                            ),
+                                            border: OutlineInputBorder(
+                                              borderSide: BorderSide(
+                                                color:Theme.of(context)
+                                                  .colorScheme
+                                                  .onSecondary,
                                               ),
-                                              border: OutlineInputBorder(
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          10))),
+                                              borderRadius:
+                                                  BorderRadius.circular(
+                                                10,
+                                              ),
+                                            ),
+                                          ),
                                         ),
                                       );
                                     }
@@ -371,9 +423,17 @@ class SignUpScreen extends StatelessWidget {
                                                 .changeVisibility();
                                           },
                                           icon: state.obscureText
-                                              ? const Icon(Icons.visibility)
-                                              : const Icon(
+                                              ? Icon(
+                                                  Icons.visibility,
+                                                  color: Theme.of(context)
+                                                      .colorScheme
+                                                      .onSecondary,
+                                                )
+                                              : Icon(
                                                   Icons.visibility_off,
+                                                  color: Theme.of(context)
+                                                      .colorScheme
+                                                      .onSecondary,
                                                 ),
                                         ),
                                       );
@@ -393,9 +453,17 @@ class SignUpScreen extends StatelessWidget {
                                                 .changeVisibility();
                                           },
                                           icon: state.obscureText
-                                              ? const Icon(Icons.visibility)
-                                              : const Icon(
+                                              ? Icon(
+                                                  Icons.visibility,
+                                                  color: Theme.of(context)
+                                                      .colorScheme
+                                                      .onSecondary,
+                                                )
+                                              : Icon(
                                                   Icons.visibility_off,
+                                                  color: Theme.of(context)
+                                                      .colorScheme
+                                                      .onSecondary,
                                                 ),
                                         ),
                                       );
@@ -415,9 +483,17 @@ class SignUpScreen extends StatelessWidget {
                                                 .changeVisibility();
                                           },
                                           icon: SignUpCubit().obscure
-                                              ? const Icon(Icons.visibility)
-                                              : const Icon(
+                                              ? Icon(
+                                                  Icons.visibility,
+                                                  color: Theme.of(context)
+                                                      .colorScheme
+                                                      .onSecondary,
+                                                )
+                                              : Icon(
                                                   Icons.visibility_off,
+                                                  color: Theme.of(context)
+                                                      .colorScheme
+                                                      .onSecondary,
                                                 ),
                                         ),
                                       );

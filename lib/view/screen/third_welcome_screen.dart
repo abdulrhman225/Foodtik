@@ -13,14 +13,17 @@ class ThirdWelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Theme.of(context).colorScheme.primary,
       body: Stack(
         children: [
           Image.asset(
+            width: double.infinity,
+            height: double.infinity,
+            fit: BoxFit.cover,
             "assets/images/pattern.png",
           ),
           Container(
-            color: Colors.white,
+            color: Theme.of(context).colorScheme.primary,
             margin: EdgeInsets.only(top: responsiveHeight(context, 251)),
             width: responsiveWidth(context, 434),
             height: responsiveHeight(context, 681),
@@ -31,7 +34,7 @@ class ThirdWelcomeScreen extends StatelessWidget {
             height: responsiveHeight(context, 103),
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                  colors: [Colors.white, Colors.white],
+                  colors: [Theme.of(context).colorScheme.primary, Theme.of(context).colorScheme.primary],
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   stops: [0.67, 0.1]),

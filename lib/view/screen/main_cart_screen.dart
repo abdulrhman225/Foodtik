@@ -19,6 +19,7 @@ class MainCartScreen extends StatelessWidget {
       length: 2,
       child: Scaffold(
           appBar: AppBar(
+            backgroundColor: Theme.of(context).colorScheme.primary,
             title: ListTile(
               leading: Container(
                   padding: EdgeInsets.symmetric(
@@ -27,7 +28,7 @@ class MainCartScreen extends StatelessWidget {
                   ),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(4),
-                    color: Color(0xFFF5F5F5),
+                    color: Theme.of(context).colorScheme.secondaryFixed,
                   ),
                   child: InkWell(
                     onTap: () {
@@ -43,13 +44,13 @@ class MainCartScreen extends StatelessWidget {
                 "Current location ▾",
                 style: TextStyle(
                   fontSize: 12.sp,
-                  color: Colors.grey,
+                  color: Theme.of(context).colorScheme.onSecondary,
                 ),
               ),
               subtitle: Text(
                 "Jl. Soekarno Hatta 15A Malang",
                 style: TextStyle(
-                  color: ConstantColors.TextColor,
+                  color: Theme.of(context).colorScheme.secondary,
                   fontSize: 14.sp,
                 ),
               ),
@@ -60,7 +61,7 @@ class MainCartScreen extends StatelessWidget {
                   ),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(4),
-                    color: Color(0xFFF5F5F5),
+                    color: Theme.of(context).colorScheme.secondaryFixed,
                   ),
                   child: InkWell(
                     onTap: () {
@@ -80,15 +81,17 @@ class MainCartScreen extends StatelessWidget {
                     },
                     child: Icon(
                       Icons.notifications_none,
+                      color: Theme.of(context).colorScheme.onSecondary,
                       size: 15,
                     ),
                   )),
             ),
             bottom: TabBar(
-                dividerColor:  Color(0xFFDBF4D1),
+                dividerColor:  Theme.of(context).colorScheme.secondaryFixed,
                 indicatorColor: ConstantColors.green_background,
                 indicatorSize: TabBarIndicatorSize.tab,
                 labelColor: ConstantColors.green_background,
+                unselectedLabelColor: Theme.of(context).colorScheme.onSecondary,
                 tabs: [
                   Tab(
                     text: "Cart",

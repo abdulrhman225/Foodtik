@@ -3,6 +3,7 @@ import 'package:Foodtik/controller/home_screen_cubit/home_screen_cubit.dart';
 import 'package:Foodtik/controller/login_cubit/login_cubit.dart';
 import 'package:Foodtik/controller/reset_password_cubit/reset_password_cubit.dart';
 import 'package:Foodtik/controller/sign_up_cubit/sign_up_cubit.dart';
+import 'package:Foodtik/custom_themes.dart';
 import 'package:Foodtik/view/screen/splash_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -64,11 +65,7 @@ class MyApp extends StatelessWidget {
                 Locale('en'), // English
                 Locale('ar'), // Spanish
               ],
-              theme: ThemeData(
-                primarySwatch: Colors.blue,
-                textTheme:
-                    Typography.englishLike2018.apply(fontSizeFactor: 1.sp),
-              ),
+              theme: CustomThemes().lightTheme,
               home: child,
             );
           },

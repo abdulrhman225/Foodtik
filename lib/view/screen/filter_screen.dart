@@ -26,6 +26,7 @@ class _FilterScreenState extends State<FilterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.primary,
       body: SingleChildScrollView(
         child: Container(
           margin: EdgeInsets.symmetric(
@@ -43,7 +44,7 @@ class _FilterScreenState extends State<FilterScreen> {
                     ),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(4),
-                      color: Color(0xFFF5F5F5),
+                      color: Theme.of(context).colorScheme.secondaryFixed,
                     ),
                     child: InkWell(
                       onTap: () {
@@ -59,13 +60,13 @@ class _FilterScreenState extends State<FilterScreen> {
                   "Current location ▾",
                   style: TextStyle(
                     fontSize: 12.sp,
-                    color: Colors.grey,
+                    color: Theme.of(context).colorScheme.onSecondary,
                   ),
                 ),
                 subtitle: Text(
                   "Jl. Soekarno Hatta 15A Malang",
                   style: TextStyle(
-                    color: ConstantColors.TextColor,
+                    color: Theme.of(context).colorScheme.secondary,
                     fontSize: 14.sp,
                   ),
                 ),
@@ -76,7 +77,7 @@ class _FilterScreenState extends State<FilterScreen> {
                     ),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(4),
-                      color: Color(0xFFF5F5F5),
+                      color: Theme.of(context).colorScheme.secondaryFixed,
                     ),
                     child: InkWell(
                       onTap: () {
@@ -96,6 +97,7 @@ class _FilterScreenState extends State<FilterScreen> {
                       },
                       child: Icon(
                         Icons.notifications_none,
+                        color: Theme.of(context).colorScheme.onSecondary,
                         size: 15,
                       ),
                     )),
@@ -108,7 +110,7 @@ class _FilterScreenState extends State<FilterScreen> {
                 style: TextStyle(
                   fontSize: 20.sp,
                   fontWeight: FontWeight.w600,
-                  color: Color(0xFF391713),
+                  color: Theme.of(context).colorScheme.secondary,
                 ),
               ),
               SizedBox(
@@ -119,7 +121,7 @@ class _FilterScreenState extends State<FilterScreen> {
                 style: TextStyle(
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w600,
-                  color: Colors.grey,
+                  color: Theme.of(context).colorScheme.onSecondary,
                 ),
               ),
               SizedBox(
@@ -135,14 +137,14 @@ class _FilterScreenState extends State<FilterScreen> {
                           vertical: responsiveHeight(context, 9),
                           horizontal: responsiveWidth(context, 9)),
                       decoration: BoxDecoration(
-                          border: Border.all(color: Colors.grey),
+                          border: Border.all(color: Theme.of(context).colorScheme.onSecondary,),
                           borderRadius: BorderRadius.circular(5)),
                       child: Text(
                         "Min",
                         style: TextStyle(
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w600,
-                          color: Colors.grey,
+                          color: Theme.of(context).colorScheme.onSecondary,
                         ),
                       ),
                     ),
@@ -153,14 +155,14 @@ class _FilterScreenState extends State<FilterScreen> {
                           vertical: responsiveHeight(context, 9),
                           horizontal: responsiveWidth(context, 9)),
                       decoration: BoxDecoration(
-                          border: Border.all(color: Colors.grey),
+                          border: Border.all(color: Theme.of(context).colorScheme.onSecondary,),
                           borderRadius: BorderRadius.circular(5)),
                       child: Text(
                         "Max",
                         style: TextStyle(
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w600,
-                          color: Colors.grey,
+                          color: Theme.of(context).colorScheme.onSecondary,
                         ),
                       ),
                     ),
@@ -219,7 +221,7 @@ class _FilterScreenState extends State<FilterScreen> {
                 style: TextStyle(
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w600,
-                  color: Colors.grey,
+                  color: Theme.of(context).colorScheme.onSecondary,
                 ),
               ),
               SizedBox(
@@ -235,14 +237,14 @@ class _FilterScreenState extends State<FilterScreen> {
                           vertical: responsiveHeight(context, 9),
                           horizontal: responsiveWidth(context, 9)),
                       decoration: BoxDecoration(
-                          border: Border.all(color: Colors.grey),
+                          border: Border.all(color:Theme.of(context).colorScheme.onSecondary,),
                           borderRadius: BorderRadius.circular(5)),
                       child: Text(
                         "Min",
                         style: TextStyle(
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w600,
-                          color: Colors.grey,
+                          color: Theme.of(context).colorScheme.onSecondary,
                         ),
                       ),
                     ),
@@ -253,14 +255,14 @@ class _FilterScreenState extends State<FilterScreen> {
                           vertical: responsiveHeight(context, 9),
                           horizontal: responsiveWidth(context, 9)),
                       decoration: BoxDecoration(
-                          border: Border.all(color: Colors.grey),
+                          border: Border.all(color: Theme.of(context).colorScheme.onSecondary,),
                           borderRadius: BorderRadius.circular(5)),
                       child: Text(
                         "Max",
                         style: TextStyle(
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w600,
-                          color: Colors.grey,
+                          color: Theme.of(context).colorScheme.onSecondary,
                         ),
                       ),
                     ),
@@ -319,7 +321,7 @@ class _FilterScreenState extends State<FilterScreen> {
                 style: TextStyle(
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w600,
-                  color: Colors.grey,
+                  color: Theme.of(context).colorScheme.onSecondary,
                 ),
               ),
               SizedBox(
@@ -336,10 +338,10 @@ class _FilterScreenState extends State<FilterScreen> {
                       text: "Fast Food",
                       color: selectedCategory == 0
                           ? ConstantColors.green_background
-                          : Color(0xFFF2F4F7),
+                          : Theme.of(context).colorScheme.secondaryFixed,
                       textColor: selectedCategory == 0
                           ? Colors.white
-                          : Color(0xFF4B4B4B),
+                          : Theme.of(context).colorScheme.secondary,
                     ),
                   ),
                   InkWell(
@@ -351,10 +353,10 @@ class _FilterScreenState extends State<FilterScreen> {
                       text: "Sea Food",
                       color: selectedCategory == 1
                           ? ConstantColors.green_background
-                          : Color(0xFFF2F4F7),
+                          : Theme.of(context).colorScheme.secondaryFixed,
                       textColor: selectedCategory == 1
                           ? Colors.white
-                          : Color(0xFF4B4B4B),
+                          : Theme.of(context).colorScheme.secondary,
                     ),
                   ),
                   InkWell(
@@ -366,10 +368,10 @@ class _FilterScreenState extends State<FilterScreen> {
                       text: "Desert",
                       color: selectedCategory == 2
                           ? ConstantColors.green_background
-                          : Color(0xFFF2F4F7),
+                          : Theme.of(context).colorScheme.secondaryFixed,
                       textColor: selectedCategory == 2
                           ? Colors.white
-                          : Color(0xFF4B4B4B),
+                          : Theme.of(context).colorScheme.secondary,
                     ),
                   )
                 ],
@@ -382,7 +384,7 @@ class _FilterScreenState extends State<FilterScreen> {
                 style: TextStyle(
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w600,
-                  color: Colors.grey,
+                  color: Theme.of(context).colorScheme.onSecondary,
                 ),
               ),
               SizedBox(
@@ -399,10 +401,10 @@ class _FilterScreenState extends State<FilterScreen> {
                       text: "1K",
                       color: selectedLocation == 0
                           ? ConstantColors.green_background
-                          : Color(0xFFF2F4F7),
+                          : Theme.of(context).colorScheme.secondaryFixed,
                       textColor: selectedLocation == 0
                           ? Colors.white
-                          : Color(0xFF4B4B4B),
+                          : Theme.of(context).colorScheme.secondary,
                     ),
                   ),
                   InkWell(
@@ -414,10 +416,10 @@ class _FilterScreenState extends State<FilterScreen> {
                       text: "5K",
                       color: selectedLocation == 1
                           ? ConstantColors.green_background
-                          : Color(0xFFF2F4F7),
+                          : Theme.of(context).colorScheme.secondaryFixed,
                       textColor: selectedLocation == 1
                           ? Colors.white
-                          : Color(0xFF4B4B4B),
+                          : Theme.of(context).colorScheme.secondary,
                     ),
                   ),
                   InkWell(
@@ -429,10 +431,10 @@ class _FilterScreenState extends State<FilterScreen> {
                       text: "10K",
                       color: selectedLocation == 2
                           ? ConstantColors.green_background
-                          : Color(0xFFF2F4F7),
+                          : Theme.of(context).colorScheme.secondaryFixed,
                       textColor: selectedLocation == 2
                           ? Colors.white
-                          : Color(0xFF4B4B4B),
+                          : Theme.of(context).colorScheme.secondary,
                     ),
                   )
                 ],
@@ -445,7 +447,7 @@ class _FilterScreenState extends State<FilterScreen> {
                 style: TextStyle(
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w600,
-                  color: Colors.grey,
+                  color: Theme.of(context).colorScheme.onSecondary,
                 ),
               ),
               SizedBox(
@@ -462,9 +464,9 @@ class _FilterScreenState extends State<FilterScreen> {
                       text: "Tuna Tartare",
                       color: selectedDish == 0
                           ? ConstantColors.green_background
-                          : Color(0xFFF2F4F7),
+                          : Theme.of(context).colorScheme.secondaryFixed,
                       textColor:
-                          selectedDish == 0 ? Colors.white : Color(0xFF4B4B4B),
+                          selectedDish == 0 ? Colors.white : Theme.of(context).colorScheme.secondary,
                     ),
                   ),
                   InkWell(
@@ -476,9 +478,9 @@ class _FilterScreenState extends State<FilterScreen> {
                       text: "Spicy Crab Cakes",
                       color: selectedDish == 1
                           ? ConstantColors.green_background
-                          : Color(0xFFF2F4F7),
+                          :Theme.of(context).colorScheme.secondaryFixed,
                       textColor:
-                          selectedDish == 1 ? Colors.white : Color(0xFF4B4B4B),
+                          selectedDish == 1 ? Colors.white : Theme.of(context).colorScheme.secondary,
                     ),
                   ),
                   InkWell(
@@ -490,9 +492,9 @@ class _FilterScreenState extends State<FilterScreen> {
                       text: "Seafood Paella",
                       color: selectedDish == 2
                           ? ConstantColors.green_background
-                          : Color(0xFFF2F4F7),
+                          : Theme.of(context).colorScheme.secondaryFixed,
                       textColor:
-                          selectedDish == 2 ? Colors.white : Color(0xFF4B4B4B),
+                          selectedDish == 2 ? Colors.white : Theme.of(context).colorScheme.secondary,
                     ),
                   )
                 ],
@@ -511,9 +513,9 @@ class _FilterScreenState extends State<FilterScreen> {
                       text: "Clam Chowder",
                       color: selectedDish == 3
                           ? ConstantColors.green_background
-                          : Color(0xFFF2F4F7),
+                          : Theme.of(context).colorScheme.secondaryFixed,
                       textColor:
-                          selectedDish == 3 ? Colors.white : Color(0xFF4B4B4B),
+                          selectedDish == 3 ? Colors.white : Theme.of(context).colorScheme.secondary,
                     ),
                   ),
                   InkWell(
@@ -525,9 +527,9 @@ class _FilterScreenState extends State<FilterScreen> {
                       text: "Miso-Glazed Cod",
                       color: selectedDish == 4
                           ? ConstantColors.green_background
-                          : Color(0xFFF2F4F7),
+                          : Theme.of(context).colorScheme.secondaryFixed,
                       textColor:
-                          selectedDish == 4 ? Colors.white : Color(0xFF4B4B4B),
+                          selectedDish == 4 ? Colors.white : Theme.of(context).colorScheme.secondary,
                     ),
                   ),
                   InkWell(
@@ -539,9 +541,9 @@ class _FilterScreenState extends State<FilterScreen> {
                       text: "Lobster Thermidor",
                       color: selectedDish == 5
                           ? ConstantColors.green_background
-                          : Color(0xFFF2F4F7),
+                          : Theme.of(context).colorScheme.secondaryFixed,
                       textColor:
-                          selectedDish == 5 ? Colors.white : Color(0xFF4B4B4B),
+                          selectedDish == 5 ? Colors.white : Theme.of(context).colorScheme.secondary,
                     ),
                   )
                 ],

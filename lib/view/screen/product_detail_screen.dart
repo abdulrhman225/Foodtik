@@ -24,6 +24,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.primary,
       body: SingleChildScrollView(
         child: Container(
           margin: EdgeInsets.symmetric(
@@ -39,7 +40,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                     ),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(4),
-                      color: const Color(0xFFF5F5F5),
+                      color: Theme.of(context).colorScheme.secondaryFixed,
                     ),
                     child: InkWell(
                       onTap: () {
@@ -59,13 +60,13 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                   "Current location ▾",
                   style: TextStyle(
                     fontSize: 12.sp,
-                    color: Colors.grey,
+                    color: Theme.of(context).colorScheme.onSecondary,
                   ),
                 ),
                 subtitle: Text(
                   "Jl. Soekarno Hatta 15A Malang",
                   style: TextStyle(
-                    color: ConstantColors.TextColor,
+                    color: Theme.of(context).colorScheme.secondary,
                     fontSize: 14.sp,
                   ),
                 ),
@@ -76,7 +77,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                   ),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(4),
-                    color: const Color(0xFFF5F5F5),
+                    color: Theme.of(context).colorScheme.secondaryFixed,
                   ),
                   child: InkWell(
                     onTap: () {
@@ -96,6 +97,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                     },
                     child: Icon(
                       Icons.notifications_none,
+                      color: Theme.of(context).colorScheme.onSecondary,
                       size: 15,
                     ),
                   ),
@@ -107,9 +109,9 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
               SearchTextInputWidget(
                 hint: "Search menu, restaurant or etc",
                 textEditingController: searchTextEditingController,
-                prefixIcon: const Icon(
+                prefixIcon:  Icon(
                   Icons.search,
-                  color: Colors.grey,
+                  color: Theme.of(context).colorScheme.onSecondary,
                 ),
                 suffixIcon: InkWell(
                   onTap: () {
@@ -154,7 +156,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                 child: Text(
                   "Cheeseburger Wendy's Burger",
                   style: TextStyle(
-                      color: ConstantColors.TextColor,
+                      color: Theme.of(context).colorScheme.secondary,
                       fontSize: 20.sp,
                       fontWeight: FontWeight.w500),
                 ),
@@ -177,7 +179,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                     "4.5",
                     style: TextStyle(
                       fontSize: 12.sp,
-                      color: Colors.grey,
+                      color: Theme.of(context).colorScheme.onSecondary,
                       fontWeight: FontWeight.w400,
                     ),
                   ),
@@ -188,7 +190,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                     "(89 reviews)",
                     style: TextStyle(
                       fontSize: 12.sp,
-                      color: Colors.grey,
+                      color: Theme.of(context).colorScheme.onSecondary,
                       fontWeight: FontWeight.w400,
                     ),
                   )
@@ -214,7 +216,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                     "\$9.5",
                     style: TextStyle(
                         fontSize: 16.sp,
-                        color: Colors.grey,
+                        color: Theme.of(context).colorScheme.onSecondary,
                         fontWeight: FontWeight.w400,
                         decoration: TextDecoration.lineThrough),
                   ),
@@ -226,7 +228,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
               Text(
                 "Nulla occaecat velit laborum exercitation ullamco. Elit labore eu aute elit nostrud culpa velit excepteur deserunt sunt. Velit non est cillum consequat cupidatat ex Lorem laboris labore aliqua ad duis eu laborum.",
                 style: TextStyle(
-                    color: Colors.grey,
+                    color: Theme.of(context).colorScheme.onSecondary,
                     fontSize: 12.sp,
                     fontWeight: FontWeight.w400),
               ),
@@ -237,7 +239,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                 Text(
                   "Spicy",
                   style: TextStyle(
-                      color: Colors.grey,
+                      color: Theme.of(context).colorScheme.onSecondary,
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w500),
                 ),
@@ -247,7 +249,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                 Text(
                   "Quantity",
                   style: TextStyle(
-                      color: Colors.grey,
+                      color: Theme.of(context).colorScheme.onSecondary,
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w500),
                 ),
@@ -307,7 +309,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                     Text(
                       "3",
                       style: TextStyle(
-                          color: Colors.grey,
+                          color: Theme.of(context).colorScheme.onSecondary,
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w500),
                     ),

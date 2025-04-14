@@ -31,7 +31,7 @@ class ProductInCartWidget extends StatelessWidget {
       ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(7),
-        border: Border.all(color: Color(0xFFDBF4D1))
+        border: Border.all(color: Theme.of(context).colorScheme.secondaryFixed)
       ),
       child: Slidable(
         endActionPane: ActionPane(
@@ -64,6 +64,7 @@ class ProductInCartWidget extends StatelessWidget {
             productName,
             style: TextStyle(
               fontSize: 15.sp,
+              color: Theme.of(context).colorScheme.secondary,
               fontWeight: FontWeight.w500,
             ),
           ),
@@ -74,7 +75,7 @@ class ProductInCartWidget extends StatelessWidget {
                 product_section,
                 style: TextStyle(
                   fontSize: 12.sp,
-                  color: Colors.grey,
+                  color: Theme.of(context).colorScheme.onSecondary,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -113,7 +114,7 @@ class ProductInCartWidget extends StatelessWidget {
                   Text(
                     "3",
                     style: TextStyle(
-                        color: Colors.grey,
+                        color: Theme.of(context).colorScheme.onSecondary,
                         fontSize: 12.sp,
                         fontWeight: FontWeight.w500),
                   ),

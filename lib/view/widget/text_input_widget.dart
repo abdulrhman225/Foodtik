@@ -37,33 +37,37 @@ class TextInputWidget extends StatelessWidget {
         controller: textEditingController,
         obscureText: obscureText,
         style: TextStyle(
-          color: ConstantColors.TextColor,
+          color: Theme.of(context).colorScheme.secondary,
           fontSize: 14.sp,
           fontWeight: FontWeight.w500,
         ),
         decoration: InputDecoration(
           focusedBorder: OutlineInputBorder(
             borderSide: BorderSide(
-              color: Color(0xFFEDF1F3),
+              color: Theme.of(context)
+                .colorScheme
+                .onSecondary,
             ),
             borderRadius: BorderRadius.circular(10),
           ),
           enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(
-              color: Color(0xFFEDF1F3),
+              color: Theme.of(context)
+                  .colorScheme
+                  .onSecondary,
             ),
             borderRadius: BorderRadius.circular(10),
           ),
           hintText: hint,
           hintStyle: TextStyle(
-              fontSize: 12.sp, color: Colors.grey, fontWeight: FontWeight.w700),
+              fontSize: 12.sp, color: Theme.of(context).colorScheme.secondary, fontWeight: FontWeight.w700),
           prefixIcon: prefixIcon,
           suffixIcon: suffixIcon,
           label: Text(
             label,
             style: TextStyle(
                 fontSize: 12.sp,
-                color: Colors.grey,
+                color: Theme.of(context).colorScheme.secondary,
                 fontWeight: FontWeight.w700),
           ),
           errorText: errorText,

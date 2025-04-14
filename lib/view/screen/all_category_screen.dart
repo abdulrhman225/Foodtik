@@ -68,7 +68,7 @@ class AllCategoryScreen extends StatelessWidget {
           child: Text(
             "Top Rated",
             style: TextStyle(
-              color: ConstantColors.TextColor,
+              color: Theme.of(context).colorScheme.secondary,
               fontSize: 20.sp,
               fontWeight: FontWeight.w600,
             ),
@@ -99,7 +99,7 @@ class AllCategoryScreen extends StatelessWidget {
             Text(
               "Recommend",
               style: TextStyle(
-                color: Color(0xFF391713),
+                color: Theme.of(context).colorScheme.secondary,
                 fontSize: 16.sp,
                 fontWeight: FontWeight.w600,
               ),
@@ -143,6 +143,9 @@ class AllCategoryScreen extends StatelessWidget {
               },
             ),
           ),
+        ),
+        SizedBox(
+          height: responsiveHeight(context, 20),
         ),
       ],
     );

@@ -49,7 +49,9 @@ class NewPassowrdScreen extends StatelessWidget {
                         vertical: responsiveHeight(context, 24),
                       ),
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: Theme.of(context)
+                            .colorScheme
+                            .primary,
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: Column(
@@ -65,6 +67,9 @@ class NewPassowrdScreen extends StatelessWidget {
                                 child: Icon(
                                   Icons.arrow_back,
                                   size: 14,
+                                  color: Theme.of(context)
+                                      .colorScheme
+                                      .secondary,
                                 )),
                           ),
                           SizedBox(
@@ -73,7 +78,9 @@ class NewPassowrdScreen extends StatelessWidget {
                           Text(
                             AppLocalizations.of(context)!.reset_password_screen_title,
                             style: TextStyle(
-                              color: Colors.black,
+                              color: Theme.of(context)
+                                  .colorScheme
+                                  .secondary,
                               fontWeight: FontWeight.w700,
                               fontSize: 32.sp,
                             ),
@@ -87,7 +94,9 @@ class NewPassowrdScreen extends StatelessWidget {
                                 AppLocalizations.of(context)!.want_to_try_with_my_current_password,
                                 style: TextStyle(
                                   fontSize: 12.sp,
-                                  color: Colors.grey,
+                                  color: Theme.of(context)
+                                      .colorScheme
+                                      .onSecondary,
                                   fontWeight: FontWeight.w500,
                                 ),
                               ),

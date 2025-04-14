@@ -11,6 +11,7 @@ class FinishOrdingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.primary,
       body: Container(
         margin: EdgeInsets.symmetric(
             horizontal: responsiveWidth(context, 32),
@@ -33,7 +34,7 @@ class FinishOrdingScreen extends StatelessWidget {
                     ),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(4),
-                      color: Color(0xFFF5F5F5),
+                      color: Theme.of(context).colorScheme.secondaryFixed,
                     ),
                     child: InkWell(
                       onTap: () {
@@ -54,13 +55,14 @@ class FinishOrdingScreen extends StatelessWidget {
                       child: Icon(
                         Icons.notifications_none,
                         size: 18,
+                        color: Theme.of(context).colorScheme.onSecondary,
                       ),
                     )),
               ),
               Text(
                 "Checkout",
                 style: TextStyle(
-                  color: Color(0xFF391713),
+                  color: Theme.of(context).colorScheme.secondary,
                   fontSize: 20.sp,
                   fontWeight: FontWeight.w600,
                 ),
@@ -75,7 +77,7 @@ class FinishOrdingScreen extends StatelessWidget {
               Text(
                 "Your Order Done Successfully",
                 style: TextStyle(
-                  color: Color(0xFF391713),
+                  color: Theme.of(context).colorScheme.secondary,
                   fontSize: 24.sp,
                   fontWeight: FontWeight.w600,
                 ),
@@ -88,7 +90,7 @@ class FinishOrdingScreen extends StatelessWidget {
                 "you will get your order within 12min.thanks for using our services",
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: Color(0xFF391713),
+                  color: Theme.of(context).colorScheme.secondary,
                   fontSize: 18.sp,
                   fontWeight: FontWeight.w400,
                 ),

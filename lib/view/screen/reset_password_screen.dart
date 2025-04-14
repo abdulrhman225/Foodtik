@@ -49,7 +49,9 @@ class ResetPasswordScreen extends StatelessWidget {
                       horizontal: responsiveWidth(context, 44),
                     ),
                     decoration: BoxDecoration(
-                      color: Colors.white,
+                      color: Theme.of(context)
+                          .colorScheme
+                          .primary,
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: SingleChildScrollView(
@@ -68,6 +70,9 @@ class ResetPasswordScreen extends StatelessWidget {
                                     },
                                     child: Icon(
                                       Icons.arrow_back,
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .secondary,
                                       size: 14,
                                     ),
                                   ),
@@ -79,7 +84,9 @@ class ResetPasswordScreen extends StatelessWidget {
                                     style: TextStyle(
                                       fontSize: 12.sp,
                                       fontWeight: FontWeight.w500,
-                                      color: Colors.grey,
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .onSecondary,
                                     ),
                                   ),
                                   Text(
@@ -95,7 +102,9 @@ class ResetPasswordScreen extends StatelessWidget {
                                     style: TextStyle(
                                       fontSize: 12.sp,
                                       fontWeight: FontWeight.w500,
-                                      color: Colors.grey,
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .onSecondary,
                                     ),
                                   ),
                                 ],
@@ -109,7 +118,9 @@ class ResetPasswordScreen extends StatelessWidget {
                                   Text(
                                     AppLocalizations.of(context)!.reset_password_screen_title,
                                     style: TextStyle(
-                                      color: Color(0xFF111827),
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .secondary,
                                       fontSize: 32.sp,
                                       fontWeight: FontWeight.w700,
                                     ),
@@ -122,7 +133,9 @@ class ResetPasswordScreen extends StatelessWidget {
                                     style: TextStyle(
                                       fontSize: 12.sp,
                                       fontWeight: FontWeight.w500,
-                                      color: Colors.grey,
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .onSecondary,
                                     ),
                                     textAlign: TextAlign.center,
                                   ),

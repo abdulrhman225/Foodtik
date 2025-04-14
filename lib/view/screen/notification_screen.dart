@@ -15,28 +15,30 @@ class NotificationScreen extends StatelessWidget {
       length: 3,
       child: Scaffold(
         appBar: AppBar(
+          backgroundColor: Theme.of(context).colorScheme.primary,
           leading: InkWell(
               onTap: () {
                 Navigator.pop(context);
               },
-              child: Icon(Icons.arrow_back)),
+              child: Icon(Icons.arrow_back , color: Theme.of(context).colorScheme.onSecondary,)),
           title: Text(
             "Notification",
             style: TextStyle(
-                color: Colors.black,
+                color: Theme.of(context).colorScheme.secondary,
                 fontSize: 24.sp,
                 fontWeight: FontWeight.w600),
           ),
           actions: [
             InkWell(
               onTap: () {},
-              child: Icon(Icons.more_vert),
+              child: Icon(Icons.more_vert , color: Theme.of(context).colorScheme.onSecondary,),
             )
           ],
           bottom: TabBar(
-              dividerColor:  Color(0xFFDBF4D1),
+              dividerColor:  Theme.of(context).colorScheme.secondaryFixed,
               indicatorColor: ConstantColors.green_background,
               labelColor: ConstantColors.green_background,
+              unselectedLabelColor: Theme.of(context).colorScheme.onSecondary,
               tabs: [
                 Tab(
                   text: "All",

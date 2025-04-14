@@ -17,7 +17,7 @@ class SkipWidget extends StatelessWidget {
           AppLocalizations.of(context)!.skip,
           style: TextStyle(
             fontSize: 16.sp,
-            color: Color(0xFF455A64),
+            color: Theme.of(context).colorScheme.secondary,
           ),
         ),
         SizedBox(

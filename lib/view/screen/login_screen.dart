@@ -46,7 +46,7 @@ class LoginScreen extends StatelessWidget {
                         horizontal: responsiveWidth(context, 24),
                         vertical: responsiveHeight(context, 24)),
                     decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: Theme.of(context).colorScheme.primary,
                         borderRadius: BorderRadius.circular(12)),
                     child: IntrinsicWidth(
                       child: IntrinsicHeight(
@@ -60,7 +60,8 @@ class LoginScreen extends StatelessWidget {
                               Text(
                                 AppLocalizations.of(context)!.login,
                                 style: TextStyle(
-                                  color: Colors.black,
+                                  color:
+                                      Theme.of(context).colorScheme.secondary,
                                   fontWeight: FontWeight.w700,
                                   fontSize: 32.sp,
                                 ),
@@ -72,9 +73,12 @@ class LoginScreen extends StatelessWidget {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Text(
-                                    AppLocalizations.of(context)!.do_not_have_an_account,
+                                    AppLocalizations.of(context)!
+                                        .do_not_have_an_account,
                                     style: TextStyle(
-                                      color: Color(0xFF6C7278),
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .onSecondary,
                                       fontWeight: FontWeight.w700,
                                       fontSize: 12.sp,
                                     ),
@@ -87,14 +91,16 @@ class LoginScreen extends StatelessWidget {
                                       Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                            builder: (context) => SignUpScreen(),
+                                            builder: (context) =>
+                                                SignUpScreen(),
                                           ));
                                     },
                                     child: Text(
                                       AppLocalizations.of(context)!.sign_up,
                                       style: TextStyle(
                                           fontWeight: FontWeight.w600,
-                                          color: ConstantColors.green_background,
+                                          color:
+                                              ConstantColors.green_background,
                                           fontSize: 12.sp),
                                     ),
                                   )
@@ -108,9 +114,11 @@ class LoginScreen extends StatelessWidget {
                                   if (state is LoginValidationState) {
                                     return TextInputWidget(
                                       hint: AppLocalizations.of(context)!.email,
-                                      label: AppLocalizations.of(context)!.email,
+                                      label:
+                                          AppLocalizations.of(context)!.email,
                                       errorText: state.emailError
-                                          ? AppLocalizations.of(context)!.error_email_login
+                                          ? AppLocalizations.of(context)!
+                                              .error_email_login
                                           : null,
                                       textEditingController:
                                           emailTextEditingController,
@@ -118,7 +126,8 @@ class LoginScreen extends StatelessWidget {
                                   } else {
                                     return TextInputWidget(
                                       hint: AppLocalizations.of(context)!.email,
-                                      label: AppLocalizations.of(context)!.email,
+                                      label:
+                                          AppLocalizations.of(context)!.email,
                                       textEditingController:
                                           emailTextEditingController,
                                     );
@@ -132,34 +141,53 @@ class LoginScreen extends StatelessWidget {
                                 builder: (context, state) {
                                   if (state is LoginValidationState) {
                                     return TextInputWidget(
-                                      hint: AppLocalizations.of(context)!.password,
-                                      label: AppLocalizations.of(context)!.password,
+                                      hint: AppLocalizations.of(context)!
+                                          .password,
+                                      label: AppLocalizations.of(context)!
+                                          .password,
                                       obscureText: state.obscureText,
                                       suffixIcon: IconButton(
-                                        icon: Icon(state.obscureText
-                                            ? Icons.visibility
-                                            : Icons.visibility_off),
+                                        icon: Icon(
+                                          state.obscureText
+                                              ? Icons.visibility
+                                              : Icons.visibility_off,
+                                          color: Theme.of(context)
+                                              .colorScheme
+                                              .onSecondary,
+                                        ),
                                         onPressed: () {
-                                          context.read<LoginCubit>().changeVisibility();
+                                          context
+                                              .read<LoginCubit>()
+                                              .changeVisibility();
                                         },
                                       ),
                                       errorText: state.passwordError
-                                          ? AppLocalizations.of(context)!.error_password_login
+                                          ? AppLocalizations.of(context)!
+                                              .error_password_login
                                           : null,
                                       textEditingController:
                                           passwordTextEditingController,
                                     );
                                   } else {
                                     return TextInputWidget(
-                                      hint: AppLocalizations.of(context)!.password,
-                                      label: AppLocalizations.of(context)!.password,
+                                      hint: AppLocalizations.of(context)!
+                                          .password,
+                                      label: AppLocalizations.of(context)!
+                                          .password,
                                       obscureText: LoginCubit().obscureText,
                                       suffixIcon: IconButton(
-                                        icon: Icon(LoginCubit().obscureText
-                                            ? Icons.visibility
-                                            : Icons.visibility_off),
+                                        icon: Icon(
+                                          LoginCubit().obscureText
+                                              ? Icons.visibility
+                                              : Icons.visibility_off,
+                                          color: Theme.of(context)
+                                              .colorScheme
+                                              .onSecondary,
+                                        ),
                                         onPressed: () {
-                                          context.read<LoginCubit>().changeVisibility();
+                                          context
+                                              .read<LoginCubit>()
+                                              .changeVisibility();
                                         },
                                       ),
                                       textEditingController:
@@ -181,6 +209,13 @@ class LoginScreen extends StatelessWidget {
                                       builder: (context, state) {
                                         if (state is LoginValidationState) {
                                           return Checkbox(
+                                            checkColor: Theme.of(context)
+                                                .colorScheme
+                                                .secondary,
+                                            side: BorderSide(
+                                                color: Theme.of(context)
+                                                    .colorScheme
+                                                    .secondary),
                                             value: state.checkRememberMe,
                                             onChanged: (value) {
                                               context
@@ -190,6 +225,13 @@ class LoginScreen extends StatelessWidget {
                                           );
                                         } else {
                                           return Checkbox(
+                                            focusColor: Theme.of(context)
+                                                .colorScheme
+                                                .secondary,
+                                            side: BorderSide(
+                                                color: Theme.of(context)
+                                                    .colorScheme
+                                                    .secondary),
                                             value: LoginCubit().checkRememberMe,
                                             onChanged: (value) {
                                               context
@@ -209,7 +251,9 @@ class LoginScreen extends StatelessWidget {
                                     style: TextStyle(
                                       fontWeight: FontWeight.w700,
                                       fontSize: 12.sp,
-                                      color: Color(0xFF6C7278),
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .onSecondary,
                                     ),
                                   ),
                                   SizedBox(
@@ -228,7 +272,8 @@ class LoginScreen extends StatelessWidget {
                                       "${AppLocalizations.of(context)!.forgot_password}?",
                                       style: TextStyle(
                                           fontWeight: FontWeight.w600,
-                                          color: ConstantColors.green_background,
+                                          color:
+                                              ConstantColors.green_background,
                                           fontSize: 12.sp),
                                     ),
                                   ),
@@ -246,7 +291,11 @@ class LoginScreen extends StatelessWidget {
                                   //           passwordTextEditingController.text,
                                   //     );
 
-                                  Navigator.push(context, MaterialPageRoute(builder: (context) => MainScreen(),));
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => MainScreen(),
+                                      ));
                                 },
                               ),
                               SizedBox(
@@ -257,7 +306,11 @@ class LoginScreen extends StatelessWidget {
                                 children: [
                                   SizedBox(
                                     width: responsiveWidth(context, 124),
-                                    child: Divider(),
+                                    child: Divider(
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .onSecondary,
+                                    ),
                                   ),
                                   SizedBox(
                                     width: responsiveWidth(context, 16),
@@ -265,7 +318,9 @@ class LoginScreen extends StatelessWidget {
                                   Text(
                                     "Or",
                                     style: TextStyle(
-                                      color: Colors.grey,
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .onSecondary,
                                       fontSize: 12.sp,
                                       fontWeight: FontWeight.w500,
                                     ),
@@ -275,7 +330,11 @@ class LoginScreen extends StatelessWidget {
                                   ),
                                   SizedBox(
                                     width: responsiveWidth(context, 124),
-                                    child: Divider(),
+                                    child: Divider(
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .onSecondary,
+                                    ),
                                   ),
                                 ],
                               ),
@@ -288,7 +347,10 @@ class LoginScreen extends StatelessWidget {
                                 alignment: Alignment.center,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10),
-                                  border: Border.all(color: Colors.grey),
+                                  border: Border.all(
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .onSecondary),
                                 ),
                                 child: ListTile(
                                   minTileHeight: responsiveHeight(context, 48),
@@ -299,9 +361,14 @@ class LoginScreen extends StatelessWidget {
                                       width: responsiveWidth(context, 18),
                                       height: responsiveHeight(context, 18),
                                       "assets/images/google.png"),
-                                  title: Text(AppLocalizations.of(context)!.continue_with_gmail,
+                                  title: Text(
+                                      AppLocalizations.of(context)!
+                                          .continue_with_gmail,
                                       style: TextStyle(
                                           fontSize: 14,
+                                          color: Theme.of(context)
+                                              .colorScheme
+                                              .secondary,
                                           fontWeight: FontWeight.w600)),
                                 ),
                               ),
@@ -314,21 +381,30 @@ class LoginScreen extends StatelessWidget {
                                 alignment: Alignment.center,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10),
-                                  border: Border.all(color: Colors.grey),
+                                  border: Border.all(
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .onSecondary),
                                 ),
                                 child: ListTile(
                                   minTileHeight: responsiveHeight(context, 48),
                                   onTap: () {
-                                    context.read<LoginCubit>().loginViaFacebook();
+                                    context
+                                        .read<LoginCubit>()
+                                        .loginViaFacebook();
                                   },
                                   leading: Image.asset(
                                       width: responsiveWidth(context, 18),
                                       height: responsiveHeight(context, 18),
                                       "assets/images/facebook.png"),
                                   title: Text(
-                                    AppLocalizations.of(context)!.continue_with_facebook,
+                                    AppLocalizations.of(context)!
+                                        .continue_with_facebook,
                                     style: TextStyle(
                                         fontSize: 14,
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .secondary,
                                         fontWeight: FontWeight.w600),
                                   ),
                                 ),
@@ -342,7 +418,10 @@ class LoginScreen extends StatelessWidget {
                                 alignment: Alignment.center,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10),
-                                  border: Border.all(color: Colors.grey),
+                                  border: Border.all(
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .onSecondary),
                                 ),
                                 child: ListTile(
                                   minTileHeight: responsiveHeight(context, 48),
@@ -352,9 +431,13 @@ class LoginScreen extends StatelessWidget {
                                       height: responsiveHeight(context, 18),
                                       "assets/images/apple_logo.png"),
                                   title: Text(
-                                    AppLocalizations.of(context)!.continue_with_apple,
+                                    AppLocalizations.of(context)!
+                                        .continue_with_apple,
                                     style: TextStyle(
                                         fontSize: 14,
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .secondary,
                                         fontWeight: FontWeight.w600),
                                   ),
                                 ),

@@ -29,7 +29,7 @@ class ProductInHistoryWidget extends StatelessWidget {
           vertical: responsiveHeight(context, 11)),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(7),
-          border: Border.all(color: Color(0xFFDBF4D1))),
+          border: Border.all(color: Theme.of(context).colorScheme.secondaryFixed,)),
       child: Slidable(
         endActionPane: ActionPane(
           motion: ScrollMotion(),
@@ -59,6 +59,7 @@ class ProductInHistoryWidget extends StatelessWidget {
           title: Text(
             productName,
             style: TextStyle(
+              color: Theme.of(context).colorScheme.secondary,
               fontSize: 15.sp,
               fontWeight: FontWeight.w500,
             ),
@@ -70,7 +71,7 @@ class ProductInHistoryWidget extends StatelessWidget {
                 product_section,
                 style: TextStyle(
                   fontSize: 12.sp,
-                  color: Colors.grey,
+                  color: Theme.of(context).colorScheme.onSecondary,
                   fontWeight: FontWeight.w400,
                 ),
               ),
@@ -94,7 +95,7 @@ class ProductInHistoryWidget extends StatelessWidget {
                       Text(
                         date,
                         style: TextStyle(
-                          color: Colors.grey,
+                          color: Theme.of(context).colorScheme.onSecondary,
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w700,
                         ),

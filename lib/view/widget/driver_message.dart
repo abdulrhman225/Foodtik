@@ -16,7 +16,7 @@ class DriverMessage extends StatelessWidget {
       ),
       padding: EdgeInsets.all(15),
       decoration: BoxDecoration(
-        color: Color(0xFFEEEEEE),
+        color: Theme.of(context).colorScheme.secondaryFixed,
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(24),
           topRight: Radius.circular(24),
@@ -28,7 +28,7 @@ class DriverMessage extends StatelessWidget {
         style: TextStyle(
           fontSize: 13.sp,
           fontWeight: FontWeight.w700,
-          color: ConstantColors.TextColor,
+          color: Theme.of(context).colorScheme.secondary,
         ),
       ),
     );

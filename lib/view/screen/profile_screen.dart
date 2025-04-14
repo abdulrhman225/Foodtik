@@ -18,13 +18,15 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.primary,
       appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.primary,
         title: Text(
           "Profile",
           style: TextStyle(
             fontSize: 20.sp,
             fontWeight: FontWeight.w600,
-            color: ConstantColors.TextColor,
+            color: Theme.of(context).colorScheme.secondary,
           ),
         ),
       ),
@@ -51,7 +53,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 style: TextStyle(
                   fontSize: 16.sp,
                   fontWeight: FontWeight.w500,
-                  color: ConstantColors.TextColor,
+                  color: Theme.of(context).colorScheme.secondary,
                 ),
               ),
               Text(
@@ -59,14 +61,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 style: TextStyle(
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w400,
-                  color: Colors.grey,
+                  color: Theme.of(context).colorScheme.onSecondary,
                 ),
               ),
               SizedBox(
                 height: responsiveHeight(context, 24),
               ),
               Card(
-                color: Colors.white,
+                color: Theme.of(context).colorScheme.primary,
                 child: Padding(
                   padding: EdgeInsets.all(12.0),
                   child: Column(
@@ -77,7 +79,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         style: TextStyle(
                           fontSize: 16.sp,
                           fontWeight: FontWeight.w500,
-                          color: ConstantColors.TextColor,
+                          color: Theme.of(context).colorScheme.secondary,
                         ),
                       ),
                       SizedBox(
@@ -98,7 +100,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               style: TextStyle(
                                 fontSize: 14.sp,
                                 fontWeight: FontWeight.w500,
-                                color: ConstantColors.TextColor,
+                                color: Theme.of(context).colorScheme.secondary,
                               ),
                             ),
                           ],
@@ -119,7 +121,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               style: TextStyle(
                                 fontSize: 14.sp,
                                 fontWeight: FontWeight.w500,
-                                color: ConstantColors.TextColor,
+                                color: Theme.of(context).colorScheme.secondary,
                               ),
                             ),
                           ),
@@ -128,7 +130,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             style: TextStyle(
                               fontSize: 14.sp,
                               fontWeight: FontWeight.w400,
-                              color: Colors.grey,
+                              color: Theme.of(context).colorScheme.onSecondary,
                             ),
                           ),
                         ],
@@ -147,7 +149,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             style: TextStyle(
                               fontSize: 14.sp,
                               fontWeight: FontWeight.w500,
-                              color: ConstantColors.TextColor,
+                              color: Theme.of(context).colorScheme.secondary,
                             ),
                           ),
                         ],
@@ -166,7 +168,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             style: TextStyle(
                               fontSize: 14.sp,
                               fontWeight: FontWeight.w500,
-                              color: ConstantColors.TextColor,
+                              color: Theme.of(context).colorScheme.secondary,
                             ),
                           ),
                         ],
@@ -179,7 +181,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 height: responsiveHeight(context, 16),
               ),
               Card(
-                color: Colors.white,
+                color: Theme.of(context).colorScheme.primary,
                 child: Padding(
                   padding: EdgeInsets.all(12.0),
                   child: Column(
@@ -190,7 +192,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         style: TextStyle(
                           fontSize: 16.sp,
                           fontWeight: FontWeight.w500,
-                          color: ConstantColors.TextColor,
+                          color: Theme.of(context).colorScheme.secondary,
                         ),
                       ),
                       SizedBox(
@@ -208,7 +210,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               style: TextStyle(
                                 fontSize: 14.sp,
                                 fontWeight: FontWeight.w500,
-                                color: ConstantColors.TextColor,
+                                color: Theme.of(context).colorScheme.secondary,
                               ),
                             ),
                           ),
@@ -240,7 +242,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               style: TextStyle(
                                 fontSize: 14.sp,
                                 fontWeight: FontWeight.w500,
-                                color: ConstantColors.TextColor,
+                                color: Theme.of(context).colorScheme.secondary,
                               ),
                             ),
                           ),
@@ -265,7 +267,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 height: responsiveHeight(context, 16),
               ),
               Card(
-                color: Colors.white,
+                color: Theme.of(context).colorScheme.primary,
                 child: Padding(
                   padding: EdgeInsets.all(12.0),
                   child: Column(
@@ -276,7 +278,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         style: TextStyle(
                           fontSize: 16.sp,
                           fontWeight: FontWeight.w500,
-                          color: ConstantColors.TextColor,
+                          color: Theme.of(context).colorScheme.secondary,
                         ),
                       ),
                       SizedBox(
@@ -293,7 +295,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             style: TextStyle(
                               fontSize: 14.sp,
                               fontWeight: FontWeight.w500,
-                              color: ConstantColors.TextColor,
+                              color: Theme.of(context).colorScheme.secondary,
                             ),
                           ),
                         ],

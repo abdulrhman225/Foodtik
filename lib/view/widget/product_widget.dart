@@ -27,7 +27,7 @@ class ProductWidget extends StatelessWidget {
       padding: EdgeInsets.symmetric(
           horizontal: responsiveWidth(context, 12),
           vertical: responsiveHeight(context, 8)),
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
+      decoration: BoxDecoration(borderRadius: BorderRadius.circular(10) , border: Border.all(color: Theme.of(context).colorScheme.onSecondary,)),
       child: IntrinsicHeight(
         child: IntrinsicWidth(
           child: Column(
@@ -45,7 +45,7 @@ class ProductWidget extends StatelessWidget {
                   ),
                   Text(
                     rating,
-                    style: TextStyle(fontSize: 12.sp),
+                    style: TextStyle(fontSize: 12.sp , color: Theme.of(context).colorScheme.secondary,),
                   ),
                 ],
               ),
@@ -64,7 +64,7 @@ class ProductWidget extends StatelessWidget {
                 productName,
                 style: TextStyle(
                   fontSize: 18.sp,
-                  color: ConstantColors.TextColor,
+                  color: Theme.of(context).colorScheme.secondary,
                 ),
               ),
               SizedBox(
@@ -77,7 +77,7 @@ class ProductWidget extends StatelessWidget {
                   productContent,
                   style: TextStyle(
                     fontSize: 12.sp,
-                    color: Colors.grey,
+                    color: Theme.of(context).colorScheme.onSecondary,
                   ),
                 ),
               ),

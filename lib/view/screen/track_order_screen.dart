@@ -60,6 +60,9 @@ class TrackOrderScreen extends StatelessWidget {
               horizontal: responsiveWidth(context, 20),
               vertical: responsiveHeight(context, 20)),
           height: responsiveHeight(context, 250),
+          decoration: BoxDecoration(
+            color: Theme.of(context).colorScheme.primary
+          ),
           child: SingleChildScrollView(
             child: Column(
               children: [
@@ -71,7 +74,7 @@ class TrackOrderScreen extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 20.sp,
                         fontWeight: FontWeight.w600,
-                        color: ConstantColors.TextColor,
+                        color: Theme.of(context).colorScheme.secondary,
                       ),
                     ),
                     InkWell(
@@ -93,6 +96,7 @@ class TrackOrderScreen extends StatelessWidget {
                   height: responsiveHeight(context, 20),
                 ),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Image.asset("assets/images/driver_phone.png"),
                     SizedBox(
@@ -106,7 +110,7 @@ class TrackOrderScreen extends StatelessWidget {
                           style: TextStyle(
                             fontSize: 12.sp,
                             fontWeight: FontWeight.w500,
-                            color: Colors.grey,
+                            color: Theme.of(context).colorScheme.onSecondary,
                           ),
                         ),
                         SizedBox(
@@ -119,7 +123,7 @@ class TrackOrderScreen extends StatelessWidget {
                               style: TextStyle(
                                 fontSize: 15.sp,
                                 fontWeight: FontWeight.w400,
-                                color: Colors.grey,
+                                color: Theme.of(context).colorScheme.onSecondary,
                               ),
                             ),
                             SizedBox(
@@ -137,7 +141,7 @@ class TrackOrderScreen extends StatelessWidget {
                               style: TextStyle(
                                 fontSize: 13.sp,
                                 fontWeight: FontWeight.w400,
-                                color: Colors.grey.shade400,
+                                color: Theme.of(context).colorScheme.onSecondary,
                               ),
                             ),
                           ],
@@ -173,7 +177,7 @@ class TrackOrderScreen extends StatelessWidget {
                         "your location",
                         style: TextStyle(
                           fontSize: 12.sp,
-                          color: Colors.grey,
+                          color: Theme.of(context).colorScheme.onSecondary,
                           fontWeight: FontWeight.w500,
                         ),
                       ),
@@ -194,7 +198,7 @@ class TrackOrderScreen extends StatelessWidget {
                           "123 Al-Madina Street, Abdali, Amman, Jordan",
                           style: TextStyle(
                             fontSize: 12.sp,
-                            color: Colors.grey,
+                            color: Theme.of(context).colorScheme.onSecondary,
                             fontWeight: FontWeight.w600,
                           ),
                         ),

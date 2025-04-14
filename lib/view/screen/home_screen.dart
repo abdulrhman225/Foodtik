@@ -29,6 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.primary,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -44,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(4),
-                      color: Color(0xFFF5F5F5),
+                      color: Theme.of(context).colorScheme.secondaryFixed,
                     ),
                     child: InkWell(
                       onTap: () {
@@ -64,13 +65,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   "Current location ▾",
                   style: TextStyle(
                     fontSize: 12.sp,
-                    color: Colors.grey,
+                    color: Theme.of(context).colorScheme.onSecondary,
                   ),
                 ),
                 subtitle: Text(
                   "Jl. Soekarno Hatta 15A Malang",
                   style: TextStyle(
-                    color: ConstantColors.TextColor,
+                    color: Theme.of(context).colorScheme.secondary,
                     fontSize: 14.sp,
                   ),
                 ),
@@ -81,7 +82,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(4),
-                      color: Color(0xFFF5F5F5),
+                      color: Theme.of(context).colorScheme.secondaryFixed,
                     ),
                     child: InkWell(
                       onTap: () {
@@ -102,6 +103,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Icon(
                         Icons.notifications_none,
                         size: 15,
+                        color: Theme.of(context).colorScheme.onSecondary,
                       ),
                     )),
               ),
@@ -114,7 +116,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 textEditingController: searchTextEditingController,
                 prefixIcon: Icon(
                   Icons.search,
-                  color: Colors.grey,
+                  color: Theme.of(context).colorScheme.onSecondary,
                 ),
                 suffixIcon: InkWell(
                     onTap: () {
@@ -164,8 +166,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             return CategoryWidget(
                               imagePath: state.categories[index]["image_path"],
                               category: state.categories[index]["name"],
-                              backgroundColor: Colors.white,
-                              textColor: ConstantColors.TextColor,
+                              backgroundColor: Theme.of(context).colorScheme.primary,
+                              textColor: Theme.of(context).colorScheme.secondary,
                               index: index,
                             );
                           }
@@ -195,8 +197,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             return CategoryWidget(
                               imagePath: state.categories[index]["image_path"],
                               category: state.categories[index]["name"],
-                              backgroundColor: Colors.white,
-                              textColor: ConstantColors.TextColor,
+                              backgroundColor: Theme.of(context).colorScheme.primary,
+                              textColor: Theme.of(context).colorScheme.secondary,
                               index: index,
                             );
                           }

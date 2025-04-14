@@ -21,7 +21,9 @@ class OtpDialog extends StatelessWidget {
             horizontal: responsiveWidth(context, 44),
           ),
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: Theme.of(context)
+                .colorScheme
+                .primary,
             borderRadius: BorderRadius.circular(12),
           ),
           child: SingleChildScrollView(
@@ -43,7 +45,9 @@ class OtpDialog extends StatelessWidget {
                       textAlign: TextAlign.center,
                       AppLocalizations.of(context)!.otp_text,
                       style: TextStyle(
-                        color: Colors.grey,
+                        color: Theme.of(context)
+                            .colorScheme
+                            .onSecondary,
                         fontSize: 12.sp,
                         decoration: TextDecoration.none,
                         fontFamily: "Inter-VariableFont_opsz,wght",
@@ -56,7 +60,9 @@ class OtpDialog extends StatelessWidget {
                     PinCodeTextField(
                       appContext: context,
                       textStyle: TextStyle(
-                        color: Color(0xFF1A1C1E),
+                        color: Theme.of(context)
+                            .colorScheme
+                            .onSecondary,
                         fontSize: 14.sp,
                         fontWeight: FontWeight.w700,
                       ),
@@ -66,9 +72,15 @@ class OtpDialog extends StatelessWidget {
                         print(value);
                       },
                       pinTheme: PinTheme(
-                        inactiveColor: Colors.grey,
-                        activeColor: Colors.grey,
-                        selectedColor: Colors.grey,
+                        inactiveColor: Theme.of(context)
+                            .colorScheme
+                            .onSecondary,
+                        activeColor: Theme.of(context)
+                            .colorScheme
+                            .onSecondary,
+                        selectedColor: Theme.of(context)
+                            .colorScheme
+                            .onSecondary,
                         shape: PinCodeFieldShape.box,
                         // Box shape for OTP fields
                         borderRadius: BorderRadius.circular(10),

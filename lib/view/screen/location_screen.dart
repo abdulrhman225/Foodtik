@@ -55,6 +55,7 @@ class _LocationScreenState extends State<LocationScreen> {
                   },
                   child: Icon(
                     Icons.arrow_back,
+                    color: Theme.of(context).colorScheme.onSecondary,
                     size: 25,
                   ),
                 ),
@@ -85,7 +86,7 @@ class _LocationScreenState extends State<LocationScreen> {
                   horizontal: responsiveWidth(context, 24),
                   vertical: responsiveHeight(context, 24)),
               decoration: BoxDecoration(
-                  color: Colors.white, borderRadius: BorderRadius.circular(12)),
+                  color: Theme.of(context).colorScheme.primary, borderRadius: BorderRadius.circular(12)),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -97,7 +98,7 @@ class _LocationScreenState extends State<LocationScreen> {
                       "your location",
                       style: TextStyle(
                         fontSize: 12.sp,
-                        color: Colors.grey,
+                        color: Theme.of(context).colorScheme.onSecondary,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
@@ -118,7 +119,7 @@ class _LocationScreenState extends State<LocationScreen> {
                         "123 Al-Madina Street, Abdali, Amman, Jordan",
                         style: TextStyle(
                           fontSize: 12.sp,
-                          color: Colors.grey,
+                          color: Theme.of(context).colorScheme.onSecondary,
                           fontWeight: FontWeight.w600,
                         ),
                       ),

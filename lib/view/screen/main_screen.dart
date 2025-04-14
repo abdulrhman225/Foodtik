@@ -12,6 +12,7 @@ import 'main_cart_screen.dart';
 class MainScreen extends StatelessWidget {
 
   final PersistentTabController _controller = PersistentTabController(initialIndex: 0);
+
   List<Widget> _buildScreens() {
     return [
       HomeScreen(),
@@ -22,19 +23,19 @@ class MainScreen extends StatelessWidget {
     ];
   }
 
-  List<PersistentBottomNavBarItem> _navBarsItems() {
+  List<PersistentBottomNavBarItem> _navBarsItems(BuildContext context) {
     return [
       PersistentBottomNavBarItem(
         icon: Icon(Icons.home),
         title: "Home",
         activeColorPrimary: ConstantColors.green_background,
-        inactiveColorPrimary: Colors.grey,
+        inactiveColorPrimary: Theme.of(context).colorScheme.onSecondary,
       ),
       PersistentBottomNavBarItem(
         icon: Icon(Icons.favorite_border),
         title: "Favorite",
         activeColorPrimary: ConstantColors.green_background,
-        inactiveColorPrimary: Colors.grey,
+        inactiveColorPrimary: Theme.of(context).colorScheme.onSecondary,
       ),
       PersistentBottomNavBarItem(
         icon: Icon(Icons.shopping_cart_outlined , color: Colors.white,),
@@ -45,13 +46,13 @@ class MainScreen extends StatelessWidget {
         icon: Icon(Icons.location_pin),
         title: "Track",
         activeColorPrimary: ConstantColors.green_background,
-        inactiveColorPrimary: Colors.grey,
+        inactiveColorPrimary: Theme.of(context).colorScheme.onSecondary,
       ),
       PersistentBottomNavBarItem(
         icon: Icon(Icons.person),
         title: "Profile",
         activeColorPrimary: ConstantColors.green_background,
-        inactiveColorPrimary: Colors.grey,
+        inactiveColorPrimary: Theme.of(context).colorScheme.onSecondary,
       ),
     ];
   }
@@ -62,8 +63,8 @@ class MainScreen extends StatelessWidget {
       controller: _controller,
       hideNavigationBarWhenKeyboardAppears: true,
       screens: _buildScreens(),
-      items: _navBarsItems(),
-      backgroundColor: Color(0xFFDBF4D1), // Background color of the nav bar
+      items: _navBarsItems(context),
+      backgroundColor: Theme.of(context).colorScheme.secondaryFixed, // Background color of the nav bar
       handleAndroidBackButtonPress: true, // Handle Android back button
       resizeToAvoidBottomInset: true, // Adjust for keyboard
       stateManagement: true, // Persist state of screens

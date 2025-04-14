@@ -21,13 +21,15 @@ class ChatScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).colorScheme.primary,
       appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.primary,
         title: Text(
           "Chat",
           style: TextStyle(
             fontSize: 20.sp,
             fontWeight: FontWeight.w600,
-            color: ConstantColors.TextColor,
+            color: Theme.of(context).colorScheme.onSecondary,
           ),
         ),
       ),
@@ -59,20 +61,20 @@ class ChatScreen extends StatelessWidget {
               child: TextField(
                 controller: chatTextEditingController,
                 style: TextStyle(
-                  color: ConstantColors.TextColor,
+                  color: Theme.of(context).colorScheme.secondary,
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w500,
                 ),
                 decoration: InputDecoration(
                   focusedBorder: OutlineInputBorder(
                     borderSide: BorderSide(
-                      color: Colors.grey,
+                      color: Theme.of(context).colorScheme.onSecondary,
                     ),
                     borderRadius: BorderRadius.circular(30),
                   ),
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(
-                      color: Colors.grey,
+                      color: Theme.of(context).colorScheme.onSecondary,
                     ),
                     borderRadius: BorderRadius.circular(30),
                   ),
@@ -81,13 +83,13 @@ class ChatScreen extends StatelessWidget {
                     "Write Your Message",
                     style: TextStyle(
                         fontSize: 12.sp,
-                        color: Colors.grey,
+                        color: Theme.of(context).colorScheme.onSecondary,
                         fontWeight: FontWeight.w700),
                   ),
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(30),
                       borderSide: BorderSide(
-                        color: Colors.grey,
+                        color: Theme.of(context).colorScheme.onSecondary,
                       )),
                 ),
               ),
