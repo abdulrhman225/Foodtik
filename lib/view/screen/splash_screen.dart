@@ -1,6 +1,8 @@
 import 'dart:async';
 
+import 'package:Foodtik/controller/design_cubit/design_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:Foodtik/constant_colors.dart';
@@ -16,12 +18,21 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+
+  getSavedTheme() async {
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    String theme = sharedPreferences.getString("theme")??"light";
+    context.read<DesignCubit>().getSavedTheme(theme: theme);
+  }
+
   @override
   void initState() {
     super.initState();
     Timer(Duration(seconds: 2), () {
       checkIfIHaveToGoToWelcomeScreens();
     },);
+
+    getSavedTheme();
   }
 
   checkIfIHaveToGoToWelcomeScreens() async{

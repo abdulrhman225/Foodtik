@@ -1,6 +1,7 @@
 import 'package:Foodtik/constant_colors.dart';
 import 'package:Foodtik/responsive.dart';
 import 'package:Foodtik/view/screen/change_personal_info_screen.dart';
+import 'package:Foodtik/view/screen/setting_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -157,21 +158,26 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       SizedBox(
                         height: responsiveHeight(context, 12),
                       ),
-                      Row(
-                        children: [
-                          Image.asset("assets/images/setting.png"),
-                          SizedBox(
-                            width: responsiveWidth(context, 6),
-                          ),
-                          Text(
-                            "Settings",
-                            style: TextStyle(
-                              fontSize: 14.sp,
-                              fontWeight: FontWeight.w500,
-                              color: Theme.of(context).colorScheme.secondary,
+                      InkWell(
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => SettingScreen(),));
+                        },
+                        child: Row(
+                          children: [
+                            Image.asset("assets/images/setting.png"),
+                            SizedBox(
+                              width: responsiveWidth(context, 6),
                             ),
-                          ),
-                        ],
+                            Text(
+                              "Settings",
+                              style: TextStyle(
+                                fontSize: 14.sp,
+                                fontWeight: FontWeight.w500,
+                                color: Theme.of(context).colorScheme.secondary,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   ),

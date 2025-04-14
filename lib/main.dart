@@ -1,3 +1,4 @@
+import 'package:Foodtik/controller/design_cubit/design_cubit.dart';
 import 'package:Foodtik/controller/favorite_screen_cubit/favorite_screen_cubit.dart';
 import 'package:Foodtik/controller/home_screen_cubit/home_screen_cubit.dart';
 import 'package:Foodtik/controller/login_cubit/login_cubit.dart';
@@ -45,6 +46,9 @@ class MyApp extends StatelessWidget {
           BlocProvider(
             create: (context) => FavoriteScreenCubit(),
           ),
+          BlocProvider(
+            create: (context) => DesignCubit(),
+          ),
         ],
         child: ScreenUtilInit(
           designSize: const Size(430, 932),
@@ -52,21 +56,44 @@ class MyApp extends StatelessWidget {
           splitScreenMode: true,
           // Use builder only if you need to use library outside ScreenUtilInit context
           builder: (context, child) {
-            return MaterialApp(
-              debugShowCheckedModeBanner: false,
-              title: 'First Method',
-              localizationsDelegates: const [
-                AppLocalizations.delegate, // Add this line
-                GlobalMaterialLocalizations.delegate,
-                GlobalWidgetsLocalizations.delegate,
-                GlobalCupertinoLocalizations.delegate,
-              ],
-              supportedLocales: const [
-                Locale('en'), // English
-                Locale('ar'), // Spanish
-              ],
-              theme: CustomThemes().lightTheme,
-              home: child,
+            return BlocBuilder<DesignCubit, DesignState>(
+              builder: (context, state) {
+                if(state is ChangeDesignState){
+                  return MaterialApp(
+                    debugShowCheckedModeBanner: false,
+                    title: 'First Method',
+                    localizationsDelegates: const [
+                      AppLocalizations.delegate, // Add this line
+                      GlobalMaterialLocalizations.delegate,
+                      GlobalWidgetsLocalizations.delegate,
+                      GlobalCupertinoLocalizations.delegate,
+                    ],
+                    supportedLocales: const [
+                      Locale('en'), // English
+                      Locale('ar'), // Spanish
+                    ],
+                    theme: state.isLightTheme?CustomThemes().lightTheme:CustomThemes().darkTheme,
+                    home: child,
+                  );
+                }else{
+                  return MaterialApp(
+                    debugShowCheckedModeBanner: false,
+                    title: 'First Method',
+                    localizationsDelegates: const [
+                      AppLocalizations.delegate, // Add this line
+                      GlobalMaterialLocalizations.delegate,
+                      GlobalWidgetsLocalizations.delegate,
+                      GlobalCupertinoLocalizations.delegate,
+                    ],
+                    supportedLocales: const [
+                      Locale('en'), // English
+                      Locale('ar'), // Spanish
+                    ],
+                    theme: CustomThemes().lightTheme,
+                    home: child,
+                  );
+                }
+              },
             );
           },
           child: SplashScreen(),
