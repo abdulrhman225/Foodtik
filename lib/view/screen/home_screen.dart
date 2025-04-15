@@ -11,6 +11,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../widget/search_text_input_widget.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -112,7 +114,7 @@ class _HomeScreenState extends State<HomeScreen> {
               padding: EdgeInsets.symmetric(
                   horizontal: responsiveWidth(context, 30)),
               child: SearchTextInputWidget(
-                hint: "Search menu, restaurant or etc",
+                hint: AppLocalizations.of(context)!.search,
                 textEditingController: searchTextEditingController,
                 prefixIcon: Icon(
                   Icons.search,

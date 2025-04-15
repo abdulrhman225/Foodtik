@@ -3,6 +3,7 @@ import 'package:Foodtik/view/screen/read_notification_screen.dart';
 import 'package:Foodtik/view/screen/unread_notification_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../constant_colors.dart';
 
@@ -22,7 +23,7 @@ class NotificationScreen extends StatelessWidget {
               },
               child: Icon(Icons.arrow_back , color: Theme.of(context).colorScheme.onSecondary,)),
           title: Text(
-            "Notification",
+            AppLocalizations.of(context)!.notifications,
             style: TextStyle(
                 color: Theme.of(context).colorScheme.secondary,
                 fontSize: 24.sp,
@@ -41,13 +42,13 @@ class NotificationScreen extends StatelessWidget {
               unselectedLabelColor: Theme.of(context).colorScheme.onSecondary,
               tabs: [
                 Tab(
-                  text: "All",
+                  text: AppLocalizations.of(context)!.all,
                 ),
                 Tab(
-                  text: "Unread",
+                  text: AppLocalizations.of(context)!.unread,
                 ),
                 Tab(
-                  text: "Read",
+                  text: AppLocalizations.of(context)!.read,
                 )
               ]),
         ),

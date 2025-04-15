@@ -3,12 +3,13 @@ import 'package:Foodtik/responsive.dart';
 import 'package:Foodtik/view/widget/place_order_button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class TotalPriceCardWidget extends StatelessWidget {
 
   VoidCallback onPress;
 
-  TotalPriceCardWidget({required this.onPress});
+    TotalPriceCardWidget({required this.onPress});
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +37,7 @@ class TotalPriceCardWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "Sub-Total",
+                  AppLocalizations.of(context)!.sub_total,
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 14.sp,
@@ -58,7 +59,7 @@ class TotalPriceCardWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "Delivery Charge",
+                  AppLocalizations.of(context)!.delivery_charge,
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 14.sp,
@@ -80,7 +81,7 @@ class TotalPriceCardWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "Discount",
+                  AppLocalizations.of(context)!.discount,
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 14.sp,
@@ -102,7 +103,7 @@ class TotalPriceCardWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  "Total:",
+                  "${AppLocalizations.of(context)!.total}:",
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 18.sp,
@@ -121,7 +122,7 @@ class TotalPriceCardWidget extends StatelessWidget {
             ),
             SizedBox(height: responsiveHeight(context, 24),),
 
-            PlaceOrderButtonWidget(text: "Place My Order", onPress: onPress,),
+            PlaceOrderButtonWidget(text: AppLocalizations.of(context)!.place_my_order, onPress: onPress,),
           ],
         ),
       ),

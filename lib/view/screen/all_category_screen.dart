@@ -6,6 +6,7 @@ import '../../responsive.dart';
 import '../widget/banner_widget.dart';
 import '../widget/product_widget.dart';
 import '../widget/recommended_product_widget.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AllCategoryScreen extends StatelessWidget {
   List data = [
@@ -66,7 +67,7 @@ class AllCategoryScreen extends StatelessWidget {
         SizedBox(
           width: double.infinity,
           child: Text(
-            "Top Rated",
+            AppLocalizations.of(context)!.top_rated,
             style: TextStyle(
               color: Theme.of(context).colorScheme.secondary,
               fontSize: 20.sp,
@@ -97,7 +98,7 @@ class AllCategoryScreen extends StatelessWidget {
         Row(
           children: [
             Text(
-              "Recommend",
+              AppLocalizations.of(context)!.recommend,
               style: TextStyle(
                 color: Theme.of(context).colorScheme.secondary,
                 fontSize: 16.sp,
@@ -110,7 +111,7 @@ class AllCategoryScreen extends StatelessWidget {
             InkWell(
               onTap: () {},
               child: Text(
-                "View All",
+                AppLocalizations.of(context)!.view_all,
                 style: TextStyle(
                   color: ConstantColors.green_background,
                   fontSize: 12.sp,

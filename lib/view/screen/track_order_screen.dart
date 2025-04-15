@@ -3,7 +3,7 @@ import 'package:Foodtik/view/screen/order_detail_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../../constant_colors.dart';
 import '../../responsive.dart';
 import '../widget/find_location_text_input_widget.dart';
@@ -43,7 +43,7 @@ class TrackOrderScreen extends StatelessWidget {
                   ),
                   FindLocationTextInputWidget(
                     hint: "",
-                    label: "Find your Location",
+                    label: AppLocalizations.of(context)!.find_your_location,
                     prefixIcon: Icon(
                       Icons.search,
                       color: ConstantColors.green_background,
@@ -70,7 +70,7 @@ class TrackOrderScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "On The Way",
+                      AppLocalizations.of(context)!.on_the_way,
                       style: TextStyle(
                         fontSize: 20.sp,
                         fontWeight: FontWeight.w600,
@@ -82,7 +82,7 @@ class TrackOrderScreen extends StatelessWidget {
                         Navigator.push(context, MaterialPageRoute(builder: (context) => OrderDetailScreen(),));
                       },
                       child: Text(
-                        "All Details",
+                        AppLocalizations.of(context)!.all_details,
                         style: TextStyle(
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w600,
@@ -106,7 +106,7 @@ class TrackOrderScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Your Delivery Hero",
+                          AppLocalizations.of(context)!.your_delivery_hero,
                           style: TextStyle(
                             fontSize: 12.sp,
                             fontWeight: FontWeight.w500,
@@ -174,7 +174,7 @@ class TrackOrderScreen extends StatelessWidget {
                           left: responsiveWidth(context, 8),
                           right: responsiveWidth(context, 8)),
                       child: Text(
-                        "your location",
+                        AppLocalizations.of(context)!.your_location,
                         style: TextStyle(
                           fontSize: 12.sp,
                           color: Theme.of(context).colorScheme.onSecondary,

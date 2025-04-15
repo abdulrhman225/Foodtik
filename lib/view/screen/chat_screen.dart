@@ -3,7 +3,7 @@ import 'package:Foodtik/view/widget/clint_message.dart';
 import 'package:Foodtik/view/widget/driver_message.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../../constant_colors.dart';
 
 class ChatScreen extends StatelessWidget {
@@ -25,7 +25,7 @@ class ChatScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.primary,
         title: Text(
-          "Chat",
+          AppLocalizations.of(context)!.chat,
           style: TextStyle(
             fontSize: 20.sp,
             fontWeight: FontWeight.w600,
@@ -80,7 +80,7 @@ class ChatScreen extends StatelessWidget {
                   ),
                   suffixIcon: Icon(Icons.send_rounded, color: ConstantColors.green_background,),
                   label: Text(
-                    "Write Your Message",
+                    AppLocalizations.of(context)!.write_your_message,
                     style: TextStyle(
                         fontSize: 12.sp,
                         color: Theme.of(context).colorScheme.onSecondary,

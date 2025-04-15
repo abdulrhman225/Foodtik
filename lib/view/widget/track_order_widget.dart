@@ -2,6 +2,7 @@ import 'package:Foodtik/constant_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:timelines_plus/timelines_plus.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class TrackOrderWidget extends StatelessWidget {
   const TrackOrderWidget({super.key});
@@ -24,7 +25,7 @@ class TrackOrderWidget extends StatelessWidget {
               return Padding(
                 padding: EdgeInsets.all(16.0),
                 child: Text(
-                  "Order received",
+                  AppLocalizations.of(context)!.order_received,
                   style: TextStyle(
                     fontSize: 16.sp,
                     fontWeight: FontWeight.w600,
@@ -37,7 +38,7 @@ class TrackOrderWidget extends StatelessWidget {
               return Padding(
                 padding: EdgeInsets.all(16.0),
                 child: Text(
-                  "Cooking your order",
+                  AppLocalizations.of(context)!.cooking_order,
                   style: TextStyle(
                     fontSize: 16.sp,
                     fontWeight: FontWeight.w600,
@@ -50,7 +51,7 @@ class TrackOrderWidget extends StatelessWidget {
               return Padding(
                 padding: EdgeInsets.all(16.0),
                 child: Text(
-                  "Courier is picking up order",
+                  AppLocalizations.of(context)!.courier_pickup,
                   style: TextStyle(
                     fontSize: 16.sp,
                     fontWeight: FontWeight.w600,
@@ -63,7 +64,7 @@ class TrackOrderWidget extends StatelessWidget {
               return Padding(
                 padding: EdgeInsets.all(16.0),
                 child: Text(
-                  "Order delivered",
+                  AppLocalizations.of(context)!.order_delivered,
                   style: TextStyle(
                     fontSize: 16.sp,
                     fontWeight: FontWeight.w600,

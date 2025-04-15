@@ -1,6 +1,7 @@
 import 'package:Foodtik/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HistoryScreenWithoutData extends StatelessWidget {
   const HistoryScreenWithoutData({super.key});
@@ -22,7 +23,7 @@ class HistoryScreenWithoutData extends StatelessWidget {
               height: responsiveHeight(context, 51),
             ),
             Text(
-              "History Empty",
+              AppLocalizations.of(context)!.history_empty,
               style: TextStyle(
                 color: Theme.of(context).colorScheme.secondary,
                 fontSize: 32.sp,
@@ -33,7 +34,7 @@ class HistoryScreenWithoutData extends StatelessWidget {
               height: responsiveHeight(context, 12),
             ),
             Text(
-              "You don’t have order any foods before",
+              AppLocalizations.of(context)!.history_empty_message,
               style: TextStyle(
                 color: Theme.of(context).colorScheme.onSecondary,
                 fontSize: 16.sp,

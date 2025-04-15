@@ -154,7 +154,16 @@
   "log_out": "تسجيل الخروج",
   "user_name": "اسم المستخدم",
   "address": "العنوان",
-  "update": "تحديث"
-
-
+  "update": "تحديث",
+  "search": "ابحث في المقائمة,المطعم الخ",
+  "view_all": "مشاهدة الكل",
+  "price_range": "السعر",
+  "load_more": "تحميل المزيد...",
+  "change": "تغيير",
+  "promo_code": "رمز ترويجي؟",
+  "enter_your_promo": "أدخل عرضك الترويجي",
+  "add": "اضافة",
+  "all_details": "جميع التفاصيل",
+  "english": "English",
+  "change_theme": "تغيير المظهر"
 }

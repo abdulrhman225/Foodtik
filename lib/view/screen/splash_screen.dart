@@ -19,10 +19,12 @@ class SplashScreen extends StatefulWidget {
 
 class _SplashScreenState extends State<SplashScreen> {
 
-  getSavedTheme() async {
+  getSavedThemeAndLanguage() async {
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     String theme = sharedPreferences.getString("theme")??"light";
+    String language = sharedPreferences.getString("language")??"english";
     context.read<DesignCubit>().getSavedTheme(theme: theme);
+    context.read<DesignCubit>().getSavedLanguage(language: language);
   }
 
   @override
@@ -32,7 +34,7 @@ class _SplashScreenState extends State<SplashScreen> {
       checkIfIHaveToGoToWelcomeScreens();
     },);
 
-    getSavedTheme();
+    getSavedThemeAndLanguage();
   }
 
   checkIfIHaveToGoToWelcomeScreens() async{

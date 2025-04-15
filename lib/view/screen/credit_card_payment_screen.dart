@@ -4,6 +4,7 @@ import 'package:Foodtik/view/widget/in_app_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_credit_card/flutter_credit_card.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../responsive.dart';
 import 'notification_screen.dart';
@@ -74,7 +75,7 @@ class _CreditCardPaymentScreenState extends State<CreditCardPaymentScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Add Card",
+                AppLocalizations.of(context)!.add_card,
                 style: TextStyle(
                   color: Theme.of(context).colorScheme.secondary,
                   fontSize: 20.sp,
@@ -118,7 +119,7 @@ class _CreditCardPaymentScreenState extends State<CreditCardPaymentScreen> {
                 alignment: Alignment.center,
                 child: Text(
                   textAlign: TextAlign.center,
-                  "We will send you an order details to your email after the successfull payment",
+                  AppLocalizations.of(context)!.order_email_note,
                   style: TextStyle(
                     color: Theme.of(context).colorScheme.onSecondary,
                     fontSize: 12.sp,
@@ -132,7 +133,7 @@ class _CreditCardPaymentScreenState extends State<CreditCardPaymentScreen> {
               Align(
                 alignment: Alignment.center,
                 child: InAppButton(
-                  text: "🔒 Pay for the order",
+                  text: AppLocalizations.of(context)!.pay_for_order,
                   onPress: () {
                     Navigator.push(context, MaterialPageRoute(builder: (context) => FinishOrdingScreen(),));
                   },

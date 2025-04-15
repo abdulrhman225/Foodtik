@@ -5,8 +5,7 @@ import 'package:Foodtik/view/screen/profile_screen.dart';
 import 'package:Foodtik/view/screen/track_order_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
-
-import 'history_screen.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'main_cart_screen.dart';
 
 class MainScreen extends StatelessWidget {
@@ -27,13 +26,13 @@ class MainScreen extends StatelessWidget {
     return [
       PersistentBottomNavBarItem(
         icon: Icon(Icons.home),
-        title: "Home",
+        title: AppLocalizations.of(context)!.home,
         activeColorPrimary: ConstantColors.green_background,
         inactiveColorPrimary: Theme.of(context).colorScheme.onSecondary,
       ),
       PersistentBottomNavBarItem(
         icon: Icon(Icons.favorite_border),
-        title: "Favorite",
+        title: AppLocalizations.of(context)!.favorites,
         activeColorPrimary: ConstantColors.green_background,
         inactiveColorPrimary: Theme.of(context).colorScheme.onSecondary,
       ),
@@ -44,13 +43,13 @@ class MainScreen extends StatelessWidget {
       ),
       PersistentBottomNavBarItem(
         icon: Icon(Icons.location_pin),
-        title: "Track",
+        title: AppLocalizations.of(context)!.track,
         activeColorPrimary: ConstantColors.green_background,
         inactiveColorPrimary: Theme.of(context).colorScheme.onSecondary,
       ),
       PersistentBottomNavBarItem(
         icon: Icon(Icons.person),
-        title: "Profile",
+        title: AppLocalizations.of(context)!.profile,
         activeColorPrimary: ConstantColors.green_background,
         inactiveColorPrimary: Theme.of(context).colorScheme.onSecondary,
       ),

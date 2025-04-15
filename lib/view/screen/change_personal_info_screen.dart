@@ -1,11 +1,9 @@
 import 'package:Foodtik/view/widget/in_app_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../../constant_colors.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../../responsive.dart';
 import '../widget/text_input_widget.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ChangePersonalInfoScreen extends StatelessWidget {
   TextEditingController fullNameTextEditingController = TextEditingController();
@@ -22,7 +20,7 @@ class ChangePersonalInfoScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.primary,
         title: Text(
-          "Profile",
+          AppLocalizations.of(context)!.profile,
           style: TextStyle(
             fontSize: 20.sp,
             fontWeight: FontWeight.w600,
@@ -111,8 +109,8 @@ class ChangePersonalInfoScreen extends StatelessWidget {
                         height: responsiveHeight(context, 16),
                       ),
                       TextInputWidget(
-                        hint: "Address",
-                        label: "Address",
+                        hint: AppLocalizations.of(context)!.address,
+                        label: AppLocalizations.of(context)!.address,
                         textEditingController: addressTextEditingController,
                       ),
                     ],
@@ -122,7 +120,7 @@ class ChangePersonalInfoScreen extends StatelessWidget {
               SizedBox(
                 height: responsiveHeight(context, 42),
               ),
-              InAppButton(text: "Update", onPress: (){})
+              InAppButton(text: AppLocalizations.of(context)!.update, onPress: (){})
             ],
           ),
         ),

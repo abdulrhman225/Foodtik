@@ -2,8 +2,7 @@ import 'package:Foodtik/view/screen/product_detail_screen.dart';
 import 'package:Foodtik/view/widget/filter_catigory_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../../constant_colors.dart';
 import '../../responsive.dart';
 import 'location_screen.dart';
@@ -106,7 +105,7 @@ class _FilterScreenState extends State<FilterScreen> {
                 height: responsiveHeight(context, 23),
               ),
               Text(
-                "Filter",
+                AppLocalizations.of(context)!.filter,
                 style: TextStyle(
                   fontSize: 20.sp,
                   fontWeight: FontWeight.w600,
@@ -117,7 +116,7 @@ class _FilterScreenState extends State<FilterScreen> {
                 height: responsiveHeight(context, 23),
               ),
               Text(
-                "Price range",
+                AppLocalizations.of(context)!.price_range,
                 style: TextStyle(
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w600,
@@ -140,7 +139,7 @@ class _FilterScreenState extends State<FilterScreen> {
                           border: Border.all(color: Theme.of(context).colorScheme.onSecondary,),
                           borderRadius: BorderRadius.circular(5)),
                       child: Text(
-                        "Min",
+                        AppLocalizations.of(context)!.min,
                         style: TextStyle(
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w600,
@@ -158,7 +157,7 @@ class _FilterScreenState extends State<FilterScreen> {
                           border: Border.all(color: Theme.of(context).colorScheme.onSecondary,),
                           borderRadius: BorderRadius.circular(5)),
                       child: Text(
-                        "Max",
+                        AppLocalizations.of(context)!.max,
                         style: TextStyle(
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w600,
@@ -217,7 +216,7 @@ class _FilterScreenState extends State<FilterScreen> {
                 height: responsiveHeight(context, 20),
               ),
               Text(
-                "Discount",
+                AppLocalizations.of(context)!.discount,
                 style: TextStyle(
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w600,
@@ -240,7 +239,7 @@ class _FilterScreenState extends State<FilterScreen> {
                           border: Border.all(color:Theme.of(context).colorScheme.onSecondary,),
                           borderRadius: BorderRadius.circular(5)),
                       child: Text(
-                        "Min",
+                        AppLocalizations.of(context)!.min,
                         style: TextStyle(
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w600,
@@ -258,7 +257,7 @@ class _FilterScreenState extends State<FilterScreen> {
                           border: Border.all(color: Theme.of(context).colorScheme.onSecondary,),
                           borderRadius: BorderRadius.circular(5)),
                       child: Text(
-                        "Max",
+                        AppLocalizations.of(context)!.max,
                         style: TextStyle(
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w600,
@@ -317,7 +316,7 @@ class _FilterScreenState extends State<FilterScreen> {
                 height: responsiveHeight(context, 20),
               ),
               Text(
-                "Category",
+                AppLocalizations.of(context)!.category,
                 style: TextStyle(
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w600,
@@ -335,7 +334,7 @@ class _FilterScreenState extends State<FilterScreen> {
                       setState(() {});
                     },
                     child: FilterCatigoryWidget(
-                      text: "Fast Food",
+                      text: AppLocalizations.of(context)!.fast_food,
                       color: selectedCategory == 0
                           ? ConstantColors.green_background
                           : Theme.of(context).colorScheme.secondaryFixed,
@@ -350,7 +349,7 @@ class _FilterScreenState extends State<FilterScreen> {
                       setState(() {});
                     },
                     child: FilterCatigoryWidget(
-                      text: "Sea Food",
+                      text: AppLocalizations.of(context)!.sea_food,
                       color: selectedCategory == 1
                           ? ConstantColors.green_background
                           : Theme.of(context).colorScheme.secondaryFixed,
@@ -365,7 +364,7 @@ class _FilterScreenState extends State<FilterScreen> {
                       setState(() {});
                     },
                     child: FilterCatigoryWidget(
-                      text: "Desert",
+                      text: AppLocalizations.of(context)!.desert,
                       color: selectedCategory == 2
                           ? ConstantColors.green_background
                           : Theme.of(context).colorScheme.secondaryFixed,
@@ -380,7 +379,7 @@ class _FilterScreenState extends State<FilterScreen> {
                 height: responsiveHeight(context, 32),
               ),
               Text(
-                "Location",
+                AppLocalizations.of(context)!.location,
                 style: TextStyle(
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w600,
@@ -443,7 +442,7 @@ class _FilterScreenState extends State<FilterScreen> {
                 height: responsiveHeight(context, 32),
               ),
               Text(
-                "Dish",
+                AppLocalizations.of(context)!.dish,
                 style: TextStyle(
                   fontSize: 14.sp,
                   fontWeight: FontWeight.w600,
@@ -461,7 +460,7 @@ class _FilterScreenState extends State<FilterScreen> {
                       setState(() {});
                     },
                     child: FilterCatigoryWidget(
-                      text: "Tuna Tartare",
+                      text: AppLocalizations.of(context)!.tune_tartare,
                       color: selectedDish == 0
                           ? ConstantColors.green_background
                           : Theme.of(context).colorScheme.secondaryFixed,
@@ -475,7 +474,7 @@ class _FilterScreenState extends State<FilterScreen> {
                       setState(() {});
                     },
                     child: FilterCatigoryWidget(
-                      text: "Spicy Crab Cakes",
+                      text: AppLocalizations.of(context)!.spicy_crab_cakes,
                       color: selectedDish == 1
                           ? ConstantColors.green_background
                           :Theme.of(context).colorScheme.secondaryFixed,
@@ -489,7 +488,7 @@ class _FilterScreenState extends State<FilterScreen> {
                       setState(() {});
                     },
                     child: FilterCatigoryWidget(
-                      text: "Seafood Paella",
+                      text: AppLocalizations.of(context)!.seafood_paella,
                       color: selectedDish == 2
                           ? ConstantColors.green_background
                           : Theme.of(context).colorScheme.secondaryFixed,
@@ -510,7 +509,7 @@ class _FilterScreenState extends State<FilterScreen> {
                       setState(() {});
                     },
                     child: FilterCatigoryWidget(
-                      text: "Clam Chowder",
+                      text: AppLocalizations.of(context)!.clam_chowder,
                       color: selectedDish == 3
                           ? ConstantColors.green_background
                           : Theme.of(context).colorScheme.secondaryFixed,
@@ -524,7 +523,7 @@ class _FilterScreenState extends State<FilterScreen> {
                       setState(() {});
                     },
                     child: FilterCatigoryWidget(
-                      text: "Miso-Glazed Cod",
+                      text: AppLocalizations.of(context)!.miso_glazed_cod,
                       color: selectedDish == 4
                           ? ConstantColors.green_background
                           : Theme.of(context).colorScheme.secondaryFixed,
@@ -538,7 +537,7 @@ class _FilterScreenState extends State<FilterScreen> {
                       setState(() {});
                     },
                     child: FilterCatigoryWidget(
-                      text: "Lobster Thermidor",
+                      text: AppLocalizations.of(context)!.lobster_thermidor,
                       color: selectedDish == 5
                           ? ConstantColors.green_background
                           : Theme.of(context).colorScheme.secondaryFixed,

@@ -4,7 +4,7 @@ import 'package:Foodtik/view/screen/location_screen.dart';
 import 'package:Foodtik/view/screen/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../../constant_colors.dart';
 import '../../responsive.dart';
 import 'history_screen.dart';
@@ -94,10 +94,10 @@ class MainCartScreen extends StatelessWidget {
                 unselectedLabelColor: Theme.of(context).colorScheme.onSecondary,
                 tabs: [
                   Tab(
-                    text: "Cart",
+                    text: AppLocalizations.of(context)!.cart,
                   ),
                   Tab(
-                    text: "History",
+                    text: AppLocalizations.of(context)!.history,
                   )
                 ]),
           ),

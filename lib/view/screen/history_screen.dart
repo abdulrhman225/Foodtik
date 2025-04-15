@@ -3,7 +3,7 @@ import 'package:Foodtik/responsive.dart';
 import 'package:Foodtik/view/screen/history_screen_without_data.dart';
 import 'package:Foodtik/view/widget/product_in_cart_widget.dart';
 import 'package:Foodtik/view/widget/product_in_history_widget.dart';
-import 'package:Foodtik/view/widget/total_price_card_widget.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -80,7 +80,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
                       setState(() {});
                     },
                     child: Text(
-                      "Load More..",
+                      AppLocalizations.of(context)!.load_more,
                       style: TextStyle(
                         fontSize: 16.sp,
                         fontWeight: FontWeight.w500,

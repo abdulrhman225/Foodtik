@@ -6,6 +6,7 @@ import 'package:Foodtik/view/widget/search_text_input_widget.dart';
 import 'package:Foodtik/view/widget/text_input_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -64,7 +65,7 @@ class _LocationScreenState extends State<LocationScreen> {
                 ),
                 FindLocationTextInputWidget(
                   hint: "",
-                  label: "Find your Location",
+                  label: AppLocalizations.of(context)!.find_your_location,
                   prefixIcon: Icon(
                     Icons.search,
                     color: ConstantColors.green_background,
@@ -95,7 +96,7 @@ class _LocationScreenState extends State<LocationScreen> {
                         left: responsiveWidth(context, 8),
                         right: responsiveWidth(context, 8)),
                     child: Text(
-                      "your location",
+                      AppLocalizations.of(context)!.your_location,
                       style: TextStyle(
                         fontSize: 12.sp,
                         color: Theme.of(context).colorScheme.onSecondary,
@@ -128,7 +129,7 @@ class _LocationScreenState extends State<LocationScreen> {
                   SizedBox(
                     height: responsiveHeight(context, 24),
                   ),
-                  InAppButton(text: "Set Location", onPress: () async {
+                  InAppButton(text: AppLocalizations.of(context)!.set_location, onPress: () async {
                       position = await Geolocator.getCurrentPosition();
                       setState(() {});
 

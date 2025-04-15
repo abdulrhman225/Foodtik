@@ -155,5 +155,16 @@
   "log_out": "Log out",
   "user_name": "User Name",
   "address": "Address",
-  "update": "Update"
+  "update": "Update",
+  "search": "search menu, restaurant or etc",
+  "view_all": "View All",
+  "price_range": "Price Range",
+  "load_more": "Load More...",
+  "change": "Change",
+  "promo_code": "Promo Code?",
+  "enter_your_promo": "Enter Your Promo",
+  "add": "Add",
+  "all_details": "All Details",
+  "english": "عربي",
+  "change_theme": "Change Theme"
 }

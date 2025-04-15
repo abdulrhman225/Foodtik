@@ -4,7 +4,7 @@ import 'package:Foodtik/view/widget/in_app_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating/flutter_rating.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../../constant_colors.dart';
 import '../../responsive.dart';
 import '../widget/search_text_input_widget.dart';
@@ -107,7 +107,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                 height: responsiveHeight(context, 22),
               ),
               SearchTextInputWidget(
-                hint: "Search menu, restaurant or etc",
+                hint: AppLocalizations.of(context)!.search,
                 textEditingController: searchTextEditingController,
                 prefixIcon:  Icon(
                   Icons.search,
@@ -237,7 +237,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
               ),
               Row(children: [
                 Text(
-                  "Spicy",
+                  AppLocalizations.of(context)!.spicy,
                   style: TextStyle(
                       color: Theme.of(context).colorScheme.onSecondary,
                       fontSize: 12.sp,
@@ -247,7 +247,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                   width: responsiveWidth(context, 221),
                 ),
                 Text(
-                  "Quantity",
+                  AppLocalizations.of(context)!.quantity,
                   style: TextStyle(
                       color: Theme.of(context).colorScheme.onSecondary,
                       fontSize: 12.sp,
@@ -342,7 +342,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
               Row(
                 children: [
                   Text(
-                    "Mild",
+                    AppLocalizations.of(context)!.mild,
                     style: TextStyle(
                         color: ConstantColors.green_background,
                         fontSize: 12.sp,
@@ -352,7 +352,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                     width: responsiveWidth(context, 122),
                   ),
                   Text(
-                    "Hot",
+                    AppLocalizations.of(context)!.hot,
                     style: TextStyle(
                         color: Colors.red,
                         fontSize: 12.sp,
@@ -363,7 +363,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
               SizedBox(
                 height: responsiveHeight(context, 63),
               ),
-              InAppButton(text: "Add To Cart", onPress: () {}),
+              InAppButton(text: AppLocalizations.of(context)!.add_to_cart, onPress: () {}),
               SizedBox(
                 height: responsiveHeight(context, 10),
               )

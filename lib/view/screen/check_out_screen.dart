@@ -3,7 +3,7 @@ import 'package:Foodtik/responsive.dart';
 import 'package:Foodtik/view/screen/credit_card_payment_screen.dart';
 import 'package:Foodtik/view/screen/finish_ording_screen.dart';
 import 'package:Foodtik/view/widget/promo_text_input_widget.dart';
-import 'package:Foodtik/view/widget/text_input_widget.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:Foodtik/view/widget/total_price_card_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -73,7 +73,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                     )),
               ),
               Text(
-                "Checkout",
+                AppLocalizations.of(context)!.checkout,
                 style: TextStyle(
                   color: Theme.of(context).colorScheme.secondary,
                   fontSize: 20.sp,
@@ -84,7 +84,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                 height: responsiveHeight(context, 18),
               ),
               Text(
-                "Pay With:",
+                "${AppLocalizations.of(context)!.pay_with}:",
                 style: TextStyle(
                   color: Theme.of(context).colorScheme.secondary,
                   fontSize: 18.sp,
@@ -173,7 +173,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                           ),
                           InkWell(
                             child: Text(
-                              "Change",
+                              AppLocalizations.of(context)!.change,
                               style: TextStyle(
                                 color: ConstantColors.green_background,
                                 fontSize: 14.sp,
@@ -191,7 +191,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                 height: responsiveHeight(context, 32),
               ),
               Text(
-                "Promo Code?",
+                AppLocalizations.of(context)!.promo_code,
                 style: TextStyle(
                   color: Theme.of(context).colorScheme.secondary,
                   fontSize: 16.sp,
@@ -203,14 +203,14 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
               ),
               PromoTextInputWidget(
                 hint: "",
-                label: "Enter Your Promo",
+                label: AppLocalizations.of(context)!.enter_your_promo,
                 textEditingController: promoTextEditingController,
               ),
               SizedBox(
                 height: responsiveHeight(context, 27),
               ),
               Text(
-                "Pay With",
+                AppLocalizations.of(context)!.pay_with,
                 style: TextStyle(
                   color: Theme.of(context).colorScheme.secondary,
                   fontSize: 18.sp,
@@ -222,7 +222,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
               ),
               Row(children: [
                 Radio<String>(
-                  value: "card",
+                  value: AppLocalizations.of(context)!.card_type,
                   activeColor: ConstantColors.green_background,
                   groupValue: selectedWay,
                   onChanged: (value) {
@@ -267,7 +267,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                           height: responsiveHeight(context, 27),
                         ),
                         Text(
-                          "Card Type",
+                          AppLocalizations.of(context)!.card_type,
                           style: TextStyle(
                             color: Theme.of(context).colorScheme.secondary,
                             fontSize: 18.sp,

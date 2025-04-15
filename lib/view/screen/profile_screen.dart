@@ -1,7 +1,10 @@
 import 'package:Foodtik/constant_colors.dart';
+import 'package:Foodtik/controller/design_cubit/design_cubit.dart';
 import 'package:Foodtik/responsive.dart';
 import 'package:Foodtik/view/screen/change_personal_info_screen.dart';
 import 'package:Foodtik/view/screen/setting_screen.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -23,7 +26,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.primary,
         title: Text(
-          "Profile",
+          AppLocalizations.of(context)!.profile,
           style: TextStyle(
             fontSize: 20.sp,
             fontWeight: FontWeight.w600,
@@ -76,7 +79,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "My Account",
+                        AppLocalizations.of(context)!.my_account,
                         style: TextStyle(
                           fontSize: 16.sp,
                           fontWeight: FontWeight.w500,
@@ -97,7 +100,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               width: responsiveWidth(context, 6),
                             ),
                             Text(
-                              "Personal Information",
+                              AppLocalizations.of(context)!.personal_information,
                               style: TextStyle(
                                 fontSize: 14.sp,
                                 fontWeight: FontWeight.w500,
@@ -110,31 +113,36 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       SizedBox(
                         height: responsiveHeight(context, 12),
                       ),
-                      Row(
-                        children: [
-                          Image.asset("assets/images/language.png"),
-                          SizedBox(
-                            width: responsiveWidth(context, 6),
-                          ),
-                          Expanded(
-                            child: Text(
-                              "Languages",
-                              style: TextStyle(
-                                fontSize: 14.sp,
-                                fontWeight: FontWeight.w500,
-                                color: Theme.of(context).colorScheme.secondary,
+                      InkWell(
+                        onTap: (){
+                          context.read<DesignCubit>().changeLanguage();
+                        },
+                        child: Row(
+                          children: [
+                            Image.asset("assets/images/language.png"),
+                            SizedBox(
+                              width: responsiveWidth(context, 6),
+                            ),
+                            Expanded(
+                              child: Text(
+                                AppLocalizations.of(context)!.language,
+                                style: TextStyle(
+                                  fontSize: 14.sp,
+                                  fontWeight: FontWeight.w500,
+                                  color: Theme.of(context).colorScheme.secondary,
+                                ),
                               ),
                             ),
-                          ),
-                          Text(
-                            "English",
-                            style: TextStyle(
-                              fontSize: 14.sp,
-                              fontWeight: FontWeight.w400,
-                              color: Theme.of(context).colorScheme.onSecondary,
+                            Text(
+                              AppLocalizations.of(context)!.english,
+                              style: TextStyle(
+                                fontSize: 14.sp,
+                                fontWeight: FontWeight.w400,
+                                color: Theme.of(context).colorScheme.onSecondary,
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                       SizedBox(
                         height: responsiveHeight(context, 12),
@@ -146,7 +154,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             width: responsiveWidth(context, 6),
                           ),
                           Text(
-                            "Privacy Policy",
+                            AppLocalizations.of(context)!.privacy_policy,
                             style: TextStyle(
                               fontSize: 14.sp,
                               fontWeight: FontWeight.w500,
@@ -169,7 +177,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                               width: responsiveWidth(context, 6),
                             ),
                             Text(
-                              "Settings",
+                              AppLocalizations.of(context)!.setting,
                               style: TextStyle(
                                 fontSize: 14.sp,
                                 fontWeight: FontWeight.w500,
@@ -194,7 +202,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "Notification",
+                        AppLocalizations.of(context)!.notifications,
                         style: TextStyle(
                           fontSize: 16.sp,
                           fontWeight: FontWeight.w500,
@@ -212,7 +220,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           ),
                           Expanded(
                             child: Text(
-                              "Push Notification",
+                              AppLocalizations.of(context)!.push_notifications,
                               style: TextStyle(
                                 fontSize: 14.sp,
                                 fontWeight: FontWeight.w500,
@@ -244,7 +252,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           ),
                           Expanded(
                             child: Text(
-                              "Promotional Notifications",
+                              AppLocalizations.of(context)!.promotional_notifications,
                               style: TextStyle(
                                 fontSize: 14.sp,
                                 fontWeight: FontWeight.w500,
@@ -280,7 +288,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "More",
+                        AppLocalizations.of(context)!.more,
                         style: TextStyle(
                           fontSize: 16.sp,
                           fontWeight: FontWeight.w500,
@@ -297,7 +305,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             width: responsiveWidth(context, 6),
                           ),
                           Text(
-                            "Help",
+                            AppLocalizations.of(context)!.help_center,
                             style: TextStyle(
                               fontSize: 14.sp,
                               fontWeight: FontWeight.w500,
@@ -316,7 +324,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                             width: responsiveWidth(context, 6),
                           ),
                           Text(
-                            "Logout",
+                            AppLocalizations.of(context)!.log_out,
                             style: TextStyle(
                               fontSize: 14.sp,
                               fontWeight: FontWeight.w500,

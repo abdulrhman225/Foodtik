@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:Foodtik/constant_colors.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:Foodtik/responsive.dart';
 
 class PromoTextInputWidget extends StatelessWidget {
@@ -100,7 +101,7 @@ class PromoTextInputWidget extends StatelessWidget {
           ),
           child: InkWell(
             child: Text(
-              "Add",
+              AppLocalizations.of(context)!.add,
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 12.sp,

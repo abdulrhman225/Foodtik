@@ -2,6 +2,7 @@ import 'package:Foodtik/view/screen/track_order_screen.dart';
 import 'package:Foodtik/view/widget/in_app_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../../responsive.dart';
 import 'notification_screen.dart';
 
@@ -60,7 +61,7 @@ class FinishOrdingScreen extends StatelessWidget {
                     )),
               ),
               Text(
-                "Checkout",
+                AppLocalizations.of(context)!.checkout,
                 style: TextStyle(
                   color: Theme.of(context).colorScheme.secondary,
                   fontSize: 20.sp,
@@ -75,7 +76,7 @@ class FinishOrdingScreen extends StatelessWidget {
                 height: responsiveHeight(context, 32),
               ),
               Text(
-                "Your Order Done Successfully",
+                AppLocalizations.of(context)!.order_success,
                 style: TextStyle(
                   color: Theme.of(context).colorScheme.secondary,
                   fontSize: 24.sp,
@@ -87,7 +88,7 @@ class FinishOrdingScreen extends StatelessWidget {
                 height: responsiveHeight(context, 12),
               ),
               Text(
-                "you will get your order within 12min.thanks for using our services",
+                AppLocalizations.of(context)!.order_arrival,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Theme.of(context).colorScheme.secondary,
@@ -101,7 +102,7 @@ class FinishOrdingScreen extends StatelessWidget {
               ),
               Align(
                 alignment: Alignment.center,
-                child: InAppButton(text: "track Your Order", onPress: (){
+                child: InAppButton(text: AppLocalizations.of(context)!.track_your_order, onPress: (){
                 Navigator.push(context, MaterialPageRoute(builder: (context) => TrackOrderScreen(),));
                 }),
               ),

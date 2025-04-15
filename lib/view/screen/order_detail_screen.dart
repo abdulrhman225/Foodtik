@@ -4,6 +4,7 @@ import 'package:Foodtik/view/widget/track_order_widget.dart';
 import 'package:Foodtik/view/screen/track_order_screen.dart';
 import 'package:Foodtik/view/widget/in_app_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../constant_colors.dart';
@@ -18,7 +19,7 @@ class OrderDetailScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.primary,
         title: Text(
-          "Order Detail",
+          AppLocalizations.of(context)!.order_details,
           style: TextStyle(
             fontSize: 20.sp,
             fontWeight: FontWeight.w600,
@@ -43,7 +44,7 @@ class OrderDetailScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "Order ID",
+                        AppLocalizations.of(context)!.order_id,
                         style: TextStyle(
                           fontSize: 16.sp,
                           fontWeight: FontWeight.w600,
@@ -84,7 +85,7 @@ class OrderDetailScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "Your Delivery Hero",
+                        AppLocalizations.of(context)!.your_delivery_hero,
                         style: TextStyle(
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w500,
@@ -156,7 +157,7 @@ class OrderDetailScreen extends StatelessWidget {
                         left: responsiveWidth(context, 8),
                         right: responsiveWidth(context, 8)),
                     child: Text(
-                      "your location",
+                      AppLocalizations.of(context)!.your_location,
                       style: TextStyle(
                         fontSize: 12.sp,
                         color: Theme.of(context).colorScheme.onSecondary,
@@ -195,7 +196,7 @@ class OrderDetailScreen extends StatelessWidget {
                 height: responsiveHeight(context, 50),
               ),
               InAppButton(
-                  text: "Live Track",
+                  text: AppLocalizations.of(context)!.live_track,
                   onPress: () {
                     Navigator.push(
                         context,

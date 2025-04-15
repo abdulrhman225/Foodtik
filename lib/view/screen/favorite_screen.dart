@@ -4,7 +4,7 @@ import 'package:Foodtik/view/widget/confirm_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import '../../constant_colors.dart';
 import '../widget/search_text_input_widget.dart';
 import 'filter_screen.dart';
@@ -13,7 +13,6 @@ import 'notification_screen.dart';
 import 'other_category_screen.dart';
 
 class FavoriteScreen extends StatefulWidget {
-
   @override
   State<FavoriteScreen> createState() => _FavoriteScreenState();
 }
@@ -26,6 +25,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
     super.initState();
     context.read<FavoriteScreenCubit>().getFavoriteProduct();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,7 +58,11 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                       },
                       child: InkWell(
                         onTap: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => LocationScreen(),));
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => LocationScreen(),
+                              ));
                         },
                         child: Icon(
                           Icons.location_pin,
@@ -96,13 +100,13 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                           context: context,
                           isScrollControlled: true,
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+                            borderRadius:
+                                BorderRadius.vertical(top: Radius.circular(20)),
                           ),
                           builder: (context) {
                             return SizedBox(
                                 height: responsiveHeight(context, 600),
-                                child: NotificationScreen()
-                            );
+                                child: NotificationScreen());
                           },
                         );
                       },
@@ -118,78 +122,89 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
               padding: EdgeInsets.symmetric(
                   horizontal: responsiveWidth(context, 30)),
               child: SearchTextInputWidget(
-                hint: "Search menu, restaurant or etc",
+                hint: AppLocalizations.of(context)!.search,
                 textEditingController: searchTextEditingController,
                 prefixIcon: Icon(
                   Icons.search,
                   color: Theme.of(context).colorScheme.onSecondary,
                 ),
                 suffixIcon: InkWell(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => FilterScreen(),
-                          ));
-                    },
-                    child: Container(
-                      width: responsiveWidth(context, 15),
-                      height: responsiveHeight(context, 15),
-                      decoration: BoxDecoration(
-                          image: DecorationImage(
-                            fit: BoxFit.scaleDown,
-                            image: AssetImage(
-                                "assets/images/equalizer.png"),
-                          ),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => FilterScreen(),
+                        ));
+                  },
+                  child: Container(
+                    width: responsiveWidth(context, 15),
+                    height: responsiveHeight(context, 15),
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        fit: BoxFit.scaleDown,
+                        image: AssetImage("assets/images/equalizer.png"),
                       ),
                     ),
+                  ),
                 ),
               ),
             ),
-            SizedBox(height: responsiveHeight(context, 30),),
-
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: responsiveWidth(context, 10)),
-              child: Text("Favorite" , style: TextStyle(color: Theme.of(context).colorScheme.secondary , fontSize: 20.sp , fontWeight: FontWeight.w600),),
+            SizedBox(
+              height: responsiveHeight(context, 30),
             ),
-
-            BlocBuilder<FavoriteScreenCubit , FavoriteScreenState>(builder: (context, state) {
-              if(state is RemoveFromFavoriteState){
-                return Padding(
-                  padding: EdgeInsets.symmetric(vertical: responsiveHeight(context, 80)),
-                  child: GridView.builder(
-                    clipBehavior: Clip.none,
-                    physics: NeverScrollableScrollPhysics(),
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2,
-                        mainAxisSpacing: responsiveHeight(context, 95)),
-                    shrinkWrap: true,
-                    itemBuilder: (context, index) {
-                      return OtherCategoryScreen(
-                        imagePath: state.favorite[index]["image_path"],
-                        name: state.favorite[index]["product_Name"],
-                        description: state.favorite[index]
-                        ["product_content"],
-                        isFavorite: state.favorite[index]["favorite"],
-                        price: state.favorite[index]["product_price"],
-                        onTap: (){
-                          showDialog(context: context, builder: (context) {
-                            return ConfirmDialog(onPress: (){
-                              context.read<FavoriteScreenCubit>().removeFromFavorite(index: index);
-                              Navigator.pop(context);
-                            });
-                          },);
-                        },
-                      );
-                    },
-                    itemCount: state.favorite.length,
-                  ),
-                );
-              }
-              else{
-                return SizedBox();
-              }
-            },
+            Padding(
+              padding: EdgeInsets.symmetric(
+                  horizontal: responsiveWidth(context, 10)),
+              child: Text(
+                AppLocalizations.of(context)!.favorites,
+                style: TextStyle(
+                    color: Theme.of(context).colorScheme.secondary,
+                    fontSize: 20.sp,
+                    fontWeight: FontWeight.w600),
+              ),
+            ),
+            BlocBuilder<FavoriteScreenCubit, FavoriteScreenState>(
+              builder: (context, state) {
+                if (state is RemoveFromFavoriteState) {
+                  return Padding(
+                    padding: EdgeInsets.symmetric(
+                        vertical: responsiveHeight(context, 80)),
+                    child: GridView.builder(
+                      clipBehavior: Clip.none,
+                      physics: NeverScrollableScrollPhysics(),
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 2,
+                          mainAxisSpacing: responsiveHeight(context, 95)),
+                      shrinkWrap: true,
+                      itemBuilder: (context, index) {
+                        return OtherCategoryScreen(
+                          imagePath: state.favorite[index]["image_path"],
+                          name: state.favorite[index]["product_Name"],
+                          description: state.favorite[index]["product_content"],
+                          isFavorite: state.favorite[index]["favorite"],
+                          price: state.favorite[index]["product_price"],
+                          onTap: () {
+                            showDialog(
+                              context: context,
+                              builder: (context) {
+                                return ConfirmDialog(onPress: () {
+                                  context
+                                      .read<FavoriteScreenCubit>()
+                                      .removeFromFavorite(index: index);
+                                  Navigator.pop(context);
+                                });
+                              },
+                            );
+                          },
+                        );
+                      },
+                      itemCount: state.favorite.length,
+                    ),
+                  );
+                } else {
+                  return SizedBox();
+                }
+              },
             )
           ],
         ),

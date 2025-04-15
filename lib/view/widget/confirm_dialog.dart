@@ -2,6 +2,7 @@ import 'package:Foodtik/responsive.dart';
 import 'package:Foodtik/view/widget/in_app_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ConfirmDialog extends StatelessWidget {
 
@@ -23,7 +24,7 @@ class ConfirmDialog extends StatelessWidget {
             child: Column(
               children: [
                 Text(
-                  "Are you sure you want to remove it from favorites?",
+                  AppLocalizations.of(context)!.remove_from_favorites_confirmation,
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
                     fontSize: 12.sp,
@@ -31,7 +32,7 @@ class ConfirmDialog extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: responsiveHeight(context, 24),),
-                InAppButton(text: "Yes", onPress: onPress)
+                InAppButton(text: AppLocalizations.of(context)!.yes, onPress: onPress)
               ],
             ),
           ),

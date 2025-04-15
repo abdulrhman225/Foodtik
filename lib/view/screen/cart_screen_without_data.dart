@@ -1,6 +1,7 @@
 import 'package:Foodtik/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CartScreenWithoutData extends StatelessWidget {
   const CartScreenWithoutData({super.key});
@@ -22,7 +23,7 @@ class CartScreenWithoutData extends StatelessWidget {
               height: responsiveHeight(context, 51),
             ),
             Text(
-              "Cart Empty",
+              AppLocalizations.of(context)!.cart_empty,
               style: TextStyle(
                 color: Theme.of(context).colorScheme.secondary,
                 fontSize: 32.sp,
@@ -33,7 +34,7 @@ class CartScreenWithoutData extends StatelessWidget {
               height: responsiveHeight(context, 12),
             ),
             Text(
-              "You don’t have add any foods in cart at this time ",
+              AppLocalizations.of(context)!.cart_empty_message,
               style: TextStyle(
                 color: Theme.of(context).colorScheme.onSecondary,
                 fontSize: 16.sp,

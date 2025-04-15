@@ -2,9 +2,8 @@ import 'package:Foodtik/controller/design_cubit/design_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../responsive.dart';
-import 'change_personal_info_screen.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SettingScreen extends StatelessWidget {
   const SettingScreen({super.key});
@@ -16,7 +15,7 @@ class SettingScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.primary,
         title: Text(
-          "Profile",
+          AppLocalizations.of(context)!.profile,
           style: TextStyle(
             fontSize: 20.sp,
             fontWeight: FontWeight.w600,
@@ -68,7 +67,7 @@ class SettingScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Setting",
+                      AppLocalizations.of(context)!.setting,
                       style: TextStyle(
                         fontSize: 16.sp,
                         fontWeight: FontWeight.w500,
@@ -89,7 +88,7 @@ class SettingScreen extends StatelessWidget {
                             width: responsiveWidth(context, 6),
                           ),
                           Text(
-                            "Change Theme",
+                            AppLocalizations.of(context)!.change_theme,
                             style: TextStyle(
                               fontSize: 14.sp,
                               fontWeight: FontWeight.w500,
