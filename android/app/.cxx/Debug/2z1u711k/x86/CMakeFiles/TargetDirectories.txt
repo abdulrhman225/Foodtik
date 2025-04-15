@@ -1,0 +1,2 @@
+C:/Users/ahmad/Desktop/New folder/final result_ahmed foodtik/Foodtik/android/app/.cxx/Debug/2z1u711k/x86/CMakeFiles/edit_cache.dir
+C:/Users/ahmad/Desktop/New folder/final result_ahmed foodtik/Foodtik/android/app/.cxx/Debug/2z1u711k/x86/CMakeFiles/rebuild_cache.dir
