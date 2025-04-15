@@ -57,6 +57,7 @@ dependencies:
   flutter_advanced_seekbar: ^0.0.2
   flutter_slidable: ^4.0.0
   flutter_credit_card: ^4.1.0
+  timelines_plus: ^1.0.6
 
 dev_dependencies:
   flutter_test:

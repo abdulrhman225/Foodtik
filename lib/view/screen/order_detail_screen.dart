@@ -1,5 +1,6 @@
 import 'package:Foodtik/responsive.dart';
 import 'package:Foodtik/view/screen/chat_screen.dart';
+import 'package:Foodtik/view/widget/track_order_widget.dart';
 import 'package:Foodtik/view/screen/track_order_screen.dart';
 import 'package:Foodtik/view/widget/in_app_button.dart';
 import 'package:flutter/material.dart';
@@ -70,86 +71,9 @@ class OrderDetailScreen extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                height: responsiveWidth(context, 48),
+                height: responsiveHeight(context, 300),
+                child: TrackOrderWidget(),
               ),
-              Row(
-                children: [
-                  Image.asset("assets/images/order_received.png"),
-                  SizedBox(
-                    width: responsiveWidth(context, 12),
-                  ),
-                  Text(
-                    "Order received",
-                    style: TextStyle(
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w600,
-                      color: Theme.of(context).colorScheme.secondary,
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: responsiveWidth(context, 20),
-              ),
-              Row(
-                children: [
-                  Image.asset("assets/images/cooking_your_order.png"),
-                  SizedBox(
-                    width: responsiveWidth(context, 12),
-                  ),
-                  Text(
-                    "Cooking your order",
-                    style: TextStyle(
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w600,
-                      color: Theme.of(context).colorScheme.secondary,
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: responsiveWidth(context, 20),
-              ),
-              Row(
-                children: [
-                  Image.asset("assets/images/picking_up_order.png"),
-                  SizedBox(
-                    width: responsiveWidth(context, 12),
-                  ),
-                  Text(
-                    "Courier is picking up order",
-                    style: TextStyle(
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w600,
-                      color: Theme.of(context).colorScheme.secondary,
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: responsiveWidth(context, 20),
-              ),
-              Row(
-                children: [
-                  Image.asset("assets/images/order_delivered.png"),
-                  SizedBox(
-                    width: responsiveWidth(context, 12),
-                  ),
-                  Text(
-                    "Order delivered",
-                    style: TextStyle(
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w600,
-                      color: Theme.of(context).colorScheme.secondary,
-                    ),
-                  ),
-                ],
-              ),
-          
-              SizedBox(
-                height: responsiveWidth(context, 51),
-              ),
-          
               Row(
                 children: [
                   Image.asset("assets/images/driver_phone.png"),
@@ -210,8 +134,12 @@ class OrderDetailScreen extends StatelessWidget {
                     width: responsiveWidth(context, 12),
                   ),
                   InkWell(
-                    onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => ChatScreen(),));
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ChatScreen(),
+                          ));
                     },
                     child: Image.asset("assets/images/Icon_chat.png"),
                   ),
@@ -263,14 +191,18 @@ class OrderDetailScreen extends StatelessWidget {
                   ),
                 ],
               ),
-          
               SizedBox(
                 height: responsiveHeight(context, 50),
               ),
-          
-              InAppButton(text: "Live Track", onPress: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => TrackOrderScreen(),));
-              }),
+              InAppButton(
+                  text: "Live Track",
+                  onPress: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => TrackOrderScreen(),
+                        ));
+                  }),
               SizedBox(
                 height: responsiveHeight(context, 24),
               ),
