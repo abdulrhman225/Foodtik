@@ -25,7 +25,7 @@ class _FilterScreenState extends State<FilterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.primary,
+      backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       body: SingleChildScrollView(
         child: Container(
           margin: EdgeInsets.symmetric(
@@ -207,6 +207,7 @@ class _FilterScreenState extends State<FilterScreen> {
                     setState(() {});
                   },
                   activeColor: ConstantColors.green_background,
+                  inactiveColor: Colors.grey,
                   min: 0,
                   max: 10,
                   divisions: 10,
@@ -307,6 +308,7 @@ class _FilterScreenState extends State<FilterScreen> {
                     setState(() {});
                   },
                   activeColor: ConstantColors.green_background,
+                  inactiveColor: Colors.grey,
                   min: 0,
                   max: 100,
                   divisions: 100,

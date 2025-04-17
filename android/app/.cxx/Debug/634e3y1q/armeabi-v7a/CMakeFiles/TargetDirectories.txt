@@ -1,0 +1,2 @@
+D:/flutterApplication/Foodtik/android/app/.cxx/Debug/634e3y1q/armeabi-v7a/CMakeFiles/edit_cache.dir
+D:/flutterApplication/Foodtik/android/app/.cxx/Debug/634e3y1q/armeabi-v7a/CMakeFiles/rebuild_cache.dir

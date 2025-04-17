@@ -23,7 +23,7 @@ class OtpDialog extends StatelessWidget {
           decoration: BoxDecoration(
             color: Theme.of(context)
                 .colorScheme
-                .primary,
+                .inversePrimary,
             borderRadius: BorderRadius.circular(12),
           ),
           child: SingleChildScrollView(

@@ -61,7 +61,7 @@ class TrackOrderScreen extends StatelessWidget {
               vertical: responsiveHeight(context, 20)),
           height: responsiveHeight(context, 250),
           decoration: BoxDecoration(
-            color: Theme.of(context).colorScheme.primary
+            color: Theme.of(context).colorScheme.inversePrimary
           ),
           child: SingleChildScrollView(
             child: Column(

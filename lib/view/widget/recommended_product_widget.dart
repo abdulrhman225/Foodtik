@@ -5,10 +5,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class RecommendedProductWidget extends StatelessWidget {
 
-  String Image;
+  String image;
   String price;
 
-  RecommendedProductWidget({required this.Image, required this.price});
+  RecommendedProductWidget({required this.image, required this.price});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class RecommendedProductWidget extends StatelessWidget {
             image: DecorationImage(
               fit: BoxFit.cover,
               image: AssetImage(
-                Image
+                image
               ),
             ),
           ),

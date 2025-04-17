@@ -19,7 +19,7 @@ class ConfirmDialog extends StatelessWidget {
           padding: EdgeInsets.symmetric(
               vertical: responsiveHeight(context, 24),
               horizontal: responsiveWidth(context, 24)),
-          decoration: BoxDecoration(borderRadius: BorderRadius.circular(12) , color: Theme.of(context).colorScheme.primary),
+          decoration: BoxDecoration(borderRadius: BorderRadius.circular(12) , color: Theme.of(context).colorScheme.inversePrimary),
           child: IntrinsicHeight(
             child: Column(
               children: [

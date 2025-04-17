@@ -1,7 +1,7 @@
 import 'package:Foodtik/controller/home_screen_cubit/home_screen_cubit.dart';
 import 'package:Foodtik/responsive.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class OtherCategoryScreen extends StatelessWidget {
@@ -42,8 +42,8 @@ class OtherCategoryScreen extends StatelessWidget {
         alignment: Alignment.center,
         children: [
           Positioned(
-            top: -20,
-            right: -15,
+            top: responsiveHeight(context, -25),
+            right: responsiveWidth(context, -20),
             child: InkWell(
               onTap: onTap,
               child: Center(
@@ -70,15 +70,16 @@ class OtherCategoryScreen extends StatelessWidget {
               ),
             ),
           ),
-          Positioned(
-            top: -50,
-            child: Center(
-              child: Image.asset("assets/images/ellipse.png", height: 90),
-            ),
+          Positioned.fill(
+            top: responsiveHeight(context, -60),
+            child: Align(
+                alignment: Alignment.topCenter,
+                child: Image.asset("assets/images/ellipse.png", height: 90)),
           ),
-          Positioned(
-            top: -35,
-            child: Center(
+          Positioned.fill(
+            top: responsiveHeight(context, -40),
+            child: Align(
+              alignment: Alignment.topCenter,
               child: Image.asset(
                 imagePath,
                 width: responsiveWidth(context, 74),
@@ -87,46 +88,55 @@ class OtherCategoryScreen extends StatelessWidget {
             ),
           ),
           SizedBox(height: 8),
-          Positioned(
-            top: 60,
-            child: Text(name,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontWeight: FontWeight.w600,
-                  fontSize: 16.sp,
-                  color: Theme.of(context).colorScheme.secondary,
-                )),
+          Positioned.fill(
+            top: responsiveHeight(context, 65),
+            child: Align(
+              alignment: Alignment.topCenter,
+              child: Text(name,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 16.sp,
+                    color: Theme.of(context).colorScheme.secondary,
+                  )),
+            ),
           ),
           SizedBox(height: 4),
-          Positioned(
-            left: 0,
-            right: 0,
-            child: Text(description,
-                maxLines: 3,
-                overflow: TextOverflow.ellipsis,
-                style: TextStyle(
-                    color: Theme.of(context).colorScheme.onSecondary,
-                    fontSize: 12)),
+          Positioned.fill(
+            child: Center(
+              child: Text(description,
+                  maxLines: 3,
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                      color: Theme.of(context).colorScheme.onSecondary,
+                      fontSize: 12.sp)),
+            ),
           ),
           SizedBox(height: 8),
-          Positioned(
-            bottom: 50,
-            child: Text(price,
-                style: TextStyle(
-                  fontWeight: FontWeight.w600,
-                  fontSize: 14.sp,
-                  color: Theme.of(context).colorScheme.secondary,
-                )),
+          Positioned.fill(
+            bottom: responsiveHeight(context, 50),
+            child: Align(
+              alignment: Alignment.bottomCenter,
+              child: Text(price,
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 14.sp,
+                    color: Theme.of(context).colorScheme.secondary,
+                  )),
+            ),
           ),
           SizedBox(height: 8),
-          Positioned(
+          Positioned.fill(
             bottom: -20,
-            child: ElevatedButton(
-              onPressed: () {},
-              child: Text("Order Now"),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.green,
-                foregroundColor: Colors.white,
+            child: Align(
+              alignment: Alignment.bottomCenter,
+              child: ElevatedButton(
+                onPressed: () {},
+                child: Text(AppLocalizations.of(context)!.add_to_cart),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green,
+                  foregroundColor: Colors.white,
+                ),
               ),
             ),
           ),

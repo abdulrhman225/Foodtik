@@ -61,7 +61,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.primary,
+      backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       body: data.isEmpty? HistoryScreenWithoutData() :Padding(
         padding:  EdgeInsets.symmetric(
             vertical: responsiveHeight(context, 20),

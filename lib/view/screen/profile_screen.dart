@@ -22,9 +22,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.primary,
+      backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.primary,
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(
           AppLocalizations.of(context)!.profile,
           style: TextStyle(
@@ -72,7 +72,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 height: responsiveHeight(context, 24),
               ),
               Card(
-                color: Theme.of(context).colorScheme.primary,
+                color: Theme.of(context).colorScheme.inversePrimary,
                 child: Padding(
                   padding: EdgeInsets.all(12.0),
                   child: Column(
@@ -195,7 +195,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 height: responsiveHeight(context, 16),
               ),
               Card(
-                color: Theme.of(context).colorScheme.primary,
+                color: Theme.of(context).colorScheme.inversePrimary,
                 child: Padding(
                   padding: EdgeInsets.all(12.0),
                   child: Column(
@@ -281,7 +281,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 height: responsiveHeight(context, 16),
               ),
               Card(
-                color: Theme.of(context).colorScheme.primary,
+                color: Theme.of(context).colorScheme.inversePrimary,
                 child: Padding(
                   padding: EdgeInsets.all(12.0),
                   child: Column(

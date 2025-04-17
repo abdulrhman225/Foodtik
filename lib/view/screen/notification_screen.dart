@@ -16,7 +16,7 @@ class NotificationScreen extends StatelessWidget {
       length: 3,
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Theme.of(context).colorScheme.primary,
+          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
           leading: InkWell(
               onTap: () {
                 Navigator.pop(context);

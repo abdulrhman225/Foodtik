@@ -87,7 +87,7 @@ class _LocationScreenState extends State<LocationScreen> {
                   horizontal: responsiveWidth(context, 24),
                   vertical: responsiveHeight(context, 24)),
               decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.primary, borderRadius: BorderRadius.circular(12)),
+                  color: Theme.of(context).colorScheme.inversePrimary, borderRadius: BorderRadius.circular(12)),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

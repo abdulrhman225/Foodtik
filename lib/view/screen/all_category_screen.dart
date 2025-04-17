@@ -75,6 +75,9 @@ class AllCategoryScreen extends StatelessWidget {
             ),
           ),
         ),
+        SizedBox(
+          height: responsiveHeight(context, 11),
+        ),
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Row(
@@ -139,7 +142,7 @@ class AllCategoryScreen extends StatelessWidget {
               data1.length,
                   (index) {
                 return RecommendedProductWidget(
-                    Image: data1[index]["image_path"],
+                    image: data1[index]["image_path"],
                     price: data1[index]["product_price"]);
               },
             ),

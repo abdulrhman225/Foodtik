@@ -24,7 +24,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.primary,
+      backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       body: SingleChildScrollView(
         child: Container(
           margin: EdgeInsets.symmetric(
@@ -281,6 +281,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                             setState(() {});
                           },
                           activeColor: Colors.red,
+                          inactiveColor: Colors.grey,
                         ),
                       ),
                     ),

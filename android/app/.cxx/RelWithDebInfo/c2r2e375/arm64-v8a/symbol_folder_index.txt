@@ -1,0 +1,1 @@
+D:\flutterApplication\Foodtik\build\app\intermediates\cxx\RelWithDebInfo\c2r2e375\obj\arm64-v8a

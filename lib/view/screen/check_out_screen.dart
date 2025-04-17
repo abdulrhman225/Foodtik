@@ -26,7 +26,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.primary,
+      backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       body: Container(
         margin: EdgeInsets.symmetric(
             horizontal: responsiveWidth(context, 32),
@@ -222,7 +222,7 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
               ),
               Row(children: [
                 Radio<String>(
-                  value: AppLocalizations.of(context)!.card_type,
+                  value: "card",
                   activeColor: ConstantColors.green_background,
                   groupValue: selectedWay,
                   onChanged: (value) {

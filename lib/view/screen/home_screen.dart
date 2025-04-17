@@ -31,7 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.primary,
+      backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -168,7 +168,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             return CategoryWidget(
                               imagePath: state.categories[index]["image_path"],
                               category: state.categories[index]["name"],
-                              backgroundColor: Theme.of(context).colorScheme.primary,
+                              backgroundColor: Theme.of(context).colorScheme.inversePrimary,
                               textColor: Theme.of(context).colorScheme.secondary,
                               index: index,
                             );
@@ -199,7 +199,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             return CategoryWidget(
                               imagePath: state.categories[index]["image_path"],
                               category: state.categories[index]["name"],
-                              backgroundColor: Theme.of(context).colorScheme.primary,
+                              backgroundColor: Theme.of(context).colorScheme.inversePrimary,
                               textColor: Theme.of(context).colorScheme.secondary,
                               index: index,
                             );

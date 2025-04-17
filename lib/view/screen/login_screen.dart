@@ -46,7 +46,7 @@ class LoginScreen extends StatelessWidget {
                         horizontal: responsiveWidth(context, 24),
                         vertical: responsiveHeight(context, 24)),
                     decoration: BoxDecoration(
-                        color: Theme.of(context).colorScheme.primary,
+                        color: Theme.of(context).colorScheme.inversePrimary,
                         borderRadius: BorderRadius.circular(12)),
                     child: IntrinsicWidth(
                       child: IntrinsicHeight(
@@ -342,8 +342,6 @@ class LoginScreen extends StatelessWidget {
                                 height: responsiveHeight(context, 24),
                               ),
                               Container(
-                                width: responsiveWidth(context, 295),
-                                height: responsiveHeight(context, 48),
                                 alignment: Alignment.center,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10),
@@ -376,8 +374,6 @@ class LoginScreen extends StatelessWidget {
                                 height: responsiveHeight(context, 15),
                               ),
                               Container(
-                                width: responsiveWidth(context, 295),
-                                height: responsiveHeight(context, 48),
                                 alignment: Alignment.center,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10),
@@ -413,8 +409,6 @@ class LoginScreen extends StatelessWidget {
                                 height: responsiveHeight(context, 15),
                               ),
                               Container(
-                                width: responsiveWidth(context, 295),
-                                height: responsiveHeight(context, 48),
                                 alignment: Alignment.center,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(10),

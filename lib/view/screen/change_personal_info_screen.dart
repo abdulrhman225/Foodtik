@@ -16,9 +16,9 @@ class ChangePersonalInfoScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.primary,
+      backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.primary,
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(
           AppLocalizations.of(context)!.profile,
           style: TextStyle(
@@ -66,7 +66,7 @@ class ChangePersonalInfoScreen extends StatelessWidget {
                 height: responsiveHeight(context, 24),
               ),
               Card(
-                color: Theme.of(context).colorScheme.primary,
+                color: Theme.of(context).colorScheme.inversePrimary,
                 child: Padding(
                   padding: EdgeInsets.all(14.0),
                   child: Column(

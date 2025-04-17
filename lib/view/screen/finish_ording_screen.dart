@@ -12,7 +12,7 @@ class FinishOrdingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.primary,
+      backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       body: Container(
         margin: EdgeInsets.symmetric(
             horizontal: responsiveWidth(context, 32),

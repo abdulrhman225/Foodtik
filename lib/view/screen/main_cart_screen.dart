@@ -19,7 +19,7 @@ class MainCartScreen extends StatelessWidget {
       length: 2,
       child: Scaffold(
           appBar: AppBar(
-            backgroundColor: Theme.of(context).colorScheme.primary,
+            backgroundColor: Theme.of(context).colorScheme.inversePrimary,
             title: ListTile(
               leading: Container(
                   padding: EdgeInsets.symmetric(

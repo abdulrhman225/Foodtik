@@ -60,7 +60,7 @@ class SignUpScreen extends StatelessWidget {
                         horizontal: responsiveWidth(context, 44),
                       ),
                       decoration: BoxDecoration(
-                        color: Theme.of(context).colorScheme.primary,
+                        color: Theme.of(context).colorScheme.inversePrimary,
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: IntrinsicWidth(
@@ -267,6 +267,7 @@ class SignUpScreen extends StatelessWidget {
                                         width: responsiveWidth(context, 295),
                                         child: IntlPhoneField(
                                           initialCountryCode: "JO",
+                                          dropdownTextStyle: TextStyle(color: Theme.of(context)!.colorScheme.secondary),
                                           controller:
                                               phoneNumberTextEditingController,
                                           onChanged: (value) {
@@ -335,6 +336,7 @@ class SignUpScreen extends StatelessWidget {
                                         width: responsiveWidth(context, 295),
                                         child: IntlPhoneField(
                                           initialCountryCode: "JO",
+                                          dropdownTextStyle: TextStyle(color: Theme.of(context)!.colorScheme.secondary),
                                           controller:
                                               phoneNumberTextEditingController,
                                           onChanged: (value) {
@@ -504,7 +506,7 @@ class SignUpScreen extends StatelessWidget {
                                   height: responsiveHeight(context, 24),
                                 ),
                                 InAppButton(
-                                  text: AppLocalizations.of(context)!.sign_up,
+                                  text: AppLocalizations.of(context)!.register,
                                   onPress: () {
                                     context
                                         .read<SignUpCubit>()
